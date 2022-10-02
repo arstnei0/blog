@@ -1,21 +1,45 @@
 ---
-export interface Props {
-	title: string;
-}
+import Header from '../components/Header.astro';
+import '../style/global.css';
 
-const { title } = Astro.props;
+const { frontmatter } = Astro.props;
+
+const theme = {};
+
+const {
+	title = 'Zihan'
+} = frontmatter || Astro.props;
+
+const lang = frontmatter?.lang || Astro.props.lang || 'en';
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/avatar.webp" />
-		<meta name="generator" content={Astro.generator} />
+		<!-- <meta name="generator" content={Astro.generator} /> -->
 		<title>{title}</title>
+		<link rel="icon" href="/avatar.png" type="image/png">
 	</head>
 	<body>
-		<slot />
+		<div id="site">
+			<Header>
+			</Header>
+			<div id="main">
+				<slot />
+			</div>
+		</div>
 	</body>
 </html>
+
+<style define:vars={{ ...theme }}>
+#main {
+
+}
+
+#site {
+	/* margin-left: 15%;
+	margin-right: 15%; */
+}
+</style>

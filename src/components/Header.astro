@@ -1,0 +1,104 @@
+---
+import avatar from '../assets/avatar.webp';
+import { titleOfWebsite } from '@config';
+
+const path = Astro.url.pathname;
+---
+
+<div id="header">
+    <div id="leftNav">
+        <img id="avatar" src={avatar} width="50px" height="50px" />
+
+        <h1 id="titleHeader"><a href="/" id={ path === '/' ? 'titleHeaderLinkSelected' : 'titleHeaderLink' }>{titleOfWebsite}</a></h1>
+    </div>
+
+    <nav id="rightHeader">
+        <a class={ path === '/about' ? 'selected' : '' } href="/about">About</a>
+        <a class={ path === '/posts' ? 'selected' : '' } href="/posts">Blog</a>
+        <a class={ path === '/projects' ? 'selected' : '' } href="/projects">Projects</a>
+    </nav>
+</div>
+
+<style>
+    * {
+        /* border: black solid; */
+    }
+
+    #leftNav {
+        display: flex;
+    }
+    
+    #header {
+        display: flex;
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+
+    #avatar {
+        margin: auto;
+    }
+
+    #titleHeader {
+        margin-left: 15%;
+    }
+
+    #titleHeaderLink {
+        color: #7f8c8d;
+        transition: color 0.7s;
+    }
+
+    #titleHeaderLinkSelected {
+        color: #1abc9c;
+        transition: color 0.7s;
+    }
+
+    #titleHeaderLink:hover {
+        color: #1abc9c;
+        transition: color 0.7s;
+    }
+
+    nav {
+        align-items: center;
+        display: flex;
+        flex: 1;
+        font-weight: 700;
+        justify-content: flex-end;
+        text-transform: uppercase;
+    }
+
+    nav a {
+        color: inherit;
+        text-decoration: none;
+        padding: 10px 5px;
+        display: block;
+        position: relative;
+        margin-left: 20px;
+        min-width: 70px;
+        text-align: center;
+    }
+
+    nav a:not(.selected) {
+        opacity: 0.7;
+    }
+
+    nav a::before {
+        content: '';
+        position: absolute;
+        transition: transform .3s ease;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--text-secondary);
+        transform: scaleX(0);
+    }
+
+    nav a:hover::before,
+    nav .selected::before {
+        transform: scaleX(1);
+    }
+
+    nav .selected::before {
+        background: var(--primary-color);
+    }
+</style>
