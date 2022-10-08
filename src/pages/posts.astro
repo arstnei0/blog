@@ -1,0 +1,13 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+try {
+    const posts = await Astro.glob('./post/*.mdx');
+} catch(e) {
+    
+}
+---
+
+<Layout title="Blog Posts   ">
+
+</Layout>

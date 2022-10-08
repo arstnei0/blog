@@ -2,15 +2,16 @@
 import Header from '../components/Header.astro';
 import '../style/global.css';
 
-const { frontmatter } = Astro.props;
+const { props } = Astro;
+const { frontmatter } = props;
 
 const theme = {};
 
-const {
-	title = 'Zihan'
-} = frontmatter || Astro.props;
+const title = frontmatter?.title || props.title;
 
-const lang = frontmatter?.lang || Astro.props.lang || 'en';
+const lang = frontmatter?.lang || props.lang || 'en';
+
+const emojiStatus = '🚀';
 ---
 
 <!DOCTYPE html>
@@ -19,7 +20,7 @@ const lang = frontmatter?.lang || Astro.props.lang || 'en';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<!-- <meta name="generator" content={Astro.generator} /> -->
-		<title>{title}</title>
+		<title>{ title ? `${title} ${emojiStatus} Zihan` : 'Zihan' }</title>
 		<link rel="icon" href="/avatar.png" type="image/png">
 	</head>
 	<body>
@@ -35,11 +36,11 @@ const lang = frontmatter?.lang || Astro.props.lang || 'en';
 
 <style define:vars={{ ...theme }}>
 #main {
-
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
 #site {
-	/* margin-left: 15%;
-	margin-right: 15%; */
+
 }
 </style>
