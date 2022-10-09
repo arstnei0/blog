@@ -15,7 +15,7 @@ const page = Astro.props.page;
         <a class={ page === 'home' ? 'selected' : '' } href="/">Home</a>
         <a class={ page === 'about' ? 'selected' : '' } href="/about">About</a>
         <a class={ page === 'projects' ? 'selected' : '' } href="/projects">Projects</a>
-        <a class={ page === 'posts' ? 'selected' : '' } href="/posts">Blog</a>
+        <a class={ (page === 'posts' || page === 'post') ? 'selected' : '' } href="/posts">Blog</a>
     </nav>
 </div>
 

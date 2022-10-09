@@ -21,20 +21,20 @@ const year = new Date().getFullYear() - 2009
                     </div>
 
                     <div id="short-intro" data-atropos-offset="2" data-atropos-opacity="0.7;1">
-                        <p>I am a <span id="year">{year}</span>-year-old boy living in <span id="singapore">Singapore</span>. 
+                        <p class="comf">I am a <span id="year">{year}</span>-year-old boy living in <span id="singapore">Singapore</span>. 
                             I am a fanatic open source enthusiast.<br />
                             My hometown is in <span id="hometown">Suzhou, China</span>, so I can both speak Chinese and English fluently.
                         </p>
                     </div>
 
                     <div id="hobbies" data-atropos-offset="5" data-atropos-opacity="0.7;1">
-                        <p>I love coding. I'm recently developing in frontend. 
+                        <p class="comf">I love coding. I'm recently developing in frontend. 
                             Also, I'm now building some personal open source projects and contributing to several famous open source projects.
                         </p>
                     </div>
 
                     <div id="to-about" data-atropos-offset="5" data-atropos-opacity="0.7;1">
-                        <p>
+                        <p class="comf">
                             You can find more about me at the <a href="/about">about page</a>, 
                             or read my blog <a href="/posts">here</a>.
                         </p>
@@ -90,9 +90,14 @@ const year = new Date().getFullYear() - 2009
     * {
         /* border: solid 1px black; */
     }
+
+    p {
+        font-family: 'Comfortaa', cursive;
+    }
 </style>
 
 <style scoped>
+
     #greet {
         margin-left: 10%;
         margin-right: 10%;

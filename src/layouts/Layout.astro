@@ -1,17 +1,14 @@
 ---
-import Header from '../components/Header.astro';
-import '../style/global.css';
+import Header from '@component/Header.astro';
+import '@style/global.css';
+import emojiStatus from '@emoji';
 
 const { props } = Astro;
 const { frontmatter } = props;
 
-const theme = {};
-
 const title = frontmatter?.title || props.title;
 
 const lang = frontmatter?.lang || props.lang || 'en';
-
-const emojiStatus = '🚀';
 
 const page = props.page;
 
@@ -39,15 +36,15 @@ const {
 		<div id="site">
 			<Header page={page}>
 			</Header>
-			<div id="main">
+			<main id="main">
 				<slot />
-			</div>
+			</main>
 		</div>
 	</body>
 </html>
 
-<style define:vars={{ ...theme }}>
-#main {
+<style>
+main {
 	margin-left: 10%;
 	margin-right: 10%;
 }

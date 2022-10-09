@@ -1,6 +1,8 @@
 ---
+import PostCard from "@components/PostCard.astro";
 import Layout from "@layouts/Layout.astro";
 import type { MDXInstance } from "astro";
+import dayjs from "dayjs";
 
 let posts: MDXInstance<Record<string, any>>[] | null = null;
 
@@ -9,19 +11,52 @@ try {
 } catch(e) {
     
 }
+
+let latest: MDXInstance<Record<string, any>>[] | null = null;
+if (posts) {
+    latest = posts.sort((a, b) => (dayjs(a.frontmatter.date).isBefore(dayjs(b.frontmatter.date)) ? 1 : -1))
+}
 ---
 
 <Layout title="Blog Posts" page="posts">
     <div id="posts-c">
-    {
-        posts ? posts.map((post) => post.frontmatter.title)
-        : <h2>Sorry, I haven't written any blog posts yet.</h2>
-    }
+        <div id="new">
+            <h1 id="lpt">Latest posts:</h1>
+
+            <div id="lpc">
+            {
+                latest ? latest.slice(0, 5).map((post) => (
+                    <PostCard
+                        post={post.frontmatter}
+                        url={post.url}
+                    ></PostCard>
+                ))
+                : <h2>Sorry, I haven't written any blog posts yet.</h2>
+            }
+            </div>
+        </div>
     </div>
 </Layout>
 
 <style>
-.posts-c {
-    margin: auto;
+* {
+    /* border: solid 1px black; */
+}
+
+#posts-c {
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 3%;
+	margin-bottom: 15%;
+}
+
+#lpt {
+    margin-bottom: 0%;
+}
+
+#lpc {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex: 1; */
 }
 </style>

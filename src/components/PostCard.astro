@@ -1,0 +1,45 @@
+---
+import dayjs from 'dayjs'
+
+const {
+    post,
+    url
+} = Astro.props
+
+let date;
+if (post.date) date = dayjs(post.date as string, 'YYYY/MM/DD').format('MMM D, YYYY')
+---
+
+<div class="poc">
+    <a href={url} class="cusa poca">
+        <h2>{post.title}</h2>
+        {date && <span style="font-weight: 300; line-height: 1.5em;">{date}</span><br />}
+        <span>{post.description || `No description provided...`}</span>
+    </a>
+</div>
+
+<style>
+    .poc {
+        margin: 3%;
+        width: 40%;
+        margin-bottom: 4%;
+    }
+
+    .poca {
+        color: inherit;
+        opacity: 1;
+        transition: opacity 0.5s;
+    }
+
+    .poca:hover {
+        opacity: 0.6;
+        transition: opacity 0.5s ease;
+    }
+</style>
+
+<style scoped>
+    h2 {
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+    }
+</style>
