@@ -13,3 +13,25 @@
 a {
     text-decoration: none;
 }
+
+#main a {
+    white-space: nowrap;
+    color: #121314;
+    position: relative;
+}
+
+#main a:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 80%;
+    left: -0.1em;
+    right: -0.1em;
+    bottom: 0;
+    transition: top 700ms cubic-bezier(0, 0.8, 0.13, 1);
+    background-color: rgba(79, 192, 141, 0.5);
+}
+
+#main a:hover:after {
+    top: -10%;
+}

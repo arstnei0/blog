@@ -1,7 +1,30 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import notFoundIlluUrl from '../assets/notfound.webp'
 ---
 
 <Layout title="404 Not Found!">
-    
+    <div id="nf-container">
+        <h2>404 Not Found!</h2>
+        <h1>We seem to lost our way...</h1>
+        <img src={notFoundIlluUrl} width="70%" />
+    </div>
 </Layout>
+
+<style>
+    #nf-container {
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 5%;
+    }
+</style>
+
+<style scoped>
+    h1, h2 {
+        margin: 5%;
+    }
+
+    h1 {
+        color: #2c3e50;
+    }
+</style>
