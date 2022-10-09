@@ -35,3 +35,7 @@ a {
 #main a:hover:after {
     top: -10%;
 }
+
+p {
+    font-size: 20px;
+}

@@ -2,6 +2,49 @@
 import Layout from '@layouts/Layout.astro';
 ---
 
-<Layout title="About Me">
-
+<Layout title="About Me" page="about">
+    <div id="aboutc">
+        <h1>About Me</h1>
+        <p>Hello, Glad to see you here!</p>
+        <p>My full name is Zihan Chen and I'm now living in Singapore. I moved from Suzhou, China to Singapore at July, 2022.</p>
+        <p>
+            I love coding. I can use almost all of the frontend frameworks, including <a href="https://reactjs.org/">React</a>
+            , <a href="https://vuejs.org/">Vue</a>, <a href="https://svelte.dev/">Svelte</a>, <a href="https://solidjs.com/">Solid</a> and some more, but my favourite frameworks are Solid and Vue.
+            Actually I like Solid more, but its ecosystem is still not mature enough to build really big web apps. Therefore, I write most of my web apps in Vue.
+        </p>
+        <p>
+            I made this website myself. This website is open source at <a href="https://github.com/zihan-ch/blog/">Github</a>. 
+            It is built with <a href="https://astro.build/">Astro</a>, which I have once contributed to(because it's really amazing!).
+        </p>
+        <p>
+            I will write some blog regularly, about technologies, frontend, fun or life. I believe writing blog is a good habbit.
+        </p>
+        <h2>
+            You can find me by:
+        </h2>
+        <p>
+            <a href="https://github.com/zihan-ch">Github</a><br />
+            <a href="https://twitter.com/zihanch">Twitter</a><br />
+            <a href="mailto:me@zihan.ga">Email</a><br />
+            Discord: <strong>zihan#4186</strong><br />
+        </p>
+    </div>
 </Layout>
+
+<style scoped>
+    p {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 1.4em;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    #aboutc {
+        margin-top: 3%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+</style>

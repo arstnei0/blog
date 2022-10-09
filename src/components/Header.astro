@@ -1,21 +1,21 @@
 ---
 import avatar from '../assets/avatar.webp';
 
-const path = Astro.url.pathname;
+const page = Astro.props.page;
 ---
 
 <div id="header">
     <div id="leftNav">
-        <img id="avatar" src={avatar} width="50px" height="50px" />
+        <img id="avatar" src={avatar} width="50px" height="50px" alt="avatar" />
 
         <h1 id="titleHeader"><a href="/" id="titleHeaderLink">Zihan</a></h1>
     </div>
 
     <nav id="rightHeader">
-        <a class={ path === '/' ? 'selected' : '' } href="/">Home</a>
-        <a class={ path === '/about' ? 'selected' : '' } href="/about">About</a>
-        <a class={ path === '/posts' ? 'selected' : '' } href="/posts">Blog</a>
-        <a class={ path === '/projects' ? 'selected' : '' } href="/projects">Projects</a>
+        <a class={ page === 'home' ? 'selected' : '' } href="/">Home</a>
+        <a class={ page === 'about' ? 'selected' : '' } href="/about">About</a>
+        <a class={ page === 'projects' ? 'selected' : '' } href="/projects">Projects</a>
+        <a class={ page === 'posts' ? 'selected' : '' } href="/posts">Blog</a>
     </nav>
 </div>
 

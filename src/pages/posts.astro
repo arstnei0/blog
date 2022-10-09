@@ -1,13 +1,27 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import type { MDXInstance } from "astro";
+
+let posts: MDXInstance<Record<string, any>>[] | null = null;
 
 try {
-    const posts = await Astro.glob('./post/*.mdx');
+    posts = await Astro.glob('./post/*.mdx');
 } catch(e) {
     
 }
 ---
 
-<Layout title="Blog Posts   ">
-
+<Layout title="Blog Posts" page="posts">
+    <div id="posts-c">
+    {
+        posts ? posts.map((post) => post.frontmatter.title)
+        : <h2>Sorry, I haven't written any blog posts yet.</h2>
+    }
+    </div>
 </Layout>
+
+<style>
+.posts-c {
+    margin: auto;
+}
+</style>

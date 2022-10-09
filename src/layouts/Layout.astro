@@ -12,6 +12,14 @@ const title = frontmatter?.title || props.title;
 const lang = frontmatter?.lang || props.lang || 'en';
 
 const emojiStatus = '🚀';
+
+const page = props.page;
+
+const {
+	author = 'Zihan Chen',
+	keywords = ['Blog', 'Personal website'],
+	description = "Zihan's personal website and blog posts"
+} = props.meta || {}
 ---
 
 <!DOCTYPE html>
@@ -19,13 +27,17 @@ const emojiStatus = '🚀';
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<!-- <meta name="generator" content={Astro.generator} /> -->
+		<meta name="generator" content={Astro.generator} />
+		<meta name="author" content={author}>
+		<meta name="keywords" content={keywords.join(', ')}>
+		<meta name="description" content={description}>
+
 		<title>{ title ? `${title} ${emojiStatus} Zihan` : 'Zihan' }</title>
 		<link rel="icon" href="/avatar.png" type="image/png">
 	</head>
 	<body>
 		<div id="site">
-			<Header>
+			<Header page={page}>
 			</Header>
 			<div id="main">
 				<slot />
