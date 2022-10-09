@@ -7,7 +7,7 @@ const {
 } = Astro.props
 
 let date;
-if (post.date) date = dayjs(post.date as string, 'YYYY/MM/DD').format('MMM D, YYYY')
+if (post.pubDate) date = dayjs(post.pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
 ---
 
 <div class="poc">

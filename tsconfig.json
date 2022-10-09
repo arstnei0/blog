@@ -5,8 +5,13 @@
 		"paths": {
 			"@*": ["src/*"],
 			"$layout/*": ["src/layouts/*"],
+			"@layout/*": ["src/layouts/*"],
 			"@component/*": ["src/components/*"],
-			"@style/*": ["src/style/*"]
+			"$component/*": ["src/components/*"],
+			"@style/*": ["src/style/*"],
+			"@util/*": ["src/utils/*"],
+			"$util/*": ["src/utils/*"],
+			"$style/*": ["src/style/*"],
 		}
 	}
 }

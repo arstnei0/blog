@@ -1,7 +1,7 @@
 ---
 import Header from '@component/Header.astro';
-import '@style/global.css';
-import emojiStatus from '@emoji';
+import emojiStatus from '@util/emoji';
+import Style from '$component/Style.astro'
 
 const { props } = Astro;
 const { frontmatter } = props;
@@ -33,13 +33,15 @@ const {
 		<link rel="icon" href="/avatar.png" type="image/png">
 	</head>
 	<body>
-		<div id="site">
-			<Header page={page}>
-			</Header>
-			<main id="main">
-				<slot />
-			</main>
-		</div>
+		<Style>
+			<div id="site">
+				<Header page={page}>
+				</Header>
+				<main id="main">
+					<slot />
+				</main>
+			</div>
+		</Style>
 	</body>
 </html>
 

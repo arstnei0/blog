@@ -14,11 +14,11 @@ try {
 
 let latest: MDXInstance<Record<string, any>>[] | null = null;
 if (posts) {
-    latest = posts.sort((a, b) => (dayjs(a.frontmatter.date).isBefore(dayjs(b.frontmatter.date)) ? 1 : -1))
+    latest = posts.sort((a, b) => (dayjs(a.frontmatter.pubDate).isBefore(dayjs(b.frontmatter.pubDate)) ? 1 : -1))
 }
 ---
 
-<Layout title="Blog Posts" page="posts">
+<Layout title="Latest Blog Posts" page="latest">
     <div id="posts-c">
         <div id="new">
             <h1 id="lpt">Latest posts:</h1>
@@ -34,6 +34,9 @@ if (posts) {
                 : <h2>Sorry, I haven't written any blog posts yet.</h2>
             }
             </div>
+        </div>
+        <div id="see-ac">
+            <a href="/all"><span>See all posts</span></a>
         </div>
     </div>
 </Layout>
@@ -58,5 +61,11 @@ if (posts) {
     display: flex;
     flex-wrap: wrap;
     /* flex: 1; */
+}
+
+#see-ac {
+    margin-top: 10%;
+    display: flex;
+    justify-content: flex-end;
 }
 </style>

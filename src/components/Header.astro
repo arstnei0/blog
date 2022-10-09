@@ -1,25 +1,32 @@
 ---
-import avatar from '../assets/avatar.webp';
+import avatar from '@assets/avatar.webp';
+import rssImgUrl from '@assets/rss.svg'
+import githubImgUrl from '@assets/github.svg'
+import { randomChoose } from '@util/random';
+import colors from '@util/colors'
 
 const page = Astro.props.page;
+const titleColor = randomChoose(colors)
 ---
 
 <div id="header">
     <div id="leftNav">
         <img id="avatar" src={avatar} width="50px" height="50px" alt="avatar" />
 
-        <h1 id="titleHeader"><a href="/" id="titleHeaderLink">Zihan</a></h1>
+        <h1 id="titleHeader" class="rc"><a href="/" id="titleHeaderLink">Zihan</a></h1>
     </div>
 
     <nav id="rightHeader">
         <a class={ page === 'home' ? 'selected' : '' } href="/">Home</a>
         <a class={ page === 'about' ? 'selected' : '' } href="/about">About</a>
         <a class={ page === 'projects' ? 'selected' : '' } href="/projects">Projects</a>
-        <a class={ (page === 'posts' || page === 'post') ? 'selected' : '' } href="/posts">Blog</a>
+        <a class={ (page === 'posts' || page === 'post' || page === 'latest') ? 'selected' : '' } href="/latest">Blog</a>
+        <a class="ico rss" href="/rss.xml"><img src={rssImgUrl} width="25" height="25" alt="rss" /></a>
+        <a class="ico github" target="_blank" href="https://github.com/zihan-ch"><img src={githubImgUrl} width="23" height="23" alt="github" /></a>
     </nav>
 </div>
 
-<style>
+<style define:vars={{ titleColor }}>
     * {
         /* border: black solid; */
     }
@@ -34,21 +41,20 @@ const page = Astro.props.page;
         margin-right: 4%;
     }
 
+    #titleHeader {
+        margin-left: 15%;
+    }
+
+    #titleHeaderLink {
+        color: var(--titleColor);
+    }
+
     #avatar {
         margin: auto;
     }
 
     #titleHeader {
         margin-left: 15%;
-    }
-
-    #titleHeaderLink {
-        color: #1abc9c;
-    }
-
-    #titleHeaderLink:hover {
-        color: #1abc9c;
-        transition: color 0.7s;
     }
 
     nav {
@@ -60,22 +66,22 @@ const page = Astro.props.page;
         text-transform: uppercase;
     }
 
-    nav a {
+    nav a:not(.ico) {
         color: inherit;
         text-decoration: none;
         padding: 10px 5px;
         display: block;
         position: relative;
         margin-left: 20px;
-        min-width: 70px;
+        min-width: 55px;
         text-align: center;
     }
 
-    nav a:not(.selected) {
+    nav a:not(.ico):not(.selected) {
         opacity: 0.7;
     }
 
-    nav a::before {
+    nav a:not(.ico)::before {
         content: '';
         position: absolute;
         transition: transform .3s ease;
@@ -87,12 +93,21 @@ const page = Astro.props.page;
         transform: scaleX(0);
     }
 
-    nav a:hover::before,
+    nav a:not(.ico):hover::before,
     nav .selected::before {
         transform: scaleX(1);
     }
 
     nav .selected::before {
         background: var(--primary-color);
+    }
+
+    .ico {
+        margin-left: 10px;
+        opacity: 0.6;
+    }
+
+    .ico:hover {
+        opacity: 0.9;
     }
 </style>

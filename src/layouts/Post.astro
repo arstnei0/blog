@@ -1,7 +1,7 @@
 ---
 import Layout from "./Layout.astro";
-import emojiStatus from '@emoji'
-import '@style/global.css'
+import emojiStatus from '@util/emoji'
+import Style from '$component/Style.astro'
 import Header from '@component/Header.astro'
 import dayjs from 'dayjs'
 
@@ -34,15 +34,17 @@ const date = dayjs(originalDate, ).format('MMM D, YYYY')
 		<link rel="icon" href="/avatar.png" type="image/png">
 	</head>
 	<body>
-		<div id="site">
-			<Header page={'post'}>
-			</Header>
-			<main id="main">
-				<h1 id="blog-title">{title}</h1>
-				<span style="font-size: 18px;">{date}{date ? ', by ' : 'By '}{author}</span>
-				<slot />
-			</main>
-		</div>
+		<Style>
+			<div id="site">
+				<Header page={'post'}>
+				</Header>
+				<main id="main">
+					<h1 id="blog-title">{title}</h1>
+					<span style="font-size: 18px;">{date}{date ? ', by ' : 'By '}{author}</span>
+					<slot />
+				</main>
+			</div>
+		</Style>
 	</body>
 </html>
 
