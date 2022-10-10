@@ -26,7 +26,7 @@ if (posts) {
     <div id="posts-c">
         <div id="all">
             <h1 id="apt">All posts:</h1>
-            <span>There are {posts?.length} posts altogether.</span>
+            <span>There are {posts?.length || 0} posts altogether.</span>
 
             {
                 posts ? (
