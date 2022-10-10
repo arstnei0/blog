@@ -3,72 +3,83 @@ import colors from "@utils/colors";
 import { randomChoose } from "@utils/random";
 ---
 
-<slot />
-
 <style is:global>
-    @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;700&display=swap");
-    @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
 
-    :root {
-        --primary-color: #1abc9c;
-        --header-color: #2c3e50;
-        --text-secondary: #95a5a6;
-    }
+body.light {
+    --bgColor: inherit;
+    --textColor: inherit;
+    --titleColor: inherit;
+    --headerColor: inherit;
+    transition: background-color 0.6s ease-in;
+}
 
-    #header * {
-        font-family: "Comfortaa", cursive;
-    }
+.nod {
+    display: none;
+}
 
-    main *:not(.comf) {
-        font-family: "Merriweather", serif;
-        letter-spacing: 0.05em;
-    }
+body.dark {
+    --bgColor: #191919;
+    --textColor: #DCD7C9;
+    --titleColor: #D8D8D8;
+    --headerColor: #D8D8D8;
+    transition: background-color 0.6s ease-in;
+}
 
-    .comf {
-        font-family: "Comfortaa", cursive;
+@media (prefers-color-scheme: dark) {
+    body:not(.light) {
+        --bgColor: #191919;
+        --textColor: #DCD7C9;
+        --titleColor: #D8D8D8;
+        --headerColor: #D8D8D8;
+        transition: background-color 0.6s ease-in;
     }
+}
 
-    .astro-code {
-        padding: 15px;
-        border-radius: 10px;
-    }
+body {
+    background-color: var(--bgColor);
+}
 
-    a{
-        text-decoration: none;
-    }
+:root {
+    color-scheme: light dark; /* both supported */
+}
 
-    a {
-        color: #60a3bc;
-        opacity: 1;
-        transition: opacity 0.5s;
-    }
+#header *:not(#titleHeaderLink) {
+    font-family: "Comfortaa", cursive;
+}
 
-    a:hover {
-        opacity: 0.7;
-        transition: opacity 0.5s ease;
-    }
+main *:not(.comf) {
+    font-family: "Merriweather", serif;
+    letter-spacing: 0.05em;
+    color: var(--textColor)
+}
 
-    /* main a:not(.cusa) {
-        white-space: nowrap;
-        color: #121314;
-        position: relative;
-    }
-    main a:not(.cusa):after {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 80%;
-        left: -0.1em;
-        right: -0.1em;
-        bottom: 0;
-        transition: top 700ms cubic-bezier(0, 0.8, 0.13, 1);
-        background-color: rgba(79, 192, 141, 0.5);
-    }
-    main a:not(.cusa):hover:after {
-        top: -10%;
-    } */
+.comf {
+    font-family: "Comfortaa", cursive;
+}
 
-    p {
-        font-size: 20px;
-    }
+.astro-code {
+    padding: 15px;
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a {
+    color: #60a3bc;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+a:hover {
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+}
+
+p {
+    font-size: 20px;
+}
 </style>

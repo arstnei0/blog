@@ -41,11 +41,11 @@ const year = new Date().getFullYear() - 2009
                     </div>
 
                     <div id="alc" class="bg" data-atropos-offset="40" data-atropos-opacity="0.7;0.9">
-                        <img class="logoo1" src={astroLogoUrl} width="60px" alt="astro logo" />
+                        <img class="logoo1" src={astroLogoUrl} width="60px" height="60px" alt="astro logo" />
                     </div>
 
                     <div id="vl" class="bg" data-atropos-offset="30" data-atropos-opacity="0.6;0.8">
-                        <img class="logoo2" src={viteLogoUrl} width="60px" alt="vite logo" />
+                        <img class="logoo2" src={viteLogoUrl} width="60px" height="60px" alt="vite logo" />
                     </div>
 
                     <div id="vuel" class="bg" data-atropos-offset="20" data-atropos-opacity="0.5;0.8">
@@ -53,7 +53,7 @@ const year = new Date().getFullYear() - 2009
                     </div>
 
                     <div id="sol" class="bg" data-atropos-offset="50" data-atropos-opacity="0.7;0.9">
-                        <img class="logoo1" src={solidLogoUrl} width="60px" alt="solid logo" />
+                        <img class="logoo1" src={solidLogoUrl} width="60px" height="60px" alt="solid logo" />
                     </div>
 
                     <div id="rocket" class="bg" data-atropos-offset="-25" data-atropos-opacity="0.5;0.7">
@@ -62,6 +62,12 @@ const year = new Date().getFullYear() - 2009
                     
                     <div id="ghost" class="bg" data-atropos-offset="-40" data-atropos-opacity="0.6;0.8">
                         <span class="bem">👻</span>
+                    </div>
+
+                    <div id="ghl" class="bg" data-atropos-offset="-25" data-atropos-opacity="0.5;0.8">
+                        <svg class="logoo3" width="60" height="60" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -94,9 +100,6 @@ const year = new Date().getFullYear() - 2009
     p {
         font-family: 'Comfortaa', cursive;
     }
-</style>
-
-<style scoped>
 
     #greet {
         margin-left: 10%;
@@ -149,11 +152,15 @@ const year = new Date().getFullYear() - 2009
     }
 
     .logoo1 {
-        animation: loader 2s infinite;
+        animation: loader2 1s infinite linear;
     }
     
     .logoo2 {
-        animation: loader 4s infinite;
+        animation: loader 3s infinite linear;
+    }
+
+    .logoo3 {
+        animation: loader 2s infinite linear;
     }
 
     .bg {
@@ -192,21 +199,26 @@ const year = new Date().getFullYear() - 2009
         top: 25%;
     }
 
+    #ghl {
+        left: 40%;
+        top: 80%;
+    }
+
     @keyframes loader {
         0% {
             transform: rotate(0deg);
         }
-        25% {
-            transform: rotate(90deg);
-        }
-        50% {
-            transform: rotate(180deg);
-        }
-        75% {
-            transform: rotate(270deg);
-        }
         100% {
             transform: rotate(360deg);
+        }
+    }
+
+    @keyframes loader2 {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg);
         }
     }
 </style>

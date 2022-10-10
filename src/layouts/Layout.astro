@@ -32,16 +32,14 @@ const {
 		<title>{ title ? `${title} ${emojiStatus} Zihan` : 'Zihan' }</title>
 		<link rel="icon" href="/avatar.png" type="image/png">
 	</head>
-	<body>
-		<Style>
-			<div id="site">
-				<Header page={page}>
-				</Header>
-				<main id="main">
-					<slot />
-				</main>
-			</div>
-		</Style>
+	<body class="nod">
+		<div id="site">
+			<Header page={page}>
+			</Header>
+			<main id="main">
+				<slot />
+			</main>
+		</div>
 	</body>
 </html>
 
@@ -55,3 +53,5 @@ main {
 
 }
 </style>
+
+<Style></Style>

@@ -19,6 +19,7 @@ if (posts) posts = posts.sort((a, b) => (dayjs(a.frontmatter.pubDate).isBefore(d
     <div id="posts-c">
         <div id="all">
             <h1 id="apt">All posts:</h1>
+            <span>There are {posts?.length} posts altogether.</span>
 
             <div id="apc">
             {
