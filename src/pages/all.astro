@@ -5,6 +5,7 @@ import type { MDXInstance } from "astro";
 import dayjs from "dayjs";
 
 let posts: MDXInstance<Record<string, any>>[] | null = null;
+let grouped: Record<string | symbol, MDXInstance<Record<string, any>>[]> = {};
 
 try {
     posts = await Astro.glob('./post/*.mdx');
@@ -12,7 +13,13 @@ try {
     
 }
 
-if (posts) posts = posts.sort((a, b) => (dayjs(a.frontmatter.pubDate).isBefore(dayjs(b.frontmatter.pubDate)) ? 1 : -1))
+if (posts) {
+    posts = posts.sort((a, b) => (dayjs(a.frontmatter.pubDate).isBefore(dayjs(b.frontmatter.pubDate)) ? 1 : -1))
+    posts.forEach((post) => {
+        const date = dayjs(post.frontmatter.pubDate).format('MMMM, YYYY')
+        grouped[date] = grouped[date] ? [...grouped[date], post] : [post]
+    })
+}
 ---
 
 <Layout title="All Blog Posts" page="latest">
@@ -21,17 +28,25 @@ if (posts) posts = posts.sort((a, b) => (dayjs(a.frontmatter.pubDate).isBefore(d
             <h1 id="apt">All posts:</h1>
             <span>There are {posts?.length} posts altogether.</span>
 
-            <div id="apc">
             {
-                posts ? posts.map((post) => (
-                    <PostCard
-                        post={post.frontmatter}
-                        url={post.url}
-                    ></PostCard>
-                ))
+                posts ? (
+                    Reflect.ownKeys(grouped).map(key => {
+                        return (
+                            <div class="year">
+                                <h2>{key}</h2>
+                                <div class="apc">
+                                    {
+                                        grouped[key].map(post => {
+                                            return <PostCard post={post.frontmatter} url={post.url}></PostCard>
+                                        })
+                                    }
+                                </div>
+                            </div>
+                        )
+                    })
+                )
                 : <h2>Sorry, I haven't written any blog posts yet.</h2>
             }
-            </div>
         </div>
     </div>
 </Layout>
@@ -52,7 +67,7 @@ if (posts) posts = posts.sort((a, b) => (dayjs(a.frontmatter.pubDate).isBefore(d
     margin-bottom: 0%;
 }
 
-#apc {
+.apc {
     display: flex;
     flex-wrap: wrap;
     /* flex: 1; */
@@ -62,5 +77,9 @@ if (posts) posts = posts.sort((a, b) => (dayjs(a.frontmatter.pubDate).isBefore(d
     margin-top: 10%;
     display: flex;
     justify-content: flex-end;
+}
+
+.year {
+    margin-bottom: 5%;
 }
 </style>

@@ -12,7 +12,7 @@ if (post.pubDate) date = dayjs(post.pubDate as string, 'YYYY/MM/DD').format('MMM
 
 <div class="poc">
     <a href={url} class="cusa poca">
-        <h2>{post.title}</h2>
+        <h3>{post.title}</h3>
         {date && <span style="font-weight: 300; line-height: 1.5em;">{date}</span><br />}
         <span>{post.description || `No description provided...`}</span>
     </a>
@@ -20,9 +20,8 @@ if (post.pubDate) date = dayjs(post.pubDate as string, 'YYYY/MM/DD').format('MMM
 
 <style>
     .poc {
-        margin: 3%;
+        margin: 2%;
         width: 40%;
-        margin-bottom: 4%;
     }
 
     .poca {
@@ -37,7 +36,7 @@ if (post.pubDate) date = dayjs(post.pubDate as string, 'YYYY/MM/DD').format('MMM
 </style>
 
 <style scoped>
-    h2 {
+    h3 {
         margin-block-start: 0.6em;
         margin-block-end: 0.6em;
     }
