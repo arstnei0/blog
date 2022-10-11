@@ -4,6 +4,7 @@ import emojiStatus from '@util/emoji'
 import Global from '$component/Global.astro'
 import Header from '@component/Header.astro'
 import dayjs from 'dayjs'
+import Head from '$component/Head.astro'
 
 const { content } = Astro.props;
 
@@ -61,6 +62,8 @@ const commentTheme = "preferred_color_scheme"
 			async>
 		</script>
 		<!-- data-loading="lazy" -->
+
+		<Head></Head>
 	</head>
 	<body class="nod">
 		<div id="site">
