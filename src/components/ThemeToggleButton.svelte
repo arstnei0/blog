@@ -1,6 +1,10 @@
 <script lang="ts">
 import { onMount } from 'svelte'
-import { Mode, mode, changeMode } from '$util/theme'
+import { Mode, mode as sharedMode, changeMode } from '$util/theme'
+
+let mode = sharedMode
+
+$: changeMode(mode)
 
 function toggleClass(mode: Mode) {
     const classList = document.body.classList
@@ -35,9 +39,9 @@ function toggleClass(mode: Mode) {
 // Init theme
 if (!localStorage.getItem('mp')) localStorage.setItem('mp', 'light')
 if (globalThis.matchMedia && globalThis.matchMedia('(prefers-color-scheme: dark)').matches) {
-    changeMode('dark')
+    mode = 'dark'
 } else {
-    changeMode(localStorage.getItem('mp') as Mode)
+    mode = localStorage.getItem('mp') as Mode
 }
 
 onMount(() => {
@@ -47,10 +51,10 @@ onMount(() => {
 
 function toggle() {
     if (mode === 'light') {
-        changeMode('dark')
+        mode = 'dark'
         localStorage.setItem('mp', mode)
     } else {
-       changeMode('light')
+        mode = 'light'
         localStorage.setItem('mp', mode)
     }
 

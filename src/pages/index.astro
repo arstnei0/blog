@@ -17,7 +17,7 @@ const year = new Date().getFullYear() - 2009
                 <!-- inner container (required) -->
                 <div class="atropos-inner">
                     <div id="greet" data-atropos-offset="13" data-atropos-opacity="0.7;1">
-                        <h1>Hello! My name is Zihan.🚀</h1>
+                        <h1 id="bigg" style="font-family: var(--sans); font-weight: 400;">Hello! My name is Zihan.🚀</h1>
                     </div>
 
                     <div id="short-intro" data-atropos-offset="2" data-atropos-opacity="0.7;1">
@@ -98,7 +98,29 @@ const year = new Date().getFullYear() - 2009
     }
 
     p {
-        font-family: 'Comfortaa', cursive;
+        font-family: var(--sans);
+    }
+
+    #bigg {
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: .08em solid black; /* The typwriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        animation: 
+            typing 3.5s steps(40, end),
+            blink-caret .75s step-end infinite;
+    }
+
+
+    /* The typing effect */
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: black; }
     }
 
     #greet {
