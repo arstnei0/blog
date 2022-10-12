@@ -50,6 +50,6 @@ export default defineConfig({
       }, AnchorLinkIcon), toString(heading)]
     }]]
   },
-  output: "server",
-  adapter: vercel()
+  // output: "server",
+  // adapter: vercel()
 });
