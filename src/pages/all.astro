@@ -1,14 +1,14 @@
 ---
 import PostCard from "@components/PostCard.astro";
 import Layout from "@layouts/Layout.astro";
-import type { MDXInstance } from "astro";
+import type { MarkdownInstance } from "astro";
 import dayjs from "dayjs";
 
-let posts: MDXInstance<Record<string, any>>[] | null = null;
-let grouped: Record<string | symbol, MDXInstance<Record<string, any>>[]> = {};
+let posts: MarkdownInstance<Record<string, any>>[] | null = null;
+let grouped: Record<string | symbol, MarkdownInstance<Record<string, any>>[]> = {};
 
 try {
-    posts = await Astro.glob('./post/*.mdx');
+    posts = await Astro.glob('./post/*.md');
 } catch(e) {
     
 }

@@ -1,18 +1,18 @@
 ---
 import PostCard from "@components/PostCard.astro";
 import Layout from "@layouts/Layout.astro";
-import type { MDXInstance } from "astro";
+import type { MarkdownInstance } from "astro";
 import dayjs from "dayjs";
 
-let posts: MDXInstance<Record<string, any>>[] | null = null;
+let posts: MarkdownInstance<Record<string, any>>[] | null = null;
 
 try {
-    posts = await Astro.glob('./post/*.mdx');
+    posts = await Astro.glob('./post/*.md');
 } catch(e) {
     
 }
 
-let latest: MDXInstance<Record<string, any>>[] | null = null;
+let latest: MarkdownInstance<Record<string, any>>[] | null = null;
 if (posts) {
     latest = posts.sort((a, b) => (dayjs(a.frontmatter.pubDate).isBefore(dayjs(b.frontmatter.pubDate)) ? 1 : -1))
 }
