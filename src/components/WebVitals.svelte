@@ -11,7 +11,7 @@
     // }
     let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
-    $: if (import.meta.env.MODE === 'production' && browser && analyticsId) {
+    $: if (import.meta.env.MODE === 'production' && analyticsId) {
         omMount(() => {
             const slug = window.location.pathname.match(/^\/post\/(.*)$/i)[1]
             slug && webVitals({
