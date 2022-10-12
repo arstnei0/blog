@@ -59,17 +59,7 @@ const commentTheme = "preferred_color_scheme"
 		
 		<ScrollProgressAndBackToTop client:load></ScrollProgressAndBackToTop>
 
-		<script define:vars={{ url }}>
-			import webVitals from "$lib/webVitals"
-		
-			if (import.meta.env.MODE === 'production') {
-				webVitals({
-					page: url,
-					analyticsId: import.meta.env.VERCEL_ANALYTICS_ID,
-					debug: false,
-				})
-			}
-		</script>
+
 	</head>
 	<body class="nod">
 		<div id="site">
@@ -105,3 +95,14 @@ const commentTheme = "preferred_color_scheme"
 </style>
 
 <Global></Global>
+<script define:vars={{ url }}>
+	import webVitals from "$lib/webVitals"
+
+	if (import.meta.env.MODE === 'production') {
+		webVitals({
+			page: url,
+			analyticsId: import.meta.env.VERCEL_ANALYTICS_ID,
+			debug: false,
+		})
+	}
+</script>
