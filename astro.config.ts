@@ -33,7 +33,7 @@ export default defineConfig({
 	vite: {
 		plugins: [],
 		define: {
-			VERCEL_ANALYTICS_ID: process.env.VERCEL_ANALYTICS_ID
+			VERCEL_ANALYTICS_ID: `"${process.env.VERCEL_ANALYTICS_ID}"`
 		}
 	},
 	markdown: {
