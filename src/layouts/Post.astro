@@ -15,6 +15,7 @@ const {
     author = 'Zihan Chen',
     lang = 'en',
     keywords = ['blog', 'post', 'personal website'],
+	url
 } = content || {}
 
 let originalDate = content?.date
@@ -55,8 +56,20 @@ const commentTheme = "preferred_color_scheme"
 		<!-- data-loading="lazy" -->
 
 		<Head></Head>
-
+		
 		<ScrollProgressAndBackToTop client:load></ScrollProgressAndBackToTop>
+
+		<script define:vars={{ url }}>
+			import webVitals from "$lib/webVitals"
+		
+			if (import.meta.env.MODE === 'production') {
+				webVitals({
+					page: url,
+					analyticsId: import.meta.env.VERCEL_ANALYTICS_ID,
+					debug: false,
+				})
+			}
+		</script>
 	</head>
 	<body class="nod">
 		<div id="site">
