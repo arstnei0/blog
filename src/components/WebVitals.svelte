@@ -9,7 +9,7 @@
     //         debug: true,
     //     }))
     // }
-    let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+    let analyticsId = VERCEL_ANALYTICS_ID;
     console.log(analyticsId)
 
     $: if (import.meta.env.MODE === 'production' && analyticsId) {
