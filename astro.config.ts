@@ -21,8 +21,6 @@ const AnchorLinkIcon = h(
 	})
 )
 
-console.log(process.env.VERCEL_ANALYTICS_ID)
-
 // https://astro.build/config
 export default defineConfig({
 	integrations: [sitemap(), svelte()],
