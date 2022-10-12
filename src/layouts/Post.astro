@@ -6,6 +6,7 @@ import Header from '@component/Header.astro'
 import dayjs from 'dayjs'
 import Head from '$component/Head.astro'
 import ScrollProgressAndBackToTop from "@components/ScrollProgressAndBackToTop.svelte";
+import WebVitals from "$component/WebVitals.svelte";
 
 const { content } = Astro.props;
 
@@ -59,7 +60,7 @@ const commentTheme = "preferred_color_scheme"
 		
 		<ScrollProgressAndBackToTop client:load></ScrollProgressAndBackToTop>
 
-
+		<WebVitals client:load></WebVitals>
 	</head>
 	<body class="nod">
 		<div id="site">
@@ -95,14 +96,3 @@ const commentTheme = "preferred_color_scheme"
 </style>
 
 <Global></Global>
-<script define:vars={{ url }}>
-	import webVitals from "$lib/webVitals"
-
-	if (import.meta.env.MODE === 'production') {
-		webVitals({
-			page: url,
-			analyticsId: import.meta.env.VERCEL_ANALYTICS_ID,
-			debug: false,
-		})
-	}
-</script>
