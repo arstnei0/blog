@@ -11,7 +11,8 @@
 			"@style/*": ["src/style/*"],
 			"@util/*": ["src/utils/*"],
 			"$util/*": ["src/utils/*"],
-			"$style/*": ["src/style/*"]
+			"$style/*": ["src/style/*"],
+			"$lib/*": ["src/lib/*"],
 		}
 	}
 }

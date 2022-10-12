@@ -1,8 +1,8 @@
 <script>
     import NProgress from 'nprogress'
-    import '$util/nprogress.css'
+    import '$lib/nprogress.css'
     import { onMount }from 'svelte'
-    import '$util/nprogress'
+    import '$lib/nprogress'
 
     onMount(() => {
         NProgress.configure({ minimum: 0, showSpinner: false, trickle: false })
