@@ -5,120 +5,20 @@ pubDate: 2022/10/10
 description: About how I made this website, what tech stacks or tools did I choose to build this website and what I am going to do next.
 ---
 
-# My personal website almost done!
+# Foreword
 
-.heading-wrapper {
---icon-size-x: 2rem;
---icon-size-y: 1.5rem;
-margin-inline-end: var(--icon-size-x);
-}
+Almost every single programmer has their own personal website and blog. I just heard [Astro](https://astro.build) and appreciate it a lot. I rewrote my blog from [Vue](https://vuejs.org) to Astro.(To tell you the truth, I have never finished my blog👻)
 
-.heading-wrapper:not(:first-child) {
-margin-block: 0;
-}
+Almost every single programmer will write one blog post about the tech stacks they used for their website, and then they will not write any more blog posts...🤣 I read lots of blog posts from many peoples, and I know the big influence that a person's patience in writing blog can be. Sometimes even though no one is reading your blog posts, but if you continue to blog, you will see how it can be one day. Therefore, I will stop writing blog.
 
-.heading-wrapper > \* {
-display: inline;
-margin-bottom: 0;
-}
+So, I announced, I start blogging today!
 
-.heading-wrapper > .anchor-link {
-position: relative;
-display: inline-flex;
-margin-inline-end: calc(-1 \* var(--icon-size-x));
-width: var(--icon-size-x);
-height: var(--icon-size-y);
-color: var(--theme-text-light);
-text-decoration: none;
-justify-content: center;
-vertical-align: baseline;
-}
+As you know, I am only 13 years old this year. This means I have many more time to blog than normal people. I am lucky. 
 
-/_ Float anchor links to the left of headings on larger screens. _/
-@media (min-width: 50em) {
-.heading-wrapper {
-display: flex;
-flex-direction: row-reverse;
-justify-content: flex-end;
-align-items: baseline;
-margin-inline-start: calc(-1 \* var(--icon-size-x));
-}
+Now, allow me to talk about the boring part - How I made this website.(No matter if you want to read, I will write this😝)
 
-    .heading-wrapper > .anchor-link {
-    	margin-inline-end: 0;
-    }
+# How
 
-}
+I have said that I used [Astro](https://astro.build) to build thid website. Astro is a modern framework to build faster websites. It's amazing! My first contribution to an open source project is just for [Astro Docs](https://docs.astro.build).
 
-.heading-wrapper > .anchor-link {
-opacity: 0.5;
-}
-
-@media (hover: hover) {
-.heading-wrapper > .anchor-link {
-opacity: 0;
-}
-}
-
-.heading-wrapper:hover > .anchor-link,
-.anchor-link:focus {
-opacity: 1;
-}.heading-wrapper {
---icon-size-x: 2rem;
---icon-size-y: 1.5rem;
-margin-inline-end: var(--icon-size-x);
-}
-
-.heading-wrapper:not(:first-child) {
-margin-block: 0;
-}
-
-.heading-wrapper > \* {
-display: inline;
-margin-bottom: 0;
-}
-
-.heading-wrapper > .anchor-link {
-position: relative;
-display: inline-flex;
-margin-inline-end: calc(-1 \* var(--icon-size-x));
-width: var(--icon-size-x);
-height: var(--icon-size-y);
-color: var(--theme-text-light);
-text-decoration: none;
-justify-content: center;
-vertical-align: baseline;
-}
-
-/_ Float anchor links to the left of headings on larger screens. _/
-@media (min-width: 50em) {
-.heading-wrapper {
-display: flex;
-flex-direction: row-reverse;
-justify-content: flex-end;
-align-items: baseline;
-margin-inline-start: calc(-1 \* var(--icon-size-x));
-}
-
-    .heading-wrapper > .anchor-link {
-    	margin-inline-end: 0;
-    }
-
-}
-
-.heading-wrapper > .anchor-link {
-opacity: 0.5;
-}
-
-@media (hover: hover) {
-.heading-wrapper > .anchor-link {
-opacity: 0;
-}
-}
-
-.heading-wrapper:hover > .anchor-link,
-.anchor-link:focus {
-opacity: 1;
-}
-
-# aaaasknkn
+I deployed this site at [Vercel](https://vercel.com). 
