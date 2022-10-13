@@ -15,10 +15,7 @@
         onMount(() => {
             const slug = window.location.pathname.match(/^\/post\/(.*)$/i)[1]
             slug && webVitals({
-                path: '/post/[slug]',
-                params: {
-                    slug,
-                },
+                page: location.pathname,
                 analyticsId
             })
         })
