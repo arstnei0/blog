@@ -8,7 +8,7 @@ let posts: MarkdownInstance<Record<string, any>>[] | null = null;
 let grouped: Record<string | symbol, MarkdownInstance<Record<string, any>>[]> = {};
 
 try {
-    posts = await Astro.glob('./post/*.md');
+    posts = await Astro.glob('./post/*');
 } catch(e) {
     
 }

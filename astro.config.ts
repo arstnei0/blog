@@ -3,8 +3,8 @@ import mdx from "@astrojs/mdx"
 import sitemap from "@astrojs/sitemap"
 import { h } from "hastscript"
 import { toString } from "hast-util-to-string"
-import svelte from "@astrojs/svelte"
 import vercel from "@astrojs/vercel/serverless"
+import solidJs from "@astrojs/solid-js"
 const AnchorLinkIcon = h(
 	"svg",
 	{
@@ -23,7 +23,7 @@ const AnchorLinkIcon = h(
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [sitemap(), svelte()],
+	integrations: [sitemap(), mdx(), solidJs()],
 	site: "https://zihan.ga",
 	server: {
 		port: 3000,
@@ -31,8 +31,8 @@ export default defineConfig({
 	vite: {
 		plugins: [],
 		define: {
-			VERCEL_ANALYTICS_ID: `"${process.env.VERCEL_ANALYTICS_ID}"`
-		}
+			VERCEL_ANALYTICS_ID: `"${process.env.VERCEL_ANALYTICS_ID}"`,
+		},
 	},
 	markdown: {
 		syntaxHighlight: "shiki",
@@ -65,7 +65,6 @@ export default defineConfig({
 				},
 			],
 		],
-	},
-	// output: "server",
+	}, // output: "server",
 	// adapter: vercel()
 })

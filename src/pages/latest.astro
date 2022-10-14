@@ -7,7 +7,7 @@ import dayjs from "dayjs";
 let posts: MarkdownInstance<Record<string, any>>[] | null = null;
 
 try {
-    posts = await Astro.glob('./post/*.md');
+    posts = await Astro.glob('./post/*');
 } catch(e) {
     
 }

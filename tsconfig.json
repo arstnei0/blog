@@ -1,6 +1,16 @@
 {
-	"extends": "astro/tsconfigs/strict",
+	"$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"forceConsistentCasingInFileNames": true,
+		"esModuleInterop": true,
+		"strict": true,
+		"importsNotUsedAsValues": "error",
 		"baseUrl": ".",
 		"paths": {
 			"@*": ["src/*"],
@@ -12,7 +22,10 @@
 			"@util/*": ["src/utils/*"],
 			"$util/*": ["src/utils/*"],
 			"$style/*": ["src/style/*"],
-			"$lib/*": ["src/lib/*"],
-		}
-	}
+			"$lib/*": ["src/lib/*"]
+		},
+		"jsx": "preserve",
+		"jsxImportSource": "solid-js"
+	},
+	"extends": "astro/tsconfigs/strict"
 }

@@ -20,7 +20,7 @@ function sendToAnalytics(metric: Metric, options: Options) {
 		dsn: options.analyticsId, // qPgJqYH9LQX5o31Ormk8iWhCxZO
 		id: metric.id, // v2-1653884975443-1839479248192
 		// page, // /blog/[slug]
-        page: options.page,
+		page: options.page,
 		href: location.href, // https://my-app.vercel.app/blog/my-test
 		event_name: metric.name, // TTFB
 		value: metric.value.toString(), // 60.20000000298023
@@ -51,7 +51,7 @@ export interface Options {
 	page: string
 	// path: string
 	// params: Record<string, string>
-    analyticsId: string
+	analyticsId: string
 	debug: boolean
 }
 
