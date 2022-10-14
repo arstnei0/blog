@@ -3,23 +3,9 @@ import PostCard from "@components/PostCard.astro";
 import Layout from "@layouts/Layout.astro";
 import type { MarkdownInstance } from "astro";
 import dayjs from "dayjs";
+import { getGroupedPosts } from '$lib/posts'
 
-let posts: MarkdownInstance<Record<string, any>>[] | null = null;
-let grouped: Record<string | symbol, MarkdownInstance<Record<string, any>>[]> = {};
-
-try {
-    posts = await Astro.glob('./post/*');
-} catch(e) {
-    
-}
-
-if (posts) {
-    posts = posts.sort((a, b) => (dayjs(a.frontmatter.pubDate).isBefore(dayjs(b.frontmatter.pubDate)) ? 1 : -1))
-    posts.forEach((post) => {
-        const date = dayjs(post.frontmatter.pubDate).format('MMMM, YYYY')
-        grouped[date] = grouped[date] ? [...grouped[date], post] : [post]
-    })
-}
+const [grouped, posts] = await getGroupedPosts(Astro)
 ---
 
 <Layout title="All Blog Posts" page="latest">
@@ -30,13 +16,13 @@ if (posts) {
 
             {
                 posts ? (
-                    Reflect.ownKeys(grouped).map(key => {
+                    Reflect.ownKeys(grouped as object).map(key => {
                         return (
                             <div class="year">
                                 <h2>{key}</h2>
                                 <div class="apc">
                                     {
-                                        grouped[key].map(post => {
+                                        key && grouped?.[key as string].map((post: any) => {
                                             return <PostCard post={post.frontmatter} url={post.url}></PostCard>
                                         })
                                     }

@@ -20,7 +20,7 @@ const ScrollProgressAndBackToTop = () => {
         });
     })
 
-    return (<></>)
+    return <></>
 }
 
 export default ScrollProgressAndBackToTop
