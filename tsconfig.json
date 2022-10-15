@@ -22,7 +22,8 @@
 			"@util/*": ["src/utils/*"],
 			"$util/*": ["src/utils/*"],
 			"$style/*": ["src/style/*"],
-			"$lib/*": ["src/lib/*"]
+			"$lib/*": ["src/lib/*"],
+			"$asset/*": ["src/assets/*"]
 		},
 		"jsx": "preserve",
 		"jsxImportSource": "solid-js"
