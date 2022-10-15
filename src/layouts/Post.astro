@@ -67,7 +67,7 @@ if (i !== undefined) {
 			<main id="main">
 				{
 					image && (
-						<img src={image.src} alt={image.alt || 'image'} width={image.width} height={image.height}></img>
+						<img src={image.src} alt={image.alt || 'image'} width={image.width} height={image.height} />
 					)
 				}
 
@@ -163,6 +163,20 @@ if (i !== undefined) {
 <style is:global>
 	.giscus {
 		margin-top: 10%;
+	}
+
+	code {
+		--border-radius: 8px;
+		--padding-block: 0.2em;
+		--padding-inline: 0.3em;
+		/* font-family: var(--font-mono); */
+		font-size: 0.9em;
+		/* color: var(--theme-code-inline-text); */
+		background-color: var(--theme-code-inline-bg);
+		padding: var(--padding-block) var(--padding-inline);
+		margin: calc(var(--padding-block) * -1) 0;
+		border-radius: var(--border-radius);
+		word-break: break-word;
 	}
 </style>
 
