@@ -5,5 +5,5 @@ export const get = () =>
 		title: "Zihan’s Blog",
 		description: "Zihan Chen’s blog posts.",
 		site: import.meta.env.SITE,
-		items: import.meta.glob("./post/*.mdx"),
+		items: import.meta.glob("./post/*"),
 	})
