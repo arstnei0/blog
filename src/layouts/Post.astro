@@ -17,7 +17,8 @@ const {
     author = 'Zihan Chen',
     lang = 'en',
     keywords = ['blog', 'post', 'personal website'],
-	url
+	url,
+	image,
 } = content || frontmatter || {}
 
 let originalDate = content?.pubDate
@@ -64,6 +65,12 @@ if (i !== undefined) {
 			<Header page={'post'}>
 			</Header>
 			<main id="main">
+				{
+					image && (
+						<img src={image.src} alt={image.alt || 'image'} width={image.width} height={image.height}></img>
+					)
+				}
+
 				<h1 id="blog-title">{title}</h1>
 				<span style="font-size: 18px;">{date}{date ? ', by ' : 'By '}{author}</span>
 				
