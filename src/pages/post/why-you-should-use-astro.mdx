@@ -3,15 +3,16 @@ title: Why you should use Astro
 layout: $layout/Post.astro
 description: Including the advantages of Astro and how Astro is better than others.
 pubDate: 2022/10/15
-image: 
+image:
     src: /astro.svg
 ---
 
-import AstroStarHistory from '$asset/astro-star-history.png'
+import AstroStarHistory from "$asset/astro-star-history.png"
 
 I built this website with [Astro](https://astro.build), and it is super fast, isn't it?
 
 # What is Astro
+
 The objective of [Astro](https://astro.build) is to build faster websites.
 
 Nowadays, more and more companies and individuals are using **SSG (Static Site Generator)** to build their websites to reach a quicker speed. Astro is **kind of SSG**. The official definition of Astro is an **all-in-one web framework** for building **fast, content-focused** websites. You can find out more about the features of Astro at [the getting started page of Astro Docs](https://docs.astro.build/en/getting-started/).
@@ -19,11 +20,13 @@ Nowadays, more and more companies and individuals are using **SSG (Static Site G
 This article is more about the pros and cons of Astro and some comparisons between Astro and other tools, not the introduction to Astro. For the basic info about Astro, the official website of Astro has talked about it comprehensively.
 
 # Speed🚀
-Theo (CEO of ping.gg) rebuilt his (next.js) blog using Astro just out of curiosity. 
 
-Then, 
-- Home route: 138kb -> 7.6kb
-- "All posts": 570kb -> 100kb (85kb were images)
+Theo (CEO of ping.gg) rebuilt his (next.js) blog using Astro just out of curiosity.
+
+Then,
+
+-   Home route: 138kb -> 7.6kb
+-   "All posts": 570kb -> 100kb (85kb were images)
 
 "Holy shit!" [Theo tweeted.](https://twitter.com/t3dotgg/status/1437195415439360003)
 
@@ -32,6 +35,7 @@ Powered by [Astro Islands Architecture](https://docs.astro.build/en/concepts/isl
 I'm not going into details here, but I highly recommend you to read [Astro vs. X](https://docs.astro.build/zh-cn/comparing-astro-vs-other-tools/)!
 
 # Integrations
+
 You can use any frontend framework you want to use in Astro, including React, Vue, Svelte, Preact, Alpine, Lit, or Solid. Or you can use two of them or three of them. Whatever you want.
 
 You can [deploy your site](https://docs.astro.build/en/guides/deploy/) to Netlify, Github Pages, Deno Deploy, Vercel, Gitlab Pages, Cloudflare Pages, AWS, Google Cloud, Heroku, Firebase Hosting, Azure, Render, Surge with only one single command line `npx astro add ***`!
@@ -39,8 +43,14 @@ You can [deploy your site](https://docs.astro.build/en/guides/deploy/) to Netlif
 You can use SSR to speed up your website with only one single configuration and one single command line! Astro has encapsulated everything for you!
 
 # Future
-We have to acknowledge that Astro still has some issues and disadvantages. However, we have to say that 
 
-<img width="700px" height="400px" src={AstroStarHistory} alt="astro star history"></img>
+We have to acknowledge that Astro still has some issues and disadvantages. However, we have to say that
+
+<img
+	width="700px"
+	height="400px"
+	src={AstroStarHistory}
+	alt="astro star history"
+></img>
 
 Based on the image above, the stars of Astro on Github are growing at the fastest rate! It is also the youngest! More and more developers are joining the Astro community and contributing to Astro (including me). I believe Astro has a bright future!

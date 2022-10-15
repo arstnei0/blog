@@ -7,7 +7,7 @@ import vercel from "@astrojs/vercel/serverless"
 import solidJs from "@astrojs/solid-js"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
-
+import compress from "astro-compress"
 const AnchorLinkIcon = h(
 	"svg",
 	{
@@ -25,10 +25,17 @@ const AnchorLinkIcon = h(
 )
 
 // https://astro.build/config
+
+// https://astro.build/config
 export default defineConfig({
-	integrations: [mdx({
-		extendPlugins: 'markdown'
-	}), sitemap(), solidJs()],
+	integrations: [
+		mdx({
+			extendPlugins: "markdown",
+		}),
+		sitemap(),
+		solidJs(),
+		compress(),
+	],
 	site: "https://zihan.ga",
 	server: {
 		port: 3000,
@@ -46,7 +53,8 @@ export default defineConfig({
 			theme: "dracula-soft",
 		},
 		rehypePlugins: [
-			rehypeSlug, // This adds links to headings
+			rehypeSlug,
+			// This adds links to headings
 			[
 				rehypeAutolinkHeadings,
 				{
@@ -58,17 +66,18 @@ export default defineConfig({
 						h(`div.heading-wrapper.level-${tagName}`, {
 							tabIndex: -1,
 						}),
-					content: (heading: any) => h(
-						'div',
+					content: (heading: any) =>
 						h(
-							`span.anchor-icon`,
-							{
-								ariaHidden: "true",
-							},
-							AnchorLinkIcon
+							"div",
+							h(
+								`span.anchor-icon`,
+								{
+									ariaHidden: "true",
+								},
+								AnchorLinkIcon
+							)
+							// toString(heading),
 						),
-						// toString(heading),
-					),
 				},
 			],
 		],
