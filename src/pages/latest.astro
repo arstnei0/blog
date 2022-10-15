@@ -1,21 +1,15 @@
 ---
 import PostCard from "@components/PostCard.astro";
 import Layout from "@layouts/Layout.astro";
+import { getSortedPosts } from "@lib/posts";
 import type { MarkdownInstance } from "astro";
 import dayjs from "dayjs";
 
-let posts: MarkdownInstance<Record<string, any>>[] | null = null;
+let posts: any
 
-try {
-    posts = await Astro.glob('./post/*');
-} catch(e) {
-    
-}
+posts = Astro.glob('./post/*')
 
-let latest: MarkdownInstance<Record<string, any>>[] | null = null;
-if (posts) {
-    latest = posts.sort((a, b) => (dayjs(a.frontmatter.pubDate).isBefore(dayjs(b.frontmatter.pubDate)) ? 1 : -1))
-}
+const latest = await getSortedPosts(posts)
 ---
 
 <Layout title="Latest Blog Posts" page="latest">
@@ -25,7 +19,7 @@ if (posts) {
 
             <div id="lpc">
             {
-                latest ? latest.slice(0, 5).map((post) => (
+                latest ? latest.slice(0, 5).map((post: any) => (
                     <PostCard
                         post={post.frontmatter}
                         url={post.url}

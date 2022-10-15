@@ -5,6 +5,9 @@ import { h } from "hastscript"
 import { toString } from "hast-util-to-string"
 import vercel from "@astrojs/vercel/serverless"
 import solidJs from "@astrojs/solid-js"
+import rehypeSlug from "rehype-slug"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
+
 const AnchorLinkIcon = h(
 	"svg",
 	{
@@ -23,7 +26,9 @@ const AnchorLinkIcon = h(
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [sitemap(), mdx(), solidJs()],
+	integrations: [mdx({
+		extendPlugins: 'markdown'
+	}), sitemap(), solidJs()],
 	site: "https://zihan.ga",
 	server: {
 		port: 3000,
@@ -35,14 +40,15 @@ export default defineConfig({
 		},
 	},
 	markdown: {
+		extendDefaultPlugins: true,
 		syntaxHighlight: "shiki",
 		shikiConfig: {
 			theme: "dracula-soft",
 		},
 		rehypePlugins: [
-			"rehype-slug", // This adds links to headings
+			rehypeSlug, // This adds links to headings
 			[
-				"rehype-autolink-headings",
+				rehypeAutolinkHeadings,
 				{
 					properties: {
 						class: "anchor-link",
@@ -52,7 +58,8 @@ export default defineConfig({
 						h(`div.heading-wrapper.level-${tagName}`, {
 							tabIndex: -1,
 						}),
-					content: (heading: any) => [
+					content: (heading: any) => h(
+						'div',
 						h(
 							`span.anchor-icon`,
 							{
@@ -60,8 +67,8 @@ export default defineConfig({
 							},
 							AnchorLinkIcon
 						),
-						toString(heading),
-					],
+						// toString(heading),
+					),
 				},
 			],
 		],

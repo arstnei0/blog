@@ -5,7 +5,8 @@ import Global from '$component/Global.astro'
 import Header from '@component/Header.astro'
 import dayjs from 'dayjs'
 import Head from '$component/Head.astro'
-import ScrollProgressAndBackToTop from '$component/ScrollProgressAndBackToTop'
+import Scroll from '$component/Scroll'
+import { getSortedPosts } from "@lib/posts";
 // import WebVitals from "$component/WebVitals.svelte";
 
 const { content, frontmatter } = Astro.props;
@@ -19,13 +20,26 @@ const {
 	url
 } = content || frontmatter || {}
 
-let originalDate = content?.date
+let originalDate = content?.pubDate
+const date = dayjs(originalDate).format('MMM D, YYYY')
+const sortedPosts = await getSortedPosts(Astro.glob('../pages/post/*'))
+let i: number | undefined = undefined
+let previous: any
+let next: any
 
-const date = dayjs(originalDate, ).format('MMM D, YYYY')
+sortedPosts.forEach((post: any, _i: number) => {
+	if (post.url === url) i = _i
+});
 
+if (i !== undefined) {
+	if (i !== 0) {
+		next = sortedPosts[i - 1]
+	}
 
-
-// const commentTheme = "preferred_color_scheme"
+	if (i !== sortedPosts.length - 1) {
+		previous = sortedPosts[i + 1]
+	}
+}
 ---
 
 <!DOCTYPE html>
@@ -57,6 +71,31 @@ const date = dayjs(originalDate, ).format('MMM D, YYYY')
 					<slot />
 				</article>
 
+				<!-- <div id="liscence">
+					<span>Liscence: Creative Common(Attribution-NonCommercial-ShareAlike 4.0 International)</span>
+				</div> -->
+
+				<div id="pnn">
+					<div id="previous">
+						<a href={previous?.url}>
+							<span><svg width="13" height="13" viewBox="0 0 24 24"><path fill="currentColor" d="M14.71 6.71a.996.996 0 0 0-1.41 0L8.71 11.3a.996.996 0 0 0 0 1.41l4.59 4.59a.996.996 0 1 0 1.41-1.41L10.83 12l3.88-3.88c.39-.39.38-1.03 0-1.41z"/></svg> Previous Post</span>
+							{
+								previous ? <h3>&nbsp;&nbsp;&nbsp;{previous?.frontmatter?.title}</h3>
+									: <h3>&nbsp;&nbsp;&nbsp;This is my first post!</h3>
+							}
+						</a>
+					</div>
+					<div id="next">
+						<a href={next?.url}>
+							<span>Next Post <svg width="13" height="13" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12L9.29 8.12a.996.996 0 1 1 1.41-1.41l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3a.996.996 0 0 1-1.41 0c-.38-.39-.39-1.03 0-1.42z"/></svg></span>
+							{
+								next ? <h3>{next?.frontmatter?.title}&nbsp;&nbsp;&nbsp;</h3>
+									: <h3>This is my latest post!&nbsp;&nbsp;&nbsp;</h3>
+							}
+						</a>
+					</div>
+				</div>
+
 				<script src="https://giscus.app/client.js"
 					data-repo="zihan-ch/blog"
 					data-repo-id="R_kgDOIE6d3Q"
@@ -77,7 +116,7 @@ const date = dayjs(originalDate, ).format('MMM D, YYYY')
 			</main>
 		</div>
 
-		<ScrollProgressAndBackToTop client:idle></ScrollProgressAndBackToTop>
+		<Scroll client:idle></Scroll>
 	</body>
 </html>
 
@@ -92,11 +131,31 @@ const date = dayjs(originalDate, ).format('MMM D, YYYY')
 	#blog-title {
 		font-size: 44px;
 	}
+
+	#pnn {
+		margin-top: 15%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	#previous {
+		float: left;
+	}
+
+	#next {
+		float: right;
+		text-align: right;
+	}
+
+	/* #liscence {
+		margin-top: 5%;
+		text-align: center;
+	} */
 </style>
 
 <style is:global>
 	.giscus {
-		margin-top: 20%;
+		margin-top: 10%;
 	}
 </style>
 

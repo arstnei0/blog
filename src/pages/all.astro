@@ -5,7 +5,7 @@ import type { MarkdownInstance } from "astro";
 import dayjs from "dayjs";
 import { getGroupedPosts } from '$lib/posts'
 
-const [grouped, posts] = await getGroupedPosts(Astro)
+const [grouped, posts] = await getGroupedPosts(Astro.glob('./post/*'))
 ---
 
 <Layout title="All Blog Posts" page="latest">
