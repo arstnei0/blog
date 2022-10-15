@@ -9,9 +9,21 @@
     color: white; /* Text color */
     cursor: pointer; /* Add a mouse pointer on hover */
     padding: 7px; /* Some padding */
-    border-radius: 10px;
+    /* border-radius: 10px;
     background: #f5f5f5;
     box-shadow:  -35px 35px 70px #d0d0d0,
-                35px -35px 70px #ffffff;
+                35px -35px 70px #ffffff; */
     /* display: flex; */
+    border-radius: 8px;
+    background: #fafafa;
+    box-shadow:  6px 6px 12px #d5d5d5,
+                -6px -6px 12px #ffffff;
+    transition: background 0.6s, box-shadow 0.6s;
+}
+
+#backtotop:hover {
+    background: #e3e3e3;
+    box-shadow:  6px 6px 12px #c1c1c1,
+                -6px -6px 12px #ffffff;
+    transition: background 0.6s, box-shadow 0.6s;
 }
