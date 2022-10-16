@@ -48,10 +48,17 @@ if (
 	setMode(localStorage.getItem("mp") as Mode)
 }
 
-onMount(() => {
-	toggleClass(mode())
-	document.body.classList.remove("nod")
-})
+if ((globalThis as any)?.addEventListener) {
+	addEventListener('load', () => {
+		toggleClass(mode())
+		document.body.classList.remove("nod")
+	})
+} else {
+	onMount(() => {
+		toggleClass(mode())
+		document.body.classList.remove("nod")
+	})
+}
 
 function toggle() {
 	setMode((mode) => {
