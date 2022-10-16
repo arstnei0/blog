@@ -1,20 +1,20 @@
 import { createSignal } from "solid-js"
 
 export function toggleClass(mode: Mode) {
-	const classList = document.body.classList
+	const classList = document.documentElement.classList
 	let has = false
 	for (let i in classList) {
 		if (classList[i] === "dark") {
 			has = true
-			document.body.classList.replace("dark", "light")
+			document.documentElement.classList.replace("dark", "light")
 		} else if (classList[i] === "light") {
 			has = true
-			document.body.classList.replace("light", "dark")
+			document.documentElement.classList.replace("light", "dark")
 		}
 	}
 
 	if (!has) {
-		document.body.classList.add(mode)
+		document.documentElement.classList.add(mode)
 	}
 
     let tried = false
