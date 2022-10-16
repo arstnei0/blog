@@ -38,27 +38,24 @@ function toggleClass(mode: Mode) {
 }
 
 // Init theme
-if (!localStorage.getItem("mp")) localStorage.setItem("mp", "light")
-if (
-	globalThis.matchMedia &&
-	globalThis.matchMedia("(prefers-color-scheme: dark)").matches
-) {
-	setMode("dark")
-} else {
-	setMode(localStorage.getItem("mp") as Mode)
-}
+if (!localStorage.getItem("mp")) localStorage.setItem("mp", (
+	(globalThis.matchMedia && globalThis.matchMedia("(prefers-color-scheme: dark)").matches) ? 'dark' : 'light'
+))
+// if (
+// 	globalThis.matchMedia &&
+// 	globalThis.matchMedia("(prefers-color-scheme: dark)").matches
+// ) {
+// 	setMode("dark")
+// } else {
+// 	setMode(localStorage.getItem("mp") as Mode)
+// }
 
-if ((globalThis as any)?.addEventListener) {
-	addEventListener('load', () => {
-		toggleClass(mode())
-		document.body.classList.remove("nod")
-	})
-} else {
-	onMount(() => {
-		toggleClass(mode())
-		document.body.classList.remove("nod")
-	})
-}
+setMode(localStorage.getItem("mp") as Mode)
+
+onMount(() => {
+	toggleClass(mode())
+	// document.body.classList.remove("nod")
+})
 
 function toggle() {
 	setMode((mode) => {
