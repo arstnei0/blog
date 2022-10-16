@@ -4,7 +4,7 @@ import { randomChoose } from "@utils/random";
 ---
 
 <style is:global>
-body {
+html {
     --sans: 'Merriweather sans', sans-serif;
     --serif: 'Merriweather', serif;
     --progressColor: #A6E3E9;
@@ -12,7 +12,7 @@ body {
     --linkColor: #0C7B93;
 }
 
-body.light {
+html.light {
     --bgColor: white;
     --textColor: black;
     --titleColor: black;
@@ -21,7 +21,7 @@ body.light {
     transition: background-color 0.5s;
 }
 
-body.dark {
+html.dark {
     --bgColor: #191919;
     --textColor: #DCD7C9;
     --titleColor: #D8D8D8;
