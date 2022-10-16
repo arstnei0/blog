@@ -77,6 +77,7 @@ const ThemeToggleButton = () => {
 					id="dn"
 					onChange={() => toggle()}
 					checked={mode() === "dark"}
+					aria-label="toggle theme"
 				></input>
 				<label for="dn" class="toggle">
 					<span class="toggle__handler">

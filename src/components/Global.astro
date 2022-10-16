@@ -4,15 +4,12 @@ import { randomChoose } from "@utils/random";
 ---
 
 <style is:global>
-/* @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap"); */
-
 body {
     --sans: 'Merriweather sans', sans-serif;
     --serif: 'Merriweather', serif;
     --progressColor: #A6E3E9;
     --theme-code-inline-bg: #E1FFB1;
-    /* --round: 'Varela Round', sans-serif; */
+    --linkColor: #0C7B93;
 }
 
 body.light {
@@ -124,7 +121,7 @@ a {
 }
 
 a {
-    color: #60a3bc;
+    color: var(--linkColor);
     opacity: 1;
     transition: opacity 0.5s;
 }
