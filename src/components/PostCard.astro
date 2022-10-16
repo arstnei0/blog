@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 
 const {
     post,
-    url
+    url,
 } = Astro.props
 
 let date;
@@ -13,6 +13,8 @@ if (post.pubDate) date = dayjs(post.pubDate as string, 'YYYY/MM/DD').format('MMM
 <div class="poc">
     <a href={url} class="cusa poca">
         <h3>{post.title}</h3>
+        {post?.draft && <span style="color: red;">This is just a draft, and it won't be published!<br /></span>}
+
         {date && <span style="font-weight: 300; line-height: 1.5em;">{date}</span><br />}
         <span>{post.description || `No description provided...`}</span>
     </a>

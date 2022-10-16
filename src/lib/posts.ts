@@ -1,9 +1,10 @@
-// Astro.glob('./post/*')
+// await Astro.glob('./post/*')
 
 import dayjs from "dayjs"
 
 export async function getAllPosts(result: any) {
-	return result
+	if (import.meta.env.PROD) return result.filter((post: any) => !post.frontmatter.draft)
+	else return result
 }
 
 export async function getSortedPosts(result: any) {

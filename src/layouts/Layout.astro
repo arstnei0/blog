@@ -30,57 +30,7 @@ const {
 		<meta name="keywords" content={keywords.join(', ')}>
 		<meta name="description" content={description}>
 		<title>{ title ? `${title} ${emojiStatus} Zihan` : 'Zihan' }</title>
-
-		<script is:inline>
-			// Init theme
-			if (!localStorage.getItem("mp")) localStorage.setItem("mp", (
-				(globalThis.matchMedia && globalThis.matchMedia("(prefers-color-scheme: dark)").matches) ? 'dark' : 'light'
-			))
-
-			const mode = localStorage.getItem('mp')
-
-			const classList = document.documentElement.classList
-			let has = false
-			for (let i in classList) {
-				if (classList[i] === "dark") {
-					has = true
-					document.documentElement.classList.replace("dark", "light")
-				} else if (classList[i] === "light") {
-					has = true
-					document.documentElement.classList.replace("light", "dark")
-				}
-			}
-
-			if (!has) {
-				document.documentElement.classList.add(mode)
-			}
-
-			let tried = false
-
-			function sendMessageToGiscus(mode) {
-				const iframe = document.querySelector("iframe.giscus-frame")
-				if (!iframe) {
-					if (!tried) {
-						tried = true
-						setTimeout(() => sendMessageToGiscus(mode), 1000)
-					}
-				} else {
-					iframe.contentWindow.postMessage(
-						{
-							giscus: {
-								setConfig: {
-									theme: mode,
-								},
-							},
-						},
-						"https://giscus.app"
-					)
-				}
-			}
-
-			sendMessageToGiscus(mode)
-		</script>
-
+		
 		<Head></Head>
 
 		<link rel="icon" href="/avatar.png" type="image/png">

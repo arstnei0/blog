@@ -22,7 +22,7 @@ const {
 
 let originalDate = content?.pubDate
 const date = dayjs(originalDate).format('MMM D, YYYY')
-const sortedPosts = await getSortedPosts(Astro.glob('../pages/post/*'))
+const sortedPosts = await getSortedPosts(await Astro.glob('../pages/post/*'))
 let i: number | undefined = undefined
 let previous: any
 let next: any
@@ -178,11 +178,18 @@ if (i !== undefined) {
 		/* font-family: var(--font-mono); */
 		font-size: 0.9em;
 		/* color: var(--theme-code-inline-text); */
-		background-color: var(--theme-code-inline-bg);
 		padding: var(--padding-block) var(--padding-inline);
 		margin: calc(var(--padding-block) * -1) 0;
 		border-radius: var(--border-radius);
 		word-break: break-word;
+	}
+
+	html.light code {
+		background-color: var(--theme-code-inline-bg-light);
+	}
+
+	html.dark code {
+		background-color: var(--theme-code-inline-bg-dark);
 	}
 </style>
 

@@ -2,6 +2,56 @@
 
 ---
 
+<script is:inline>
+    // Init theme
+    if (!localStorage.getItem("mp")) localStorage.setItem("mp", (
+        (globalThis.matchMedia && globalThis.matchMedia("(prefers-color-scheme: dark)").matches) ? 'dark' : 'light'
+    ))
+
+    const mode = localStorage.getItem('mp')
+
+    const classList = document.documentElement.classList
+    let has = false
+    for (let i in classList) {
+        if (classList[i] === "dark") {
+            has = true
+            document.documentElement.classList.replace("dark", "light")
+        } else if (classList[i] === "light") {
+            has = true
+            document.documentElement.classList.replace("light", "dark")
+        }
+    }
+
+    if (!has) {
+        document.documentElement.classList.add(mode)
+    }
+
+    let tried = false
+
+    function sendMessageToGiscus(mode) {
+        const iframe = document.querySelector("iframe.giscus-frame")
+        if (!iframe) {
+            if (!tried) {
+                tried = true
+                setTimeout(() => sendMessageToGiscus(mode), 1000)
+            }
+        } else {
+            iframe.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: mode,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            )
+        }
+    }
+
+    sendMessageToGiscus(mode)
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" media="screen" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">

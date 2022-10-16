@@ -8,6 +8,8 @@ import solidJs from "@astrojs/solid-js"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import compress from "astro-compress"
+import Unocss from 'unocss/astro'
+
 const AnchorLinkIcon = h(
 	"svg",
 	{
@@ -35,6 +37,7 @@ export default defineConfig({
 		sitemap(),
 		solidJs(),
 		compress(),
+		// Unocss(),
 	],
 	site: "https://zihan.ga",
 	server: {
