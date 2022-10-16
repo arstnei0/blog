@@ -7,6 +7,7 @@ import Head from '$component/Head.astro'
 import Scroll from '$component/Scroll'
 import { getSortedPosts } from "$lib/posts";
 import Clarity from "$component/Clarity.astro";
+import '$style/typography.css'
 
 const { content, frontmatter } = Astro.props;
 
@@ -62,6 +63,7 @@ if (i !== undefined) {
 		<div id="site">
 			<Header page={'post'}>
 			</Header>
+
 			<main id="main">
 				{
 					image && (
@@ -85,8 +87,8 @@ if (i !== undefined) {
 						<a href={previous?.url} style="cursor: pointer;">
 							<span><svg width="13" height="13" viewBox="0 0 24 24"><path fill="currentColor" d="M14.71 6.71a.996.996 0 0 0-1.41 0L8.71 11.3a.996.996 0 0 0 0 1.41l4.59 4.59a.996.996 0 1 0 1.41-1.41L10.83 12l3.88-3.88c.39-.39.38-1.03 0-1.41z"/></svg> Previous Post</span>
 							{
-								previous ? <h3>&nbsp;&nbsp;&nbsp;{previous?.frontmatter?.title}</h3>
-									: <h3>&nbsp;&nbsp;&nbsp;This is my first post!</h3>
+								previous ? <h1>{previous?.frontmatter?.title}</h1>
+									: <h1>This is my first post!</h1>
 							}
 						</a>
 					</div>
@@ -94,8 +96,8 @@ if (i !== undefined) {
 						<a href={next?.url} style="cursor: pointer;">
 							<span>Next Post <svg width="13" height="13" viewBox="0 0 24 24"><path fill="currentColor" d="M9.29 15.88L13.17 12L9.29 8.12a.996.996 0 1 1 1.41-1.41l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3a.996.996 0 0 1-1.41 0c-.38-.39-.39-1.03 0-1.42z"/></svg></span>
 							{
-								next ? <h3>{next?.frontmatter?.title}&nbsp;&nbsp;&nbsp;</h3>
-									: <h3>This is my latest post!&nbsp;&nbsp;&nbsp;</h3>
+								next ? <h1>{next?.frontmatter?.title}</h1>
+									: <h1>This is my latest post!</h1>
 							}
 						</a>
 					</div>
@@ -128,15 +130,31 @@ if (i !== undefined) {
 </html>
 
 <style>
-	main {
-		margin-left: 23%;
-		margin-right: 23%;
-		margin-top: 3%;
-		margin-bottom: 15%;
-	}
+	@media only screen and (max-width: 450px) {
+		main {
+			margin-left: 4%;
+			margin-right: 4%;
+			margin-top: 3%;
+			margin-bottom: 15%;
+			/* min-width: 500px; */
+		}
 
-	#blog-title {
-		font-size: 44px;
+		#blog-title {
+			font-size: 4rem;
+		}
+	}
+	
+	@media only screen and (min-width: 450px) {
+		main {
+			margin-left: 23%;
+			margin-right: 23%;
+			margin-top: 3%;
+			margin-bottom: 15%;
+		}
+
+		#blog-title {
+			font-size: 3.3rem;
+		}
 	}
 
 	#pnn {
@@ -154,36 +172,34 @@ if (i !== undefined) {
 		text-align: right;
 	}
 
-	/* #liscence {
-		margin-top: 5%;
-		text-align: center;
-	} */
+	@media only screen and (max-width: 450px) {
+		span {
+			font-size: 2rem;
+		}
+
+		#pnn {
+			h1 {
+				font-size: 2rem;
+			}
+		}
+	}
+
+	@media only screen and (min-width: 450px) {
+		span {
+			font-size: 1.2rem;
+		}
+
+		#pnn {
+			h1 {
+				font-size: 1.2rem;
+			}
+		}
+	}
 </style>
 
 <style is:global>
 	.giscus {
 		margin-top: 10%;
-	}
-
-	code {
-		--border-radius: 8px;
-		--padding-block: 0.2em;
-		--padding-inline: 0.3em;
-		/* font-family: var(--font-mono); */
-		font-size: 0.9em;
-		/* color: var(--theme-code-inline-text); */
-		padding: var(--padding-block) var(--padding-inline);
-		margin: calc(var(--padding-block) * -1) 0;
-		border-radius: var(--border-radius);
-		word-break: break-word;
-	}
-
-	html.light code {
-		background-color: var(--theme-code-inline-bg-light);
-	}
-
-	html.dark code {
-		background-color: var(--theme-code-inline-bg-dark);
 	}
 </style>
 

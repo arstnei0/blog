@@ -4,6 +4,9 @@ import { randomChoose } from "@utils/random";
 ---
 
 <style is:global>
+/* @media only screen and (max-width: 450px) */
+/* @media only screen and (min-width: 450px) */
+
 html {
     --sans: 'Merriweather sans', sans-serif;
     --serif: 'Merriweather', serif;
@@ -11,6 +14,10 @@ html {
     --theme-code-inline-bg-light: #E1FFB1;
     --theme-code-inline-bg-dark: #40514E;
     --linkColor: #0C7B93;
+}
+
+body {
+	display: flex;
 }
 
 html.light {
@@ -56,21 +63,6 @@ html.dark {
 	text-decoration: none;
 	justify-content: center;
 	vertical-align: baseline;
-}
-
-/* Float anchor links to the left of headings on larger screens. */
-@media (min-width: 50em) {
-	.heading-wrapper {
-		display: flex;
-		flex-direction: row-reverse;
-		justify-content: flex-end;
-		align-items: baseline;
-		margin-inline-start: calc(-1 * var(--icon-size-x));
-	}
-
-	.heading-wrapper > .anchor-link {
-		margin-inline-end: 0;
-	}
 }
 
 .heading-wrapper > .anchor-link {
@@ -132,9 +124,18 @@ a:hover {
     transition: opacity 0.5s ease;
 }
 
-p {
-    font-size: 20px;
-    color: var(--textColor);
+@media only screen and (min-width: 450px) {
+    p {
+        font-size: 2rem;
+        color: var(--textColor);
+    }
+}
+
+@media only screen and (min-width: 450px) {
+    p {
+        font-size: 1.3rem;
+        color: var(--textColor);
+    }
 }
 
 li {

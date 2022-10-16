@@ -50,14 +50,25 @@ const {
 </html>
 
 <style>
-main {
-	margin-left: 10%;
-	margin-right: 10%;
-}
+	
+	@media only screen and (max-width: 450px) {
+		main {
+			margin-left: 3%;
+			margin-right: 3%;
+			margin-top: 3%;
+			/* margin-bottom: 15%; */
+			/* min-width: 500px; */
+		}
+	}
 
-#site {
-
-}
+	@media only screen and (min-width: 450px) {
+		main {
+			margin-left: 10%;
+			margin-right: 10%;
+			margin-top: 3%;
+			/* margin-bottom: 15%; */
+		}
+	}
 </style>
 
 <Global></Global>
