@@ -1,9 +1,7 @@
 ---
-import PostCard from "@components/PostCard.astro";
-import Layout from "@layouts/Layout.astro";
-import { getSortedPosts } from "@lib/posts";
-import type { MarkdownInstance } from "astro";
-import dayjs from "dayjs";
+import PostCard from "$component/PostCard.astro";
+import Layout from "$layout/Layout.astro";
+import { getSortedPosts } from "$lib/posts";
 
 let posts: any
 

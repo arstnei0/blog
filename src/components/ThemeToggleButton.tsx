@@ -1,5 +1,5 @@
 import { onMount } from "solid-js"
-import { Mode, mode, setMode, toggleClass } from "@lib/theme"
+import { Mode, mode, setMode, toggleClass } from "$lib/theme"
 import "$style/toggleThemeButton.css"
 
 function toggle() {
@@ -17,7 +17,7 @@ function toggle() {
 }
 
 const ThemeToggleButton = () => {
-	setMode(localStorage.getItem('mp') as Mode)
+	setMode(localStorage.getItem("mp") as Mode)
 
 	return (
 		<>

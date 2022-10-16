@@ -1,12 +1,12 @@
 ---
-import Layout from "./Layout.astro";
 import emojiStatus from '$util/emoji'
 import Global from '$component/Global.astro'
-import Header from '@component/Header.astro'
+import Header from '$component/Header.astro'
 import dayjs from 'dayjs'
 import Head from '$component/Head.astro'
 import Scroll from '$component/Scroll'
-import { getSortedPosts } from "@lib/posts";
+import { getSortedPosts } from "$lib/posts";
+import Clarity from "$component/Clarity.astro";
 
 const { content, frontmatter } = Astro.props;
 
@@ -123,13 +123,7 @@ if (i !== undefined) {
 
 		<Scroll client:idle></Scroll>
 
-		<script lang="js">
-			(function(c,l,a,r,i,t,y){
-				c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-				t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-				y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-			})(window, document, "clarity", "script", "e1uigu6k2j");
-		</script>		
+		<Clarity></Clarity>	
 	</body>
 </html>
 

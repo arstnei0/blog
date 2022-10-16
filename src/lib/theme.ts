@@ -17,16 +17,16 @@ export function toggleClass(mode: Mode) {
 		document.documentElement.classList.add(mode)
 	}
 
-    let tried = false
+	let tried = false
 
 	function sendMessageToGiscus(mode: Mode) {
 		const iframe = document.querySelector("iframe.giscus-frame") as any
 		if (!iframe) {
-            if (!tried) {
-                tried = true
-                setTimeout(() => sendMessageToGiscus(mode), 1000)
-            }
-        } else {
+			if (!tried) {
+				tried = true
+				setTimeout(() => sendMessageToGiscus(mode), 1000)
+			}
+		} else {
 			iframe.contentWindow.postMessage(
 				{
 					giscus: {
@@ -45,4 +45,3 @@ export function toggleClass(mode: Mode) {
 
 export type Mode = "dark" | "light"
 export let [mode, setMode] = createSignal("dark" as Mode)
-

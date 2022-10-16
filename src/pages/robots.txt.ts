@@ -1,9 +1,7 @@
 export const get = async () => ({
-    body: (
-`
+	body: `
 User-agent: *
 Allow: /
 Sitemap: https://zihan.ga/sitemap-index.xml
-`
-    )
+`,
 })

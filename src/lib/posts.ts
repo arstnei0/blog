@@ -3,7 +3,8 @@
 import dayjs from "dayjs"
 
 export async function getAllPosts(result: any) {
-	if (import.meta.env.PROD) return result.filter((post: any) => !post.frontmatter.draft)
+	if (import.meta.env.PROD)
+		return result.filter((post: any) => !post.frontmatter.draft)
 	else return result
 }
 
