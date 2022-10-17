@@ -12,18 +12,37 @@ if (post.pubDate) date = dayjs(post.pubDate as string, 'YYYY/MM/DD').format('MMM
 
 <div class="poc">
     <a href={url} class="cusa poca">
-        <h3>{post.title}</h3>
+        <h2 class="pt">{post.title}</h2>
         {post?.draft && <span style="color: red;">This is just a draft, and it won't be published!<br /></span>}
 
         {date && <span style="font-weight: 300; line-height: 1.5em;">{date}</span><br />}
-        <span>{post.description || `No description provided...`}</span>
+        <p>{post.description || `No description provided...`}</p>
     </a>
 </div>
 
 <style>
     .poc {
         margin: 2%;
-        width: 40%;
+    }
+
+    @media only screen and (max-width: 450px) {
+        .poc {
+            width: 90%;
+        }
+
+        span {
+            font-size: 1.6em;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+    }
+
+    @media only screen and (min-width: 450px) {
+        .poc {
+            width: 40%;
+        }
     }
 
     .poca {
@@ -35,11 +54,21 @@ if (post.pubDate) date = dayjs(post.pubDate as string, 'YYYY/MM/DD').format('MMM
         opacity: 0.6;
         transition: opacity 0.5s ease;
     }
-</style>
 
-<style scoped>
     h3 {
         margin-block-start: 0.6em;
         margin-block-end: 0.6em;
+    }
+
+    p {
+        color: var(--textColor);
+    }
+</style>
+
+<style is:global>
+    @media only screen and (min-width: 450px) {
+        .pt {
+            font-size: 1.5rem;
+        }
     }
 </style>
