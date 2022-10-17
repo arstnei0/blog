@@ -90,3 +90,7 @@ html.dark code {
         }
     }
 }
+
+p {
+    /* color: var(--textColor); */
+}
