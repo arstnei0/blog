@@ -1,21 +1,7 @@
 ---
-import avatar from '$asset/avatar.webp';
-// import rssImgUrl from '$asset/rss.svg'
-// import githubImgUrl from '$asset/github.svg'
-// import colors from '@util/colors'
-// import ThemeToggleButton from './ThemeToggleButton.svelte';
-import Nav from './Nav'
-import '$style/header.css'
 
-const page = Astro.props.page;
 ---
 
-<div id="header">
-    <div id="leftNav">
-        <img id="avatar" src={avatar} width="50px" height="50px" alt="avatar" />
-
-        <h1 id="titleHeader" class="rc"><a href="/" id="titleHeaderLink">Zihan</a></h1>
-    </div>
-
-    <Nav client:load page={page}></Nav>
+<div>
+    
 </div>

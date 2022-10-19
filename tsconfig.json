@@ -13,13 +13,8 @@
 		"importsNotUsedAsValues": "error",
 		"baseUrl": ".",
 		"paths": {
-			"@*": ["src/*"],
 			"$layout/*": ["src/layouts/*"],
-			"@layout/*": ["src/layouts/*"],
 			"$component/*": ["src/components/*"],
-			"$component/*": ["src/components/*"],
-			"@style/*": ["src/style/*"],
-			"@util/*": ["src/utils/*"],
 			"$util/*": ["src/utils/*"],
 			"$style/*": ["src/style/*"],
 			"$lib/*": ["src/lib/*"],

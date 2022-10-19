@@ -1,0 +1,13 @@
+---
+import Html from "$component/Html.astro";
+import Head from "$component/Head.astro";
+import Header from "./Header.astro";
+---
+
+<Html>
+    <Head slot="head"></Head>
+
+    <Header></Header>
+
+    <slot></slot>
+</Html>
