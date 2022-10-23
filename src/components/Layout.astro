@@ -2,10 +2,20 @@
 import Html from "$component/Html.astro";
 import Head from "$component/Head.astro";
 import Header from "./Header.astro";
+
+const { frontmatter } = Astro.props;
+
+const {
+    title,
+    description = `Zihan's personal website and his blog.`,
+    author = 'Zihan Chen',
+    lang = 'en',
+    keywords = ['blog', 'zihan', 'personal website'],
+} = frontmatter || Astro.props || {}
 ---
 
-<Html>
-    <Head slot="head"></Head>
+<Html {lang}>
+    <Head slot="head" {title} {description} {lang} {author} {keywords}></Head>
 
     <Header></Header>
 

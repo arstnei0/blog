@@ -1,5 +1,23 @@
 ---
-
+const {
+    title,
+    description,
+    keywords,
+    author,
+    lang,
+} = Astro.props
 ---
 
-<title>Zihan</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<meta name="author" content={author}>
+<meta name="keywords" content={keywords.join(', ')}>
+<meta name="description" content={description}>
+
+<title>{
+    title ? `${title} 🚀 Zihan`
+        : 'Zihan'
+}</title>
+
+<link rel="icon" href="/avatar.webp">

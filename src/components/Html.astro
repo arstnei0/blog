@@ -1,9 +1,11 @@
 ---
-
+const {
+    lang
+} = Astro.props
 ---
 
 <!DOCTYPE html>
-<html>
+<html {lang}>
     <head>
         <slot name="head"></slot>
     </head>
