@@ -1,0 +1,45 @@
+/* Global */
+main {
+    * {
+        line-height: 1.4em;
+        letter-spacing: 0.02em;
+        color: var(--text-color);
+        font-size: 1.3em;
+        font-family: var(--sans);
+    }
+
+    p {
+        /* font-weight: 400; */
+    }
+
+    li {
+        font-size: inherit;
+    }
+    
+    a {
+        font-size: inherit;
+        color: var(--link-color);
+        text-decoration: none;
+        transition: opacity 0.4s ease-in-out;
+    }
+
+    a:hover {
+        opacity: 0.6;
+    }
+}
+
+/* Laptop or desktop only */
+@media (min-width: 400px) {
+    main {
+        * {
+
+        }
+    }
+}
+
+/* Mobile only */
+@media (max-width: 400px) {
+   main {
+
+   }
+}

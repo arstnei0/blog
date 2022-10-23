@@ -65,8 +65,8 @@ export default defineConfig({
 							tabIndex: -1,
 						}),
 					content: (heading: any) =>
-						h(
-							"div",
+						// h(
+						// 	"div",
 							h(
 								`span.anchor-icon`,
 								{
@@ -74,7 +74,7 @@ export default defineConfig({
 								},
 								AnchorLinkIcon
 							) // toString(heading),
-						),
+						// ),
 				},
 			],
 		],

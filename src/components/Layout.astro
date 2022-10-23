@@ -2,6 +2,9 @@
 import Html from "$component/Html.astro";
 import Head from "$component/Head.astro";
 import Header from "./Header.astro";
+import '$style/variables.css'
+import '$style/fonts.css'
+import '$style/effect.css'
 
 const { frontmatter } = Astro.props;
 
@@ -12,6 +15,14 @@ const {
     lang = 'en',
     keywords = ['blog', 'zihan', 'personal website'],
 } = frontmatter || Astro.props || {}
+
+const {
+    margin = 10,
+    mobileMargin = 5,
+} = Astro.props
+
+const marginStr = `${margin}%`
+const mobileMarginStr = `${mobileMargin}%`
 ---
 
 <Html {lang}>
@@ -19,5 +30,23 @@ const {
 
     <Header></Header>
 
-    <slot></slot>
+    <main>
+        <slot></slot>
+    </main>
 </Html>
+
+<style define:vars={{ marginStr, mobileMarginStr }}>
+    @media (min-width: 400px) {
+        main {
+            margin-left: var(--marginStr);
+            margin-right: var(--marginStr);
+        }
+    }
+    
+    @media (max-width: 400px) {
+        main {
+            margin-left: var(--mobileMarginStr);
+            margin-right: var(--mobileMarginStr);
+        }
+    }
+</style>

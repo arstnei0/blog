@@ -1,2 +1,10 @@
 ---
+import Layout from "$component/Layout.astro"
+import '$style/typography.css'
 ---
+
+<Layout margin={27}>
+    <article>
+        <slot></slot>
+    </article>
+</Layout>
