@@ -5,6 +5,7 @@ import Header from "./Header.astro";
 import '$style/variables.css'
 import '$style/fonts.css'
 import '$style/effect.css'
+import '$style/utils.css'
 
 const { frontmatter } = Astro.props;
 
@@ -17,7 +18,7 @@ const {
 } = frontmatter || Astro.props || {}
 
 const {
-    margin = 10,
+    margin = 17,
     mobileMargin = 5,
 } = Astro.props
 
@@ -36,6 +37,10 @@ const mobileMarginStr = `${mobileMargin}%`
 </Html>
 
 <style define:vars={{ marginStr, mobileMarginStr }}>
+    main {
+        margin-top: 2%;
+    }
+
     @media (min-width: 400px) {
         main {
             margin-left: var(--marginStr);

@@ -1,7 +1,37 @@
 ---
+import Nav from "./Nav.astro";
 
 ---
 
-<div>
-    
+<div id="header">
+    <div id="left-header">
+        <img id="avatar" src="/avatar.webp" width="50" height="50" alt="avatar" />
+        <a href="/" id="header-title" class="opacity-effect serif">Zihan</a>
+    </div>
+    <div id="nav">
+        <Nav></Nav>
+    </div>
 </div>
+
+<style is:global>
+    #header {
+        display: flex;
+        margin-left: 4%;
+        margin-right: 4%;
+        justify-content: space-between;
+        --header-title-color: black;
+        align-items: center;
+    }
+
+    #left-header {
+        display: flex;
+        align-items: center;
+    }
+
+    #header-title {
+        text-decoration: none;
+        color: var(--header-title-color);
+        font-size: 1.7rem;
+        margin-left: 1rem;
+    }
+</style>
