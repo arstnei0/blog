@@ -12,11 +12,13 @@ body {
 @media (min-width: 400px) {
 	body {
 		--big-title: 2.6rem !important;
+		--main-font-size: 1.2em;
 	}
 }
 
 @media (max-width: 400px) {
 	body {
 		--big-title: 2rem !important;
+		--main-font-size: 1.1em;
 	}
 }

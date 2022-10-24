@@ -5,6 +5,7 @@ main {
 		letter-spacing: 0.02em;
 		color: var(--text-color);
 		font-family: var(--sans);
+		font-size: var(--main-font-size);
 	}
 
 	p {
@@ -52,7 +53,7 @@ code {
 @media (min-width: 400px) {
 	main {
 		* {
-			font-size: 1.2em;
+			
 		}
 	}
 
@@ -65,7 +66,7 @@ code {
 @media (max-width: 400px) {
 	main {
 		* {
-			font-size: 1.1em;
+			
 		}
 	}
 
