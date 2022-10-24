@@ -4,7 +4,6 @@ main {
 		line-height: 1.4em;
 		letter-spacing: 0.02em;
 		color: var(--text-color);
-		font-size: 1.2em;
 		font-family: var(--sans);
 	}
 
@@ -53,7 +52,7 @@ code {
 @media (min-width: 400px) {
 	main {
 		* {
-
+			font-size: 1.2em;
 		}
 	}
 
@@ -65,7 +64,9 @@ code {
 /* Mobile only */
 @media (max-width: 400px) {
 	main {
-
+		* {
+			font-size: 1.1em;
+		}
 	}
 
     #article-title {

@@ -1,0 +1,20 @@
+---
+import Layout from '$layout/Base.astro'
+import { getPosts } from '$lib/posts';
+
+const posts = getPosts(await Astro.glob('./post/*.mdx'))
+---
+
+<Layout>
+    <h1 id="my-blog-posts">My blog posts</h1>
+
+    {
+        posts ? <></> : <h1>I haven't written any blog posts yet...</h1>
+    }
+</Layout>
+
+<style is:global>
+    #my-blog-posts {
+        font-size: var(--big-title);
+    }
+</style>
