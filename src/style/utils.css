@@ -19,6 +19,15 @@
     opacity: 0.6;
 }
 
+.opacity-effect-reversed {
+    opacity: 0.6;
+    transition: opacity 0.6s ease-out;
+}
+
+.opacity-effect-reversed:hover {
+    opacity: 1;
+}
+
 .sans {
     font-family: var(--sans);
 }
