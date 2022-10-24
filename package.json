@@ -23,6 +23,7 @@
 		"astro": "^1.5.0",
 		"astro-compress": "^1.0.12",
 		"autoprefixer": "^10.4.12",
+		"dayjs": "^1.11.6",
 		"hast-util-to-string": "^2.0.0",
 		"hastscript": "^7.1.0",
 		"pagefind": "^0.8.1",

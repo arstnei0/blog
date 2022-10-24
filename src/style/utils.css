@@ -43,3 +43,23 @@
 .fixed {
 	position: fixed;
 }
+
+.fw3 {
+	font-weight: 300;
+}
+
+.fw4 {
+	font-weight: 400;
+}
+
+.fw5 {
+	font-weight: 500;
+}
+
+.fw6 {
+	font-weight: 600;
+}
+
+.fw7 {
+	font-weight: 700;
+}

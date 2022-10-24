@@ -1,0 +1,46 @@
+---
+import dayjs from 'dayjs'
+
+const {
+    post,
+    url
+} = Astro.props as {
+    post: Record<string, any>
+    url: string
+}
+
+let date;
+if (post.pubDate) date = dayjs(post.pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
+---
+
+<div class="post-card">
+    <a href={url}>
+        <h1 class="post-title">{post?.title}</h1>
+        <span class="post-pub-date">{date}</span>
+        <p class="post-description">{post?.description}</p>
+    </a>
+</div>
+
+<style is:global>
+    @media (min-width: 400px) {
+        .post-card {
+            margin: 2%;
+            width: 50%;
+        }
+    }
+
+    .post-title {
+        font-weight: 500;
+        font-size: 1.1em;
+    }
+
+    .post-pub-date {
+        font-weight: 300;
+        font-size: 0.7em;
+    }
+    
+    .post-description {
+        font-size: .85em;
+        font-weight: 400;
+    }
+</style>
