@@ -27,7 +27,7 @@
 
 .heading-wrapper > .anchor-link {
 	opacity: 0.5;
-    transition: opacity 0.3s ease-out;
+	transition: opacity 0.3s ease-out;
 }
 
 @media (hover: hover) {
