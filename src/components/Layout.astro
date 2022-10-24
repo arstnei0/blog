@@ -20,10 +20,12 @@ const {
 const {
     margin = 17,
     mobileMargin = 5,
+    marginBottom = 10,
 } = Astro.props
 
 const marginStr = `${margin}%`
 const mobileMarginStr = `${mobileMargin}%`
+const marginBottomStr = `${marginBottom}%`
 ---
 
 <Html {lang}>
@@ -36,9 +38,10 @@ const mobileMarginStr = `${mobileMargin}%`
     </main>
 </Html>
 
-<style define:vars={{ marginStr, mobileMarginStr }}>
+<style define:vars={{ marginStr, mobileMarginStr, marginBottomStr }}>
     main {
         margin-top: 2%;
+        margin-bottom: var(--marginBottomStr);
     }
 
     @media (min-width: 400px) {

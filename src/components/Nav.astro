@@ -28,8 +28,9 @@ const page = Astro.url.pathname
     .nav-item {
         text-decoration: none;
         color: var(--header-color);
-        font-size: 1.2rem;
-        font-weight: 300;
+        font-size: 1.1rem;
+        font-weight: 400;
+        letter-spacing: 0.03em;
         margin-top: 0.5em;
         margin-left: 0.45em;
         margin-right: 0.45em;
@@ -58,7 +59,7 @@ const page = Astro.url.pathname
     }
 
     .nav-item.selected::before {
-        background: #1abc9c;
+        background: #a2d2ff;
     }
 
     .nav-item:hover::before, .nav-item.selected::before {

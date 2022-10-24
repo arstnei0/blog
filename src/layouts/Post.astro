@@ -1,9 +1,15 @@
 ---
 import Layout from "$component/Layout.astro"
 import '$style/typography.css'
+
+const {
+    title = 'Unknown title'
+} = Astro.props.frontmatter || Astro.props
 ---
 
-<Layout margin={27}>
+<Layout margin={25}>
+    <h1 id="article-title">{title}</h1>
+
     <article>
         <slot></slot>
     </article>

@@ -4,7 +4,7 @@ main {
 		line-height: 1.4em;
 		letter-spacing: 0.02em;
 		color: var(--text-color);
-		font-size: 1.3em;
+		font-size: 1.2em;
 		font-family: var(--sans);
 	}
 
@@ -36,16 +36,39 @@ main {
 	}
 }
 
+code {
+	font-size: inherit;
+	--border-radius: 4px;
+    --padding-block: .15em;
+    --padding-inline: .2em;
+    font-size: .9em;
+    padding: var(--padding-block) var(--padding-inline);
+    margin: calc(var(--padding-block)*-1)0;
+    border-radius: var(--border-radius);
+    word-break: break-word;
+	background-color: var(--code-inline-bg-color);
+}
+
 /* Laptop or desktop only */
 @media (min-width: 400px) {
 	main {
 		* {
+
 		}
 	}
+
+    #article-title {
+        font-size: 2.6rem;
+    }
 }
 
 /* Mobile only */
 @media (max-width: 400px) {
 	main {
+
 	}
+
+    #article-title {
+        font-size: 2rem;
+    }
 }

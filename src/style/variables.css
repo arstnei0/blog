@@ -2,8 +2,9 @@ body {
 	--serif: "Merriweather", serif;
 	--sans: "Merriweather Sans", sans-serif;
 	--text-color: #2d2d2d;
-	--link-color: #0c7b93;
+	--link-color: #8675A9;
 	--header-color: #2d2d2d;
 	--header-selected-color: black;
 	--background-color: white;
+	--code-inline-bg-color: #E4F9F5;
 }
