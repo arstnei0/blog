@@ -9,8 +9,7 @@ const {
     url: string
 }
 
-let date;
-if (post.pubDate) date = dayjs(post.pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
+let date = dayjs(post.pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
 ---
 
 <div class="post-card">

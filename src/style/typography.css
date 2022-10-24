@@ -39,13 +39,13 @@ main {
 code {
 	font-size: inherit;
 	--border-radius: 4px;
-    --padding-block: .15em;
-    --padding-inline: .2em;
-    font-size: .9em;
-    padding: var(--padding-block) var(--padding-inline);
-    margin: calc(var(--padding-block)*-1)0;
-    border-radius: var(--border-radius);
-    word-break: break-word;
+	--padding-block: 0.15em;
+	--padding-inline: 0.2em;
+	font-size: 0.9em;
+	padding: var(--padding-block) var(--padding-inline);
+	margin: calc(var(--padding-block) * -1) 0;
+	border-radius: var(--border-radius);
+	word-break: break-word;
 	background-color: var(--code-inline-bg-color);
 }
 
@@ -53,24 +53,22 @@ code {
 @media (min-width: 400px) {
 	main {
 		* {
-			
 		}
 	}
 
-    #article-title {
-        font-size: 2.6rem;
-    }
+	#article-title {
+		font-size: 2.6rem;
+	}
 }
 
 /* Mobile only */
 @media (max-width: 400px) {
 	main {
 		* {
-			
 		}
 	}
 
-    #article-title {
-        font-size: 2rem;
-    }
+	#article-title {
+		font-size: 2rem;
+	}
 }

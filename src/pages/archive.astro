@@ -1,0 +1,47 @@
+---
+import PostCard from '$component/PostCard.astro';
+import Layout from '$layout/Base.astro'
+import { getGroupedPosts } from '$lib/posts';
+import type { MDXInstance } from 'astro';
+
+let posts: Record<string, MDXInstance<Record<string, any>>[]> = {};
+try {
+    posts = getGroupedPosts(await Astro.glob('./post/*.mdx'))
+} catch(e) {
+
+}
+---
+
+<Layout>
+    <h1 id="my-blog-posts" class="fw6">My blog posts</h1>
+
+    <div id="posts">
+        {
+            posts ? (Reflect.ownKeys(posts).map((key) => {
+                return <div class="year">
+                    <h1 class="fw5">{key}</h1>
+                        {
+                            posts[(key as string)].map(post => {
+                                return <PostCard post={post.frontmatter} url={post.url} />
+                            })
+                        }
+                    </div>
+            })) : <h1 class="fw4">I haven't written any blog posts yet...</h1>
+        }
+    </div>
+</Layout>
+
+<style is:global>
+    #my-blog-posts {
+        font-size: var(--big-title);
+    }
+
+    #posts {
+        margin: 1%;
+        display: flex;
+    }
+
+    #archive {
+        color: var(--text-color);
+    }
+</style>

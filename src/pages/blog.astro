@@ -1,18 +1,20 @@
 ---
 import PostCard from '$component/PostCard.astro';
 import Layout from '$layout/Base.astro'
-import { getPosts } from '$lib/posts';
+import { getSortedPosts } from '$lib/posts';
 
 let posts;
 try {
-    posts = getPosts(await Astro.glob('./post/*.mdx'))
+    posts = getSortedPosts(await Astro.glob('./post/*.mdx')).slice(0, 5)
 } catch(e) {
 
 }
 ---
 
 <Layout>
-    <h1 id="my-blog-posts">My blog posts</h1>
+    <h1 id="my-blog-posts" class="fw6">My blog posts</h1>
+
+    <a href="/archive" id="archive" class="fw3"><span>Archive</span></a>
 
     <div id="posts">
         {
@@ -31,5 +33,9 @@ try {
     #posts {
         margin: 1%;
         display: flex;
+    }
+
+    #archive {
+        color: var(--text-color);
     }
 </style>

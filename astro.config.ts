@@ -8,6 +8,7 @@ import solidJs from "@astrojs/solid-js"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import compress from "astro-compress"
+
 const AnchorLinkIcon = h(
 	"svg",
 	{
@@ -24,9 +25,6 @@ const AnchorLinkIcon = h(
 	})
 )
 
-// https://astro.build/config
-
-// https://astro.build/config
 export default defineConfig({
 	integrations: [
 		mdx({
@@ -66,8 +64,6 @@ export default defineConfig({
 							tabIndex: -1,
 						}),
 					content: (heading: any) =>
-						// h(
-						// 	"div",
 						h(
 							`span.anchor-icon`,
 							{
@@ -75,7 +71,6 @@ export default defineConfig({
 							},
 							AnchorLinkIcon
 						), // toString(heading),
-					// ),
 				},
 			],
 		],

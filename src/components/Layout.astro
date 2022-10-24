@@ -15,6 +15,8 @@ const {
     author = 'Zihan Chen',
     lang = 'en',
     keywords = ['blog', 'zihan', 'personal website'],
+    article = false,
+    articleImage
 } = frontmatter || Astro.props || {}
 
 const {
@@ -29,7 +31,7 @@ const marginBottomStr = `${marginBottom}%`
 ---
 
 <Html {lang}>
-    <Head slot="head" {title} {description} {lang} {author} {keywords}></Head>
+    <Head slot="head" {title} {description} {lang} {author} {keywords} {article}></Head>
 
     <Header></Header>
 
