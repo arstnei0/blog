@@ -37,6 +37,21 @@ let date = dayjs(article.pubDate as string, 'YYYY/MM/DD').format('YYYY-MM-DD')
         : 'Zihan'
 }</title>
 
+<script is:inline>
+    if (!localStorage.getItem("mode")) localStorage.setItem("mode", 'system')
+
+    const mode = localStorage.getItem('mode')
+    let modeClassName
+
+    if (mode === 'system') modeClassName = (globalThis.matchMedia && globalThis.matchMedia("(prefers-color-scheme: dark)").matches) ? 'dark' : 'light'
+    else if (mode === 'dark') modeClassName = 'dark'
+    else modeClassName = 'light'
+    
+    modeClassName && document.documentElement.classList.add(modeClassName)
+
+    globalThis.zihan = { mode }
+</script>
+
 <link rel="icon" href="/avatar.webp">
 
 <Fonts></Fonts>

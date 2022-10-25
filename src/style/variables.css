@@ -1,12 +1,25 @@
 body {
 	--serif: "Merriweather", serif;
 	--sans: "Merriweather Sans", sans-serif;
-	--text-color: #2d2d2d;
 	--link-color: #8675a9;
+}
+
+.light body {
+	--text-color: #2d2d2d;
 	--header-color: #2d2d2d;
+	--title-color: #171717;
 	--header-selected-color: black;
 	--background-color: white;
 	--code-inline-bg-color: #e4f9f5;
+}
+
+.dark body {
+	--title-color: #D8D8D8;
+	--text-color: #DCD7C9;
+	--header-color: #D8D8D8;
+	--header-selected-color: white;
+	--background-color: #191919;
+	--code-inline-bg-color: #594545;
 }
 
 @media (min-width: 400px) {

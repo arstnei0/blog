@@ -20,7 +20,7 @@ import '$style/typography.css'
     }
 
     .typewriter {
-        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        overflow: hidden; 
         border-right: .15em solid #594545; /* The typwriter cursor */
         white-space: nowrap; /* Keeps the content on a single line */
         margin: 0 auto; /* Gives that scrolling effect as the typing happens */
@@ -45,10 +45,21 @@ import '$style/typography.css'
 
 <style>
     h1 {
-        font-size: 4rem;
-        background: linear-gradient(to right, #ef709b, #fa9372);
+        background: linear-gradient(#ef709b, #fa9372);
         background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+
+    @media (min-width: 400px) {
+        h1 {
+            font-size: 4rem;
+        }
+    }
+
+    @media (max-width: 400px) {
+        h1 {
+            font-size: 1.8rem;
+        }
     }
 
     p {
@@ -56,7 +67,7 @@ import '$style/typography.css'
     }
 
     .gradient-1 {
-        background: linear-gradient(to right, #96c6ea, #b597f6);
+        background: linear-gradient(#96c6ea, #b597f6);
         background-clip: text;
         -webkit-text-fill-color: transparent;
     }

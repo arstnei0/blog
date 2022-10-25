@@ -19,8 +19,15 @@ import Nav from "./Nav.astro";
         margin-left: 4%;
         margin-right: 4%;
         justify-content: space-between;
-        --header-title-color: black;
         align-items: center;
+    }
+
+    .light #header {
+        --header-title-color: black;
+    }
+    
+    .dark #header {
+        --header-title-color: var(--title-color);
     }
 
     #left-header {
