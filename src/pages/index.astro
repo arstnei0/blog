@@ -4,6 +4,65 @@ import '$style/typography.css'
 ---
 
 <Layout>
-    <h1>Hello! I'm Zihan.</h1>
-    <p>I'm a 13-year-old boy living in Singapore.</p>
+    <div id="home-greet-card">
+        <div>
+            <h1 class="typewriter">Hello! I'm Zihan.👋</h1>
+        </div>
+        <p class="gradient-1">I'm a 13-year-old boy living in Singapore.</p>
+        <p>See more about me at the <a href="/about">About Page</a></p>
+    </div>
 </Layout>
+
+<style is:global>
+    #home-greet-card {
+        margin: auto;
+        text-align: center;
+    }
+
+    .typewriter {
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: .15em solid #594545; /* The typwriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        letter-spacing: .15em; /* Adjust as needed */
+        animation: 
+            typing 2s steps(40, end),
+            blink-caret .75s step-end infinite;
+    }
+
+    /* The typing effect */
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: #594545; border-radius: 5px; }
+    }
+</style>
+
+<style>
+    h1 {
+        font-size: 4rem;
+        background: linear-gradient(to right, #ef709b, #fa9372);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    p {
+        font-size: 1.3em;
+    }
+
+    .gradient-1 {
+        background: linear-gradient(to right, #96c6ea, #b597f6);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+</style>
