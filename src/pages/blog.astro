@@ -14,8 +14,6 @@ try {
 <Layout>
     <h1 id="my-blog-posts" class="fw6">My blog posts</h1>
 
-    <a href="/archive" id="archive" class="fw3"><span>Archive</span></a>
-
     <div id="posts">
         {
             posts ? posts.map(post => {
@@ -23,6 +21,8 @@ try {
             }) : <h1 class="fw4">I haven't written any blog posts yet...</h1>
         }
     </div>
+
+    <a href="/archive" id="archive" class="fw3"><span>Archive</span></a>
 </Layout>
 
 <style is:global>
@@ -37,5 +37,7 @@ try {
 
     #archive {
         color: var(--text-color);
+        text-decoration: none;
+        font-size: 1em;
     }
 </style>

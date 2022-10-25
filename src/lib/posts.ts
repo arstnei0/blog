@@ -1,5 +1,5 @@
 import type { MDXInstance } from "astro"
-import dayjs from 'dayjs'
+import dayjs from "dayjs"
 
 export function getPosts(posts: MDXInstance<Record<string, any>>[]) {
 	if (import.meta.env.PROD)
@@ -9,7 +9,7 @@ export function getPosts(posts: MDXInstance<Record<string, any>>[]) {
 
 export function getSortedPosts(result: MDXInstance<Record<string, any>>[]) {
 	const posts = getPosts(result)
-	
+
 	return posts.sort((a: any, b: any) =>
 		dayjs(a.frontmatter.pubDate).isBefore(dayjs(b.frontmatter.pubDate))
 			? 1

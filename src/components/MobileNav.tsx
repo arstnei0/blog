@@ -1,6 +1,7 @@
 import { Component, Show } from "solid-js"
 import { createSignal, onMount } from "solid-js"
 import "$style/mobileNav.css"
+import ModeToggleButton from "./ModeToggleButton"
 
 const MobileNav: Component<{}> = (props) => {
 	const [opened, setOpened] = createSignal(false)
@@ -129,6 +130,7 @@ const MobileNav: Component<{}> = (props) => {
 								/>
 							</svg>
 						</a>
+						<ModeToggleButton></ModeToggleButton>
 					</div>
 				</div>
 			</Show>

@@ -1,20 +1,25 @@
 ---
 import Layout from "$component/Layout.astro"
 import '$style/typography.css'
+import dayjs from "dayjs"
 
 const article = Astro.props.frontmatter || Astro.props
 
 const {
     title = 'Unknown title',
     description,
-    image
+    image,
+    pubDate
 } = article
+
+let date = dayjs(pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
 ---
 
 <Layout {article} {description} {title} margin={25}>
     {image && <img src={image.src} width={image.width} height={image.height} />}
     
     <h1 id="article-title">{title}</h1>
+    <span id="pub-date">{date}</span>
 
     <article>
         <slot></slot>
@@ -32,7 +37,6 @@ const {
         data-input-position="top"
         data-theme="preferred_color_scheme"
         data-lang="en"
-        data-loading="lazy"
         crossorigin="anonymous"
         async>
     </script>
@@ -41,5 +45,9 @@ const {
 <style is:global>
     article {
         margin-bottom: 10%;
+    }
+
+    #pub-date {
+        
     }
 </style>

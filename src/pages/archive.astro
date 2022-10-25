@@ -17,7 +17,7 @@ try {
 
     <div id="posts">
         {
-            posts ? (Reflect.ownKeys(posts).map((key) => {
+            (Reflect.ownKeys(posts).length !== 0) ? (Reflect.ownKeys(posts).map((key) => {
                 return <div class="year">
                     <h1 class="fw5">{key}</h1>
                         {

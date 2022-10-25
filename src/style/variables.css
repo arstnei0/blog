@@ -14,9 +14,9 @@ body {
 }
 
 .dark body {
-	--title-color: #D8D8D8;
-	--text-color: #DCD7C9;
-	--header-color: #D8D8D8;
+	--title-color: #d8d8d8;
+	--text-color: #dcd7c9;
+	--header-color: #d8d8d8;
 	--header-selected-color: white;
 	--background-color: #191919;
 	--code-inline-bg-color: #594545;

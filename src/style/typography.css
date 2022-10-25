@@ -1,3 +1,5 @@
+@import url("./link.css");
+
 /* Global */
 main {
 	* {
@@ -5,34 +7,15 @@ main {
 		letter-spacing: 0.02em;
 		color: var(--text-color);
 		font-family: var(--sans);
-		font-size: var(--main-font-size);
 	}
 
 	p {
 		font-weight: 400;
+		font-size: var(--main-font-size);
 	}
 
 	li {
 		font-size: inherit;
-	}
-
-	a {
-		font-size: inherit;
-		color: var(--link-color);
-		text-decoration: none;
-		transition: opacity 0.4s ease-in-out;
-	}
-
-	a:hover {
-		opacity: 0.6;
-	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
 	}
 }
 
@@ -52,8 +35,7 @@ code {
 /* Laptop or desktop only */
 @media (min-width: 400px) {
 	main {
-		* {
-		}
+		
 	}
 
 	#article-title {
@@ -64,8 +46,7 @@ code {
 /* Mobile only */
 @media (max-width: 400px) {
 	main {
-		* {
-		}
+		
 	}
 
 	#article-title {
