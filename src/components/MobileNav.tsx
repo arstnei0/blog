@@ -18,8 +18,6 @@ const MobileNav: Component<{}> = (props) => {
 
 	onMount(() => {
 		setPage(location.pathname)
-
-		document.body.classList.add("nav-inactive")
 	})
 
 	return (
@@ -82,7 +80,7 @@ const MobileNav: Component<{}> = (props) => {
 
 						<li
 							classList={
-								page() === "/blog"
+								page() === "/blog" || page().startsWith('/post')
 									? {
 											"active-nav": true,
 											"nav__list-item": true,

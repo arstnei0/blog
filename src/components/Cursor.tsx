@@ -8,13 +8,15 @@ const Cursor: Component<{}> = (props) => {
 
     const [hover, setHover] = createSignal(false);
 
-    onMount(() => {
-        document.documentElement.addEventListener('mousemove', (event) => {
-            setStyle({
-                left: `${event.clientX}px`,
-                top: `${event.clientY}px`,
-            })
+    const onMouseMove = (event: MouseEvent) => {
+        setStyle({
+            left: `${event.clientX}px`,
+            top: `${event.clientY}px`,
         })
+    }
+
+    onMount(() => {
+        window.addEventListener('mousemove', onMouseMove)
 
         document.querySelectorAll('a').forEach((el) => {
             el.classList.add('hover-target')
@@ -31,6 +33,8 @@ const Cursor: Component<{}> = (props) => {
             el.addEventListener('mouseover', mouseOver)
             el.addEventListener('mouseout', mouseOut)
         })
+
+		document.body.classList.add("nav-inactive")
     })
   
     return <>
