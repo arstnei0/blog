@@ -1,10 +1,10 @@
 a {
-    font-size: inherit;
-    color: var(--link-color);
-    text-decoration: none;
-    transition: opacity 0.4s ease-in-out;
+	font-size: inherit;
+	color: var(--link-color);
+	text-decoration: none;
+	transition: opacity 0.4s ease-in-out;
 }
 
 a:hover {
-    opacity: 0.6;
+	opacity: 0.6;
 }

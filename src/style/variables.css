@@ -11,6 +11,7 @@ body {
 	--header-selected-color: black;
 	--background-color: white;
 	--code-inline-bg-color: #e4f9f5;
+	--bow: black; /* Black Or White */
 }
 
 .dark body {
@@ -20,6 +21,7 @@ body {
 	--header-selected-color: white;
 	--background-color: #191919;
 	--code-inline-bg-color: #594545;
+	--bow: white; /* Black Or White */
 }
 
 @media (min-width: 400px) {

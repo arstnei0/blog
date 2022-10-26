@@ -35,7 +35,6 @@ code {
 /* Laptop or desktop only */
 @media (min-width: 400px) {
 	main {
-		
 	}
 
 	#article-title {
@@ -46,7 +45,6 @@ code {
 /* Mobile only */
 @media (max-width: 400px) {
 	main {
-		
 	}
 
 	#article-title {

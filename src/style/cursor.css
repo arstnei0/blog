@@ -1,0 +1,62 @@
+.cursor,
+.cursor2,
+.cursor3{
+	position: fixed;
+	border-radius: 50%;	
+	transform: translateX(-50%) translateY(-50%);
+	pointer-events: none;
+	left: 50%;
+	top: 50%;
+	mix-blend-mode: difference;
+	-webkit-transition: all 500ms ease-out;
+	transition: all 500ms ease-out;
+}
+
+.cursor {
+	background-color: var(--bow);
+	height: 0;
+	width: 0;
+	z-index: 99999;
+}
+
+.cursor2, .cursor3{
+	height: 36px;
+	width: 36px;
+	z-index: 99998;
+	-webkit-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out
+}
+
+.cursor2.hover,
+.cursor3.hover{
+	-webkit-transform:scale(2) translateX(-25%) translateY(-25%);
+	transform:scale(2) translateX(-25%) translateY(-25%);
+	border:none
+}
+
+.cursor2{
+	border: 2px solid var(--bow);
+}
+
+.dark {
+	.cursor2 {
+		box-shadow: 0 0 22px rgba(255, 255, 255, 0.6);
+	}
+}
+
+.light {
+	.cursor2 {
+		box-shadow: 0 0 22px rgba(118, 117, 117, 0.659);
+	}
+}
+
+.cursor2.hover{
+	background: var(--bow);
+	box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 400px){
+	.cursor,.cursor2,.cursor3{
+		display: none
+	}
+}
