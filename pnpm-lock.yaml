@@ -23,6 +23,7 @@ specifiers:
     rehype-autolink-headings: ^6.1.1
     rehype-slug: ^5.0.1
     rollup: ^3.2.2
+    sass: ^1.55.0
     solid-js: ^1.4.3
     typescript: ^4.8.4
 
@@ -33,7 +34,7 @@ dependencies:
     "@astrojs/solid-js": 1.2.0_o5do7oxr2hbtrv24zykqvegilq
     "@astrojs/vercel": 2.2.0
     "@babel/core": 7.19.3
-    astro: 1.5.0
+    astro: 1.5.0_sass@1.55.0
     astro-compress: 1.0.12
     autoprefixer: 10.4.12_postcss@8.4.18
     dayjs: 1.11.6
@@ -48,6 +49,7 @@ dependencies:
     rehype-autolink-headings: 6.1.1
     rehype-slug: 5.0.1
     rollup: 3.2.2
+    sass: 1.55.0
     solid-js: 1.5.7
     typescript: 4.8.4
 
@@ -1204,6 +1206,17 @@ packages:
         engines: { node: ">=12" }
         dev: false
 
+    /anymatch/3.1.2:
+        resolution:
+            {
+                integrity: sha512-P43ePfOAIupkguHUycrc4qJ9kz8ZiuOUijaETwX7THt0Y/GNK7v0aa8rY816xWjZ7rJdA5XdMcpVFTKMq+RvWg==,
+            }
+        engines: { node: ">= 8" }
+        dependencies:
+            normalize-path: 3.0.0
+            picomatch: 2.3.1
+        dev: false
+
     /aproba/2.0.0:
         resolution:
             {
@@ -1278,7 +1291,7 @@ packages:
             terser: 5.15.1
         dev: false
 
-    /astro/1.5.0:
+    /astro/1.5.0_sass@1.55.0:
         resolution:
             {
                 integrity: sha512-xwneXjRT4FChouSe/cj6oJVU6Ux7Fd/7rfnh3mPlB9PTbN5UwnfCI5MjR7rTc93i169Jjh93FndrxmGX45sQBw==,
@@ -1344,7 +1357,7 @@ packages:
             typescript: 4.8.4
             unist-util-visit: 4.1.1
             vfile: 5.3.5
-            vite: 3.1.8
+            vite: 3.1.8_sass@1.55.0
             yargs-parser: 21.1.1
             zod: 3.19.1
         transitivePeerDependencies:
@@ -1428,6 +1441,14 @@ packages:
             {
                 integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==,
             }
+        dev: false
+
+    /binary-extensions/2.2.0:
+        resolution:
+            {
+                integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==,
+            }
+        engines: { node: ">=8" }
         dev: false
 
     /bindings/1.5.0:
@@ -1642,6 +1663,24 @@ packages:
             {
                 integrity: sha512-iBZ4F4wRbyORVsu0jPV7gXkOsGYjGHPmAyv+HiHG8gi5PtC9KI2j1+v8/tlibRvjoWX027ypmG/n0HtO5t7unw==,
             }
+        dev: false
+
+    /chokidar/3.5.3:
+        resolution:
+            {
+                integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==,
+            }
+        engines: { node: ">= 8.10.0" }
+        dependencies:
+            anymatch: 3.1.2
+            braces: 3.0.2
+            glob-parent: 5.1.2
+            is-binary-path: 2.1.0
+            is-glob: 4.0.3
+            normalize-path: 3.0.0
+            readdirp: 3.6.0
+        optionalDependencies:
+            fsevents: 2.3.2
         dev: false
 
     /chownr/1.1.4:
@@ -3545,6 +3584,13 @@ packages:
             }
         dev: false
 
+    /immutable/4.1.0:
+        resolution:
+            {
+                integrity: sha512-oNkuqVTA8jqG1Q6c+UglTOD1xhC1BtjKI7XkCXRkZHrN5m18/XsnUp8Q89GkQO/z+0WjonSvl0FLhDYftp46nQ==,
+            }
+        dev: false
+
     /import-meta-resolve/2.1.0:
         resolution:
             {
@@ -3605,6 +3651,16 @@ packages:
             {
                 integrity: sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==,
             }
+        dev: false
+
+    /is-binary-path/2.1.0:
+        resolution:
+            {
+                integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==,
+            }
+        engines: { node: ">=8" }
+        dependencies:
+            binary-extensions: 2.2.0
         dev: false
 
     /is-buffer/2.0.5:
@@ -4919,6 +4975,14 @@ packages:
             abbrev: 1.1.1
         dev: false
 
+    /normalize-path/3.0.0:
+        resolution:
+            {
+                integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==,
+            }
+        engines: { node: ">=0.10.0" }
+        dev: false
+
     /normalize-range/0.1.2:
         resolution:
             {
@@ -5467,6 +5531,16 @@ packages:
             util-deprecate: 1.0.2
         dev: false
 
+    /readdirp/3.6.0:
+        resolution:
+            {
+                integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==,
+            }
+        engines: { node: ">=8.10.0" }
+        dependencies:
+            picomatch: 2.3.1
+        dev: false
+
     /recast/0.20.5:
         resolution:
             {
@@ -5821,6 +5895,19 @@ packages:
             }
         dependencies:
             suf-log: 2.5.3
+        dev: false
+
+    /sass/1.55.0:
+        resolution:
+            {
+                integrity: sha512-Pk+PMy7OGLs9WaxZGJMn7S96dvlyVBwwtToX895WmCpAOr5YiJYEUJfiJidMuKb613z2xNWcXCHEuOvjZbqC6A==,
+            }
+        engines: { node: ">=12.0.0" }
+        hasBin: true
+        dependencies:
+            chokidar: 3.5.3
+            immutable: 4.1.0
+            source-map-js: 1.0.2
         dev: false
 
     /sax/1.2.4:
@@ -6651,7 +6738,7 @@ packages:
             vfile-message: 3.1.2
         dev: false
 
-    /vite/3.1.8:
+    /vite/3.1.8_sass@1.55.0:
         resolution:
             {
                 integrity: sha512-m7jJe3nufUbuOfotkntGFupinL/fmuTNuQmiVE7cH2IZMuf4UbfbGYMUT3jVWgGYuRVLY9j8NnrRqgw5rr5QTg==,
@@ -6677,6 +6764,7 @@ packages:
             postcss: 8.4.18
             resolve: 1.22.1
             rollup: 2.78.1
+            sass: 1.55.0
         optionalDependencies:
             fsevents: 2.3.2
         dev: false

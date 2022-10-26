@@ -1,5 +1,6 @@
 ---
 import Layout from "$component/Layout.astro"
+import Sidebar from "$component/Sidebar"
 import '$style/typography.css'
 import dayjs from "dayjs"
 
@@ -11,6 +12,8 @@ const {
     image,
     pubDate
 } = article
+
+const headings = await Astro.props.headings
 
 let date = dayjs(pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
 ---
@@ -24,6 +27,8 @@ let date = dayjs(pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
     <article>
         <slot></slot>
     </article>
+
+    <Sidebar client:idle {headings}></Sidebar>
 
     <script src="https://giscus.app/client.js"
         data-repo="zihan-ch/blog"
