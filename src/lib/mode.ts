@@ -3,6 +3,7 @@ import { createSignal } from "solid-js"
 export type Mode = "light" | "dark" | "system"
 
 const [mode, setMode] = createSignal<Mode>("system")
+const systemPreferedTheme = (globalThis.matchMedia && globalThis.matchMedia("(prefers-color-scheme: dark)").matches) ? 'dark' : 'light'
 
 const toggle = () => {
 	setMode((mode) =>
@@ -10,14 +11,8 @@ const toggle = () => {
 	)
 	const m = mode()
 	if (m === "system") {
-		const modeName =
-			globalThis.matchMedia &&
-			globalThis.matchMedia("(prefers-color-scheme: dark)").matches
-				? "dark"
-				: "light"
-
-		toggleClass(modeName)
-		sendMessageToGiscus(modeName)
+		toggleClass(systemPreferedTheme)
+		sendMessageToGiscus(systemPreferedTheme)
 	} else {
 		toggleClass(m)
 		sendMessageToGiscus(m)
@@ -59,4 +54,6 @@ const sendMessageToGiscus = (mode: Mode) => {
 	}
 }
 
-export { mode, setMode, toggle, toggleClass, sendMessageToGiscus }
+const modeStr = () => mode() === 'system' ? systemPreferedTheme : mode()
+
+export { mode, setMode, toggle, toggleClass, sendMessageToGiscus, modeStr }

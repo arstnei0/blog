@@ -3,6 +3,7 @@ import Layout from "$component/Layout.astro"
 import Sidebar from "$component/Sidebar"
 import '$style/typography.css'
 import dayjs from "dayjs"
+import Giscus from '$component/Giscus'
 
 const article = Astro.props.frontmatter || Astro.props
 
@@ -30,21 +31,7 @@ let date = dayjs(pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
 
     <Sidebar client:idle {headings}></Sidebar>
 
-    <script src="https://giscus.app/client.js"
-        data-repo="zihan-ch/blog"
-        data-repo-id="R_kgDOIE6d3Q"
-        data-category="General"
-        data-category-id="DIC_kwDOIE6d3c4CR5h7"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-    </script>
+    <Giscus client:idle></Giscus>
 </Layout>
 
 <style is:global>

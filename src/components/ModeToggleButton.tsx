@@ -1,23 +1,11 @@
 import { Component, onMount, Show } from "solid-js"
-import { mode, Mode, sendMessageToGiscus, setMode, toggle } from "$lib/mode"
+import { mode, Mode, sendMessageToGiscus, setMode, toggle, modeStr } from "$lib/mode"
 import "$style/themeToggleButton.css"
 
 const ModeToggleButton: Component<{}> = (props) => {
-	const { mode: modeName } =
-		((globalThis as any).zihan as { mode: Mode }) || {}
-	setMode(modeName)
-
 	onMount(() => {
 		const m = mode()
-		if (m === "system") {
-			sendMessageToGiscus(
-				globalThis.matchMedia &&
-					globalThis.matchMedia("(prefers-color-scheme: dark)")
-						.matches
-					? "dark"
-					: "light"
-			)
-		} else sendMessageToGiscus(m)
+		sendMessageToGiscus(modeStr())
 	})
 
 	return (
