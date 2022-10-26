@@ -43,11 +43,11 @@ const Cursor: Component<{}> = (props) => {
 			></div>
 			<div
 				style={style()}
-				classList={{ cursor1: true, hover: hover() }}
+				classList={{ cursor2: true, hover: hover() }}
 			></div>
 			<div
 				style={style()}
-				classList={{ cursor2: true, hover: hover() }}
+				classList={{ cursor3: true, hover: hover() }}
 			></div>
 		</>
 	)
