@@ -80,7 +80,7 @@ const MobileNav: Component<{}> = (props) => {
 
 						<li
 							classList={
-								page() === "/blog" || page().startsWith('/post')
+								page() === "/blog" || page().startsWith("/post")
 									? {
 											"active-nav": true,
 											"nav__list-item": true,
