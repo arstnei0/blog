@@ -21,8 +21,8 @@ const ModeToggleButton: Component<{}> = (props) => {
 	})
 
 	return (
-		<button
-			class="all-unset nav-icon"
+		<div
+			class="all-unset nav-icon hover-target"
 			id="theme-toggle-button"
 			onClick={() => {
 				toggle()
@@ -73,7 +73,7 @@ const ModeToggleButton: Component<{}> = (props) => {
 					/>
 				</svg>
 			</Show>
-		</button>
+		</div>
 	)
 }
 
