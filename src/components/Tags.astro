@@ -8,7 +8,7 @@ const {
 
 <div id="tags">
     {tags.map((tag: string) => (
-        <a href={`/tag/${tag}`}><span class="tag">{tag}</span></a>
+        <a href={`/tag/${tag}`} aria-label={`tag ${tag}`}><span class="tag">{tag}</span></a>
     ))}
 </div>
 

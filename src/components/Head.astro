@@ -1,6 +1,7 @@
 ---
-import Fonts from "./Fonts.astro";
+import Fonts from "./Fonts.astro"
 import dayjs from 'dayjs'
+import Clarity from "./Clarity.astro"
 
 const {
     title,
@@ -56,6 +57,12 @@ let date = dayjs(article.pubDate as string, 'YYYY/MM/DD').format('YYYY-MM-DD')
 
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap"></noscript>
+
+{
+    import.meta.env.PROD && (
+        <Clarity></Clarity>
+    )
+}
 
 <Fonts></Fonts>
 
