@@ -7,6 +7,7 @@ import '$style/fonts.css'
 import '$style/effect.css'
 import '$style/utils.css'
 import '$style/global.css'
+import { locale } from "@lang"
 
 const { frontmatter } = Astro.props;
 
@@ -14,7 +15,7 @@ const {
     title,
     description = `Zihan's personal website and his blog.`,
     author = 'Zihan Chen',
-    lang = 'en',
+    lang = locale,
     keywords = ['blog', 'zihan', 'personal website'],
     article = false,
     articleImage

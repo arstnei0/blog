@@ -1,15 +1,29 @@
 ---
 import Layout from "$layout/Base.astro";
 import '$style/typography.css'
+import g from "@g";
+import t from "@t";
 ---
 
 <Layout title="Home">
     <div id="home-greet-card">
         <div>
-            <h1 class="typewriter serif">Hello! I'm Zihan.👋</h1>
+            <h1 class="typewriter serif">{g({
+                en: `Hello! I'm Zihan.👋`,
+                cn: '你好！我叫 Zihan。'
+            })}</h1>
         </div>
-        <p class="gradient-1">I'm a 13-year-old boy living in Singapore.</p>
-        <p>See more about me at the <a href="/about">About Page</a></p>
+        <p class="gradient-1">{g({
+            en: `I'm a 13-year-old boy living in Singapore.`,
+            cn: '我是一个13岁的小屁孩，现在住在新加坡。'
+        })}</p>
+        <p>{g({
+            en: 'See more about me at the ',
+            cn: '更多关于我的信息都在'
+        })}<a href="/about">{g({
+            en: 'About Page',
+            cn: '关于页面'
+        })}</a>{t('period')}</p>
     </div>
 </Layout>
 
