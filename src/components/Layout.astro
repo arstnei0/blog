@@ -34,7 +34,9 @@ const marginBottomStr = `${marginBottom}%`
 ---
 
 <Html {lang}>
-    <Head slot="head" {title} {description} {lang} {author} {keywords} {article}></Head>
+    <Head slot="head" {title} {description} {lang} {author} {keywords} {article}>
+        <slot name="head"></slot>
+    </Head>
 
     <Header></Header>
 

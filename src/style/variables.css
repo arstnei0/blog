@@ -2,6 +2,7 @@ body {
 	--serif: "Merriweather", serif;
 	--sans: "Merriweather Sans", sans-serif;
 	--link-color: #8675a9;
+	--tag-bg-color: #d2daff;
 }
 
 .light body {

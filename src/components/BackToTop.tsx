@@ -1,6 +1,6 @@
 import { Component, onMount, createSignal } from "solid-js"
 import "$style/backToTop.css"
-import initialScroll from '$lib/initialScroll'
+import initialScroll from "$lib/initialScroll"
 
 const BackToTop: Component<{}> = (props) => {
 	const [active, setActive] = createSignal(false)

@@ -1,0 +1,41 @@
+---
+import Layout from '$component/Layout.astro'
+import PostCard from '$component/PostCard.astro'
+import { getPosts, getSortedPosts } from '$lib/posts'
+import getTags from '$lib/tags'
+
+const tags = getTags(getSortedPosts(await Astro.glob('../post/*.mdx')))
+
+export async function getStaticPaths() {
+    const tags = getTags(getPosts(await Astro.glob('../post/*.mdx')))
+
+    return (Reflect.ownKeys(tags) as string[]).map((tag) => ({
+        params: {
+            tag,
+        }
+    }))
+}
+
+const { tag } = Astro.params
+---
+
+<Layout title={`Tag "${tag}"`}>
+    <h1>All posts that have the tag <code>{tag}</code>:</h1>
+
+    <div id="posts">
+        {
+            tag && (
+                tags[tag].map((post) => (
+                    <PostCard post={post.frontmatter} url={post.url}></PostCard>
+                ))
+            )
+        }
+    </div>
+</Layout>
+
+<style is:global>
+    #posts {
+        margin: 1%;
+        display: flex;
+    }
+</style>

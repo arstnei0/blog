@@ -19,23 +19,23 @@ const h = (depth: number, content: JSX.Element) =>
 const Sidebar: Component<{
 	headings: { depth: number; slug: string; text: string }[]
 }> = (props) => {
-	let memo = localStorage.getItem('show-sidebar')
+	let memo = localStorage.getItem("show-sidebar")
 	if (!memo) {
-		localStorage.setItem('show-sidebar', 'true')
-		memo = 'true'
+		localStorage.setItem("show-sidebar", "true")
+		memo = "true"
 	}
 
 	const { headings } = props
-	const [showSidebar, setShowSidebar] = createSignal(memo === 'true')
+	const [showSidebar, setShowSidebar] = createSignal(memo === "true")
 	let button1: any, button2: any
 
 	const toggle = () => {
-		setShowSidebar(show => !show)
+		setShowSidebar((show) => !show)
 		if (showSidebar()) {
-			localStorage.setItem('show-sidebar', 'true')
+			localStorage.setItem("show-sidebar", "true")
 			;(window as any).cursor.add(button1)
 		} else {
-			localStorage.setItem('show-sidebar', 'false')
+			localStorage.setItem("show-sidebar", "false")
 			;(window as any).cursor.add(button2)
 		}
 
@@ -44,7 +44,7 @@ const Sidebar: Component<{
 
 	onMount(() => {
 		if (showSidebar()) {
-			(window as any).cursor?.add(button1)
+			;(window as any).cursor?.add(button1)
 		}
 	})
 
@@ -53,7 +53,20 @@ const Sidebar: Component<{
 			<Show
 				when={showSidebar()}
 				fallback={
-					<svg ref={button2} class="hover-target desktop-only" id="show-sidebar-button" onClick={toggle} width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M14.71 6.71a.996.996 0 0 0-1.41 0L8.71 11.3a.996.996 0 0 0 0 1.41l4.59 4.59a.996.996 0 1 0 1.41-1.41L10.83 12l3.88-3.88c.39-.39.38-1.03 0-1.41z"/></svg>
+					<svg
+						ref={button2}
+						class="hover-target desktop-only"
+						id="show-sidebar-button"
+						onClick={toggle}
+						width="32"
+						height="32"
+						viewBox="0 0 24 24"
+					>
+						<path
+							fill="currentColor"
+							d="M14.71 6.71a.996.996 0 0 0-1.41 0L8.71 11.3a.996.996 0 0 0 0 1.41l4.59 4.59a.996.996 0 1 0 1.41-1.41L10.83 12l3.88-3.88c.39-.39.38-1.03 0-1.41z"
+						/>
+					</svg>
 				}
 			>
 				<div id="sidebar">

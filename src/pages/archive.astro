@@ -12,14 +12,14 @@ try {
 }
 ---
 
-<Layout>
+<Layout title="Archive">
     <h1 id="my-blog-posts" class="fw6">My blog posts</h1>
 
     <div id="posts">
         {
             (Reflect.ownKeys(posts).length !== 0) ? (Reflect.ownKeys(posts).map((key) => {
                 return <div class="year">
-                    <h1 class="fw5">{key}</h1>
+                    <h1 class="fw4 year-title">{key}</h1>
                         {
                             posts[(key as string)].map(post => {
                                 return <PostCard post={post.frontmatter} url={post.url} />
@@ -38,10 +38,14 @@ try {
 
     #posts {
         margin: 1%;
-        display: flex;
+        /* display: flex; */
     }
 
     #archive {
         color: var(--text-color);
+    }
+
+    .year {
+        margin-bottom: 6%;
     }
 </style>

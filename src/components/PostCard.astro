@@ -1,13 +1,18 @@
 ---
 import dayjs from 'dayjs'
+import Tags from './Tags.astro'
 
 const {
     post,
-    url
+    url,
 } = Astro.props as {
     post: Record<string, any>
     url: string
 }
+
+const {
+    tags
+} = post
 
 let date = dayjs(post.pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
 ---
@@ -16,6 +21,7 @@ let date = dayjs(post.pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
     <a href={url}>
         <h1 class="post-title">{post?.title}</h1>
         <span class="post-pub-date">{date}</span>
+        <Tags {tags}></Tags>
         <p class="post-description">{post?.description}</p>
     </a>
 </div>
@@ -30,7 +36,7 @@ let date = dayjs(post.pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
 
     .post-title {
         font-weight: 500;
-        font-size: 1.1em;
+        font-size: 1.4em;
         line-height: 1em;
         margin: 0;
     }

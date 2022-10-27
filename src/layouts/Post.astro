@@ -4,6 +4,7 @@ import Sidebar from "$component/Sidebar"
 import '$style/typography.css'
 import dayjs from "dayjs"
 import Giscus from '$component/Giscus'
+import Tags from "$component/Tags.astro"
 
 const article = Astro.props.frontmatter || Astro.props
 
@@ -11,7 +12,8 @@ const {
     title = 'Unknown title',
     description,
     image,
-    pubDate
+    pubDate,
+    tags
 } = article
 
 const headings = await Astro.props.headings
@@ -24,6 +26,8 @@ let date = dayjs(pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
     
     <h1 id="article-title">{title}</h1>
     <span id="pub-date">{date}</span>
+
+    <Tags {tags}></Tags>
 
     <article>
         <slot></slot>
@@ -38,6 +42,7 @@ let date = dayjs(pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
 
 <style is:global>
     article {
+        margin-top: 5%;
         margin-bottom: 10%;
     }
 

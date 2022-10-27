@@ -1,0 +1,19 @@
+---
+import '$style/tags.css'
+
+const {
+    tags
+} = Astro.props
+---
+
+<div id="tags">
+    {tags.map((tag: string) => (
+        <a href={`/tag/${tag}`}><span class="tag">{tag}</span></a>
+    ))}
+</div>
+
+<style is:global>
+    #tags {
+        margin: 10px;
+    }
+</style>

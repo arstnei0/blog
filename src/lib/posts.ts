@@ -1,3 +1,5 @@
+// await Astro.glob('./post/*.mdx')
+
 import type { MDXInstance } from "astro"
 import dayjs from "dayjs"
 
