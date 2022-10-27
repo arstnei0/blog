@@ -33,6 +33,15 @@ const Cursor: Component<{}> = (props) => {
 		})
 
 		document.body.classList.add("nav-inactive")
+
+		;(window as any).cursor = {
+			add: (el: HTMLElement) => {
+				el.addEventListener("mouseover", mouseOver)
+				el.addEventListener("mouseout", mouseOut)
+			},
+			out: mouseOut,
+			over: mouseOver,
+		}
 	})
 
 	return (

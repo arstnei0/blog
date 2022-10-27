@@ -24,9 +24,11 @@ const {
     margin = 17,
     mobileMargin = 5,
     marginBottom = 10,
+    marginRight = false
 } = Astro.props
 
 const marginStr = `${margin}%`
+const marginRightStr = marginRight ? `${marginRight}%` : marginStr
 const mobileMarginStr = `${mobileMargin}%`
 const marginBottomStr = `${marginBottom}%`
 ---
@@ -43,7 +45,7 @@ const marginBottomStr = `${marginBottom}%`
     <slot name="body"></slot>
 </Html>
 
-<style define:vars={{ marginStr, mobileMarginStr, marginBottomStr }}>
+<style define:vars={{ marginStr, mobileMarginStr, marginBottomStr, marginRightStr }}>
     main {
         margin-top: 2%;
         margin-bottom: var(--marginBottomStr);
@@ -52,7 +54,7 @@ const marginBottomStr = `${marginBottom}%`
     @media (min-width: 400px) {
         main {
             margin-left: var(--marginStr);
-            margin-right: var(--marginStr);
+            margin-right: var(--marginRightStr);
         }
     }
     

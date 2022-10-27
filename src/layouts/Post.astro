@@ -19,7 +19,7 @@ const headings = await Astro.props.headings
 let date = dayjs(pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
 ---
 
-<Layout {article} {description} {title} margin={25}>
+<Layout {article} {description} {title} margin={20} marginRight={30}>
     {image && <img src={image.src} width={image.width} height={image.height} />}
     
     <h1 id="article-title">{title}</h1>
@@ -29,16 +29,23 @@ let date = dayjs(pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
         <slot></slot>
     </article>
 
-    <Sidebar client:idle {headings}></Sidebar>
-
     <div id="giscus">
         <Giscus client:idle></Giscus>
     </div>
+
+    <Sidebar client:idle {headings}></Sidebar>
 </Layout>
 
 <style is:global>
     article {
         margin-bottom: 10%;
+    }
+
+    @media (min-width: 400px) {
+        main {
+            /* margin-left: 20%;
+            margin-right: 30%; */
+        }
     }
 
     #pub-date {

@@ -1,5 +1,12 @@
 import { Component, onMount, Show } from "solid-js"
-import { mode, Mode, sendMessageToGiscus, setMode, toggle, modeStr } from "$lib/mode"
+import {
+	mode,
+	Mode,
+	sendMessageToGiscus,
+	setMode,
+	toggle,
+	modeStr,
+} from "$lib/mode"
 import "$style/themeToggleButton.css"
 
 const ModeToggleButton: Component<{}> = (props) => {
