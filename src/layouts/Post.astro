@@ -31,7 +31,9 @@ let date = dayjs(pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
 
     <Sidebar client:idle {headings}></Sidebar>
 
-    <Giscus client:idle></Giscus>
+    <div id="giscus">
+        <Giscus client:idle></Giscus>
+    </div>
 </Layout>
 
 <style is:global>
