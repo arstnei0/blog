@@ -1,6 +1,6 @@
 import dayjs from "dayjs"
 
-export let locale = "en"
+export let locale = "cn"
 export const defaultLocale = "en"
 
 export default {
