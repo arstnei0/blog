@@ -5,16 +5,23 @@ import { getPosts, getSortedPosts } from '$lib/posts'
 import getTags from '$lib/tags'
 import t from '@t'
 
-const tags = getTags(getSortedPosts(await Astro.glob(`../post/*.mdx`)))
+let tags
+
+try {
+    tags = getTags(getSortedPosts(await Astro.glob(`../post/*.mdx`)))
+} catch(e) {}
 
 export async function getStaticPaths() {
-    const tags = getTags(getPosts(await Astro.glob('../post/*.mdx')))
+    let tags
+    try {
+        tags = getTags(getPosts(await Astro.glob('../post/*.mdx')))
+    } catch(e) {}
 
-    return (Reflect.ownKeys(tags) as string[]).map((tag) => ({
+    return tags ? (Reflect.ownKeys(tags) as string[]).map((tag) => ({
         params: {
             tag,
         }
-    }))
+    })) : []
 }
 
 const { tag } = Astro.params
@@ -26,7 +33,7 @@ const { tag } = Astro.params
     <div id="posts">
         {
             tag && (
-                tags[tag].map((post) => (
+                tags?.[tag].map((post) => (
                     <PostCard post={post.frontmatter} url={post.url}></PostCard>
                 ))
             )
