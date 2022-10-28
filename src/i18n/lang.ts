@@ -6,6 +6,7 @@ export const defaultLocale = "en"
 export default {
 	en: {
 		period: ".",
+		'another-site-url': "https://cn.zihan.ga/",
 		nav: {
 			home: "Home",
 			about: "About",
@@ -30,6 +31,7 @@ export default {
 	},
 	cn: {
 		period: "。",
+		'another-site-url': "https://zihan.ga/",
 		nav: {
 			home: "主页",
 			about: "关于我",
