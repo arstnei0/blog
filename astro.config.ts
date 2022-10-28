@@ -32,9 +32,9 @@ export default defineConfig({
 		}),
 		sitemap(),
 		solidJs(),
-		compress({
-			css: false,
-		}),
+		// compress({
+		// 	css: false,
+		// }),
 	],
 	site: "https://zihan.ga",
 	server: {
@@ -45,6 +45,9 @@ export default defineConfig({
 		define: {
 			VERCEL_ANALYTICS_ID: `"${process.env.VERCEL_ANALYTICS_ID}"`,
 		},
+		build: {
+			minify: false
+		}
 	},
 	markdown: {
 		extendDefaultPlugins: true,
