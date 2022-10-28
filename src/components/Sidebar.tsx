@@ -2,8 +2,6 @@ import { Component, For, JSX, createSignal, Show, onMount } from "solid-js"
 import "$style/sidebar.css"
 
 const h = (depth: number, content: JSX.Element) => {
-	console.log(content)
-
 	return depth === 1 ? (
 		<h1>{content}</h1>
 	) : depth === 2 ? (
@@ -51,8 +49,6 @@ const Sidebar: Component<{
 		}
 	})
 
-	console.log(props.headings)
-
 	return (
 		<>
 			<Show
@@ -91,24 +87,11 @@ const Sidebar: Component<{
 					</svg>
 					<For each={props.headings}>
 						{(heading) => {
-							const { depth } = heading
 							const [text, setText] = createSignal('');
 							onMount(() => setText(heading.text))
 							const content = <a href={`#${heading.slug}`}>{text()}</a>
 
-							return depth === 1 ? (
-								<h1>{content}</h1>
-							) : depth === 2 ? (
-								<h2>{content}</h2>
-							) : depth === 3 ? (
-								<h3>{content}</h3>
-							) : depth === 4 ? (
-								<h4>{content}</h4>
-							) : depth === 5 ? (
-								<h5>{content}</h5>
-							) : (
-								<h6>{content}</h6>
-							)
+							return h(heading.depth, content)
 						}
 						}
 					</For>
