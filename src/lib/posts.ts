@@ -1,5 +1,6 @@
 // await Astro.glob('./post/*.mdx')
 
+import t from "@t"
 import type { MDXInstance } from "astro"
 import dayjs from "dayjs"
 
@@ -24,7 +25,7 @@ export function getGroupedPosts(result: MDXInstance<Record<string, any>>[]) {
 	const grouped: Record<string, MDXInstance<Record<string, any>>[]> = {}
 
 	posts.forEach((post) => {
-		const date = dayjs(post.frontmatter.pubDate).format("MMMM, YYYY")
+		const date = t("post.month")(post.frontmatter.pubDate)
 		grouped[date] = grouped[date] ? [...grouped[date], post] : [post]
 	})
 

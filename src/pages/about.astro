@@ -1,12 +1,35 @@
 ---
 import Layout from "$component/Layout.astro"
 import '$style/typography.css'
+import g from "@g";
 ---
 
-<Layout title="About">
-    <h1>Hi, I'm Zihan.</h1>
-    <p>I live in Singapore and I am still a student.</p>
-    <p>You can contact me in these ways:</p>
+<Layout title={
+    g({
+        en: 'About',
+        cn: '关于我'
+    })
+}>
+    <h1>{g({
+        en: `Hi, I'm Zihan.`,
+        cn: `你好，我叫 Zihan。`
+    })}</h1>
+    <p>{g({
+        en: `I live in Singapore and I am still a student.`,
+        cn: `我现在住在新加坡，并且还是个学生。`
+    })}</p>
+    <p>{g({
+        en: `I love coding. Nothing else.`,
+        cn: `老子编程，其他没了。`
+    })}</p>
+    <p>{g({
+        en: `I'm always active on Github.`,
+        cn: `爷常年活动在 Github。`
+    })}</p>
+    <p>{g({
+        en: 'You can contact me in these ways:',
+        cn: `你可以通过以下方法联系我：`
+    })}</p>
     <ul>
         <li><a href="https://github.com/zihan-ch">Github</a></li>
         <li><a href="https://twitter.com/zihanch">Twitter</a></li>

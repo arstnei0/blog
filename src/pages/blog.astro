@@ -2,6 +2,7 @@
 import PostCard from '$component/PostCard.astro';
 import Layout from '$layout/Base.astro'
 import { getSortedPosts } from '$lib/posts';
+import t from '@t';
 
 let posts;
 try {
@@ -12,17 +13,17 @@ try {
 ---
 
 <Layout title="Blog">
-    <h1 id="my-blog-posts" class="fw6">My blog posts</h1>
+    <h1 id="my-blog-posts" class="fw6">{t('blog.myBlogPosts')}</h1>
 
     <div id="posts">
         {
             posts ? posts.map(post => {
                 return <PostCard post={post.frontmatter} url={post.url} />
-            }) : <h1 class="fw4">I haven't written any blog posts yet...</h1>
+            }) : <h1 class="fw4">{t('blog.noPosts')}</h1>
         }
     </div>
 
-    <a href="/archive" id="archive" class="fw3"><span>Archive</span></a>
+    <a href="/archive" id="archive" class="fw3"><span>{t('blog.archive')}</span></a>
 </Layout>
 
 <style is:global>
