@@ -17,7 +17,6 @@ const h = (depth: number, content: JSX.Element) => {
 	)
 }
 
-
 const Sidebar: Component<{
 	headings: { depth: number; slug: string; text: string }[]
 }> = (props) => {
@@ -87,13 +86,14 @@ const Sidebar: Component<{
 					</svg>
 					<For each={props.headings}>
 						{(heading) => {
-							const [text, setText] = createSignal('');
+							const [text, setText] = createSignal("")
 							onMount(() => setText(heading.text))
-							const content = <a href={`#${heading.slug}`}>{text()}</a>
+							const content = (
+								<a href={`#${heading.slug}`}>{text()}</a>
+							)
 
 							return h(heading.depth, content)
-						}
-						}
+						}}
 					</For>
 				</div>
 			</Show>

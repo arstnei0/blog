@@ -45,9 +45,6 @@ export default defineConfig({
 		define: {
 			VERCEL_ANALYTICS_ID: `"${process.env.VERCEL_ANALYTICS_ID}"`,
 		},
-		build: {
-			minify: false
-		}
 	},
 	markdown: {
 		extendDefaultPlugins: true,

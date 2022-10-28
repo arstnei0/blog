@@ -8,6 +8,7 @@ import '$style/effect.css'
 import '$style/utils.css'
 import '$style/global.css'
 import { locale } from "@lang"
+import initLocale from "@init";
 
 const { frontmatter } = Astro.props;
 
@@ -32,6 +33,8 @@ const marginStr = `${margin}%`
 const marginRightStr = marginRight ? `${marginRight}%` : marginStr
 const mobileMarginStr = `${mobileMargin}%`
 const marginBottomStr = `${marginBottom}%`
+
+initLocale()
 ---
 
 <Html {lang}>

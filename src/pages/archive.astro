@@ -2,6 +2,7 @@
 import PostCard from '$component/PostCard.astro';
 import Layout from '$layout/Base.astro'
 import { getGroupedPosts } from '$lib/posts';
+import t from '@t';
 import type { MDXInstance } from 'astro';
 
 let posts: Record<string, MDXInstance<Record<string, any>>[]> = {};
@@ -13,7 +14,7 @@ try {
 ---
 
 <Layout title="Archive">
-    <h1 id="my-blog-posts" class="fw6">My blog posts</h1>
+    <h1 id="my-blog-posts" class="fw6">{t('blog.archive')}</h1>
 
     <div id="posts">
         {
@@ -26,7 +27,7 @@ try {
                             })
                         }
                     </div>
-            })) : <h1 class="fw4">I haven't written any blog posts yet...</h1>
+            })) : <h1 class="fw4">{t('blog.noPosts')}</h1>
         }
     </div>
 </Layout>
