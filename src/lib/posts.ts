@@ -25,7 +25,7 @@ export function getGroupedPosts(result: MDXInstance<Record<string, any>>[]) {
 	const grouped: Record<string, MDXInstance<Record<string, any>>[]> = {}
 
 	posts.forEach((post) => {
-		const date = t('post.month')(post.frontmatter.pubDate)
+		const date = t("post.month")(post.frontmatter.pubDate)
 		grouped[date] = grouped[date] ? [...grouped[date], post] : [post]
 	})
 

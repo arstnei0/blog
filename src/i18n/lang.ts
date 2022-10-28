@@ -13,17 +13,19 @@ export default {
 			blog: "Blog",
 		},
 		blog: {
-			myBlogPosts: 'My blog posts',
-			archive: 'Archive',
+			myBlogPosts: "My blog posts",
+			archive: "Archive",
 			noPosts: `Sorry, I haven't written any blog posts yet...`,
 		},
 		post: {
-			date: (date: string) => dayjs(date, 'YYYY/MM/DD').format('MMM D, YYYY'),
-			month: (date: string) => dayjs(date, 'YYYY/MM/DD').format('MMM, YYYY'),
+			date: (date: string) =>
+				dayjs(date, "YYYY/MM/DD").format("MMM D, YYYY"),
+			month: (date: string) =>
+				dayjs(date, "YYYY/MM/DD").format("MMM, YYYY"),
 		},
 		tag: {
-			title: 'All posts that have the tag ',
-			titleAfter: ':',
+			title: "All posts that have the tag ",
+			titleAfter: ":",
 		},
 	},
 	cn: {
@@ -35,17 +37,19 @@ export default {
 			blog: "博客",
 		},
 		blog: {
-			myBlogPosts: '我的博客文章',
-			archive: '存档',
+			myBlogPosts: "我的博客文章",
+			archive: "存档",
 			noPosts: `老子还没写博客捏`,
 		},
 		post: {
-			date: (date: string) => dayjs(date, 'YYYY/MM/DD').format('YYYY年MM月D日'),
-			month: (date: string) => dayjs(date, 'YYYY/MM/DD').format('YYYY年MM月'),
+			date: (date: string) =>
+				dayjs(date, "YYYY/MM/DD").format("YYYY年MM月D日"),
+			month: (date: string) =>
+				dayjs(date, "YYYY/MM/DD").format("YYYY年MM月"),
 		},
 		tag: {
-			title: '所有包含标签 ',
-			titleAfter: ' 的文章：',
+			title: "所有包含标签 ",
+			titleAfter: " 的文章：",
 		},
 	},
 } as any
