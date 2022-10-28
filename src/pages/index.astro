@@ -18,6 +18,24 @@ import t from "@t";
             cn: '我是一个13岁的小屁孩，现在住在新加坡。'
         })}</p>
         <p>{g({
+            en: `This site also has a `,
+            cn: `本站还有`
+        })}<a href={t('another-site-url')}>{g({
+            en: 'Chinese edition',
+            cn: '英文站点'
+        })}</a>{g({
+            en: '.'
+        })}{g({
+            en: `请看`,
+            cn: `Please follow the `
+        })}<a href={t('another-site-url')}>{g({
+            en: `中文站点`,
+            cn: `English site`
+        })}</a>{g({
+            en: '。',
+            cn: '.'
+        })}</p>
+        <p>{g({
             en: 'See more about me at the ',
             cn: '更多关于我的信息都在'
         })}<a href="/about">{g({
