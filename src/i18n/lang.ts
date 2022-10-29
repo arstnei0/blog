@@ -1,12 +1,13 @@
 import dayjs from "dayjs"
 
-export let locale = "en"
+export let locale = "cn"
 export const defaultLocale = "en"
 
 export default {
 	en: {
 		period: ".",
 		'another-site-url': "https://cn.zihan.ga/",
+		'still-in-progress': 'Sorry, this page is still in progress.',
 		nav: {
 			home: "Home",
 			about: "About",
@@ -32,6 +33,7 @@ export default {
 	cn: {
 		period: "。",
 		'another-site-url': "https://zihan.ga/",
+		'still-in-progress': '抱歉，这个页面我还在做。',
 		nav: {
 			home: "主页",
 			about: "关于我",
