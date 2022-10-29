@@ -22,14 +22,14 @@ let date = dayjs(pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
 ---
 
 <Layout {article} {description} {title} margin={20} marginRight={30}>
-    {image && <img src={image.src} width={image.width} height={image.height} />}
+    {image && <img  data-pagefind-meta="image" src={image.src} width={image.width} height={image.height} />}
     
-    <h1 id="article-title">{title}</h1>
+    <h1 id="article-title" data-pagefind-meta="title">{title}</h1>
     <span id="pub-date">{date}</span>
 
     <Tags {tags}></Tags>
 
-    <article>
+    <article data-pagefind-body>
         <slot></slot>
     </article>
 

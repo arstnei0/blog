@@ -1,9 +1,22 @@
 ---
 import Layout from "$component/Layout.astro";
+import Search from "$component/Search";
 import t from "@t";
 
 ---
 
 <Layout title="Search">
-    <h1>{t('still-in-progress')}</h1>
+    <!-- <h1>{t('still-in-progress')}</h1> -->
+
+    <script slot="head" type="module" is:inline>
+        (async () => window.pagefind = await import('/_pagefind/pagefind.js'))()
+    </script>
+
+    <Search client:load></Search>
+
+    <!-- {
+        import.meta.env.PROD ? (
+            <Search slot="main" client:load></Search>
+        ) : <></>
+    } -->
 </Layout>
