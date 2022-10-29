@@ -4,7 +4,8 @@ pubDate: 2022/10/29
 layout: "$layout/Post.astro"
 description: 2022 October 我眼中的前端，各个框架的对比，以及未来。
 tags:
- - Frontend
+ - 前端
+ - 观点与感想
 ---
 
 十月又要过去了，我加入前端这个大家庭也要有几个月了，今儿咱来谈谈目前各个前端框架的现状。
@@ -35,15 +36,17 @@ Svelte 发展异常迅速，是目前最时髦的框架（过会会谈谈为什�
 Angular 已经基本上完全退出时代的舞台了。Lit, Elm, Preact 发展就那样，没什么变化。
 
 贴几张本文会一直讲到的图，本文中使用`🚀`表示这张图
-<img class="desktop-only" src="/js-framework-comparison-1.png" width="700" />
-<img class="desktop-only" src="/js-framework-comparison-2.png" width="700" />
-<img class="desktop-only" src="/js-framework-comparison-3.png" width="700" />
-<div class="mobile-only">
-    <p>图片在移动端显示效果不好，请看</p>
-    <a href="/js-framework-comparison-1.png">图一</a>
-    <a href="/js-framework-comparison-2.png">图二</a>
-    <a href="/js-framework-comparison-3.png">图三</a>
-</div>
+
+（点击图片查看大图）
+
+<a class="desktop-only" href="/js-framework-comparison-1.png"><img src="/js-framework-comparison-1.png" width="700" /></a>
+<a class="mobile-only" href="/js-framework-comparison-1.png"><img src="/js-framework-comparison-1.png" width="300" /></a>
+
+<a class="desktop-only" href="/js-framework-comparison-2.png"><img src="/js-framework-comparison-2.png" width="700" /></a>
+<a class="mobile-only" href="/js-framework-comparison-2.png"><img src="/js-framework-comparison-2.png" width="300" /></a>
+
+<a class="desktop-only" href="/js-framework-comparison-3.png"><img src="/js-framework-comparison-3.png" width="700" /></a>
+<a class="mobile-only" href="/js-framework-comparison-3.png"><img src="/js-framework-comparison-3.png" width="300" /></a>
 
 这是目前最为出名的性能分析(benchmark): js framework benchmark。参考性很高。强烈推荐看看[这张图的来源](https://krausest.github.io/js-framework-benchmark/2022/table_chrome_107.0.5304.62.html#eyJmcmFtZXdvcmtzIjpbImtleWVkL2FuZ3VsYXIiLCJrZXllZC9lbG0iLCJrZXllZC9saXQiLCJrZXllZC9wcmVhY3QiLCJrZXllZC9yZWFjdCIsImtleWVkL3NvbGlkIiwia2V5ZWQvc3ZlbHRlIiwia2V5ZWQvdmFuaWxsYWpzIiwia2V5ZWQvdnVlIl0sImJlbmNobWFya3MiOlsiMDFfcnVuMWsiLCIwMl9yZXBsYWNlMWsiLCIwM191cGRhdGUxMHRoMWtfeDE2IiwiMDRfc2VsZWN0MWsiLCIwNV9zd2FwMWsiLCIwNl9yZW1vdmUtb25lLTFrIiwiMDdfY3JlYXRlMTBrIiwiMDhfY3JlYXRlMWstYWZ0ZXIxa194MiIsIjA5X2NsZWFyMWtfeDgiLCIyMV9yZWFkeS1tZW1vcnkiLCIyMl9ydW4tbWVtb3J5IiwiMjNfdXBkYXRlNS1tZW1vcnkiLCIyNV9ydW4tY2xlYXItbWVtb3J5IiwiMjZfcnVuLTEway1tZW1vcnkiLCIzMV9zdGFydHVwLWNpIiwiMzRfc3RhcnR1cC10b3RhbGJ5dGVzIl0sImRpc3BsYXlNb2RlIjoxLCJjYXRlZ29yaWVzIjpbMSwyLDMsNF19)
 
@@ -100,9 +103,15 @@ Solid 与 Preact 更没法比了，不管是 Bundle size 还是性能。
 
 但 Solid 问题很严重。就单看 SolidStart，它的文档犯了最智障的 Bug，导致文档几乎没法让人看。（它的下面导航部分不会自动隐藏，会遮住大部分你想阅读的地方）Solid 发展也很慢。Solid 文档对新手十分不友好，你要没完全掌握 React，根本看不懂。Solid 的 Star 增长非常缓慢，大家可以去 [Github Star History](https://star-history.com/) 对比对比。
 
+还有一张 Solid 官网贴的图：
+
+<img class="desktop-only" src="/solid-performance-comparison.png" width="700" />
+<img class="mobile-only" src="/solid-performance-comparison.png" width="300" />
 
 但我很看好 Solid。之前说过，Solid 有 [Suid](https://suid.io/)，UI 库有了着落。而且搭配上 [Astro](https://astro.build/)：Super fast！这也是我的博客网站的技术选型（Astro + Solid)。而且看看 Solid 的赞助商们：
 
+<img class="desktop-only" src="/sponsor-of-solid.png" width="700" />
+<img class="mobile-only" src="/sponsor-of-solid.png" width="300" />
 
 😉
 
