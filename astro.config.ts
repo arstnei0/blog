@@ -45,6 +45,11 @@ export default defineConfig({
 		define: {
 			VERCEL_ANALYTICS_ID: `"${process.env.VERCEL_ANALYTICS_ID}"`,
 		},
+		build: {
+			rollupOptions: {
+				external: ['/_pagefind/pagefind.js']
+			}
+		}
 	},
 	markdown: {
 		extendDefaultPlugins: true,
