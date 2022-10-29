@@ -1,6 +1,7 @@
 import { Component, createEffect, createResource, createSignal, onMount, Show } from "solid-js"
 import '$style/search.css'
 import '$style/typography.css'
+import g from "@g"
 
 const mock = (search: string) => ([
 	{
@@ -41,8 +42,16 @@ const Search: Component<{}> = (props) => {
 
 	return <>
 		<div id="search-container">
-			<h1 id="search-title">Search in my personal website</h1>
-			<input id="search-input hover-target" placeholder="Search something..." autofocus value={search()} onInput={(e) => setSearch((e.target as any).value)}></input>
+			<h1 id="search-title">{g({
+				en: 'Search in my personal website',
+				cn: `在我的个人网站中搜索内容`
+			})}</h1>
+			<input id="search-input hover-target" placeholder={
+				g({
+					en: 'Search something...',
+					cn: '搜些什么'
+				})
+			} autofocus value={search()} onInput={(e) => setSearch((e.target as any).value)}></input>
 		</div>
 		<div id="search-results">
 			<Show when={results.loading} fallback={
@@ -50,7 +59,10 @@ const Search: Component<{}> = (props) => {
 					when={results() && results().length !== 0} 
 					fallback={
 						<Show when={search() !== ''} fallback={<h2>Search something...</h2>}>
-							<h2>No results found.</h2>
+							<h2>{g({
+								en: 'No results found.',
+								cn: `啥也没找到。`
+							})}</h2>
 						</Show>
 					}
 				>
@@ -64,7 +76,10 @@ const Search: Component<{}> = (props) => {
 					}
 				</Show>
 			}>
-				<h2>Loading...</h2>
+				<h2>{g({
+					en: 'Loading...',
+					cn: '加载中...'
+				})}</h2>
 			</Show>
 		</div>
 	</>
