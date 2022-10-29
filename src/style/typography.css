@@ -22,7 +22,7 @@ main {
 	}
 
 	li {
-		font-size: inherit;
+		font-size: var(--main-font-size);
 	}
 
 	p,
