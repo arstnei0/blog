@@ -2,10 +2,10 @@ body {
 	--serif: "Merriweather", serif;
 	--sans: "Merriweather Sans", sans-serif;
 	--link-color: #8675a9;
-	--tag-bg-color: #d2daff;
 }
 
 .light body {
+	--tag-bg-color: #d2daff;
 	--text-color: #2d2d2d;
 	--header-color: #2d2d2d;
 	--title-color: #171717;
@@ -16,6 +16,7 @@ body {
 }
 
 .dark body {
+	--tag-bg-color: #967E76;
 	--title-color: #d8d8d8;
 	--text-color: #dcd7c9;
 	--header-color: #d8d8d8;
