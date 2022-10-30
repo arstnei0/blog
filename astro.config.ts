@@ -32,9 +32,9 @@ export default defineConfig({
 		}),
 		sitemap(),
 		solidJs(),
-		// compress({
-		// 	css: false,
-		// }),
+		compress({
+			css: false,
+		}),
 	],
 	site: "https://zihan.ga",
 	server: {
