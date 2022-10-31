@@ -32,9 +32,9 @@ export default defineConfig({
 		}),
 		sitemap(),
 		solidJs(),
-		// compress({
-		// 	css: false,
-		// }),
+		compress({
+			css: false,
+		}),
 	],
 	site: "https://zihan.ga",
 	server: {
@@ -47,9 +47,9 @@ export default defineConfig({
 		},
 		build: {
 			rollupOptions: {
-				external: ['/_pagefind/pagefind.js']
-			}
-		}
+				external: ["/_pagefind/pagefind.js"],
+			},
+		},
 	},
 	markdown: {
 		extendDefaultPlugins: true,
