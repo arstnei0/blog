@@ -1,16 +1,16 @@
-// await Astro.glob('./post/*.mdx')
+// await Astro.glob('./post/*.md')
 
 import t from "@t"
-import type { MDXInstance } from "astro"
+import type { MarkdownInstance } from "astro"
 import dayjs from "dayjs"
 
-export function getPosts(posts: MDXInstance<Record<string, any>>[]) {
+export function getPosts(posts: MarkdownInstance<Record<string, any>>[]) {
 	if (import.meta.env.PROD)
 		return posts.filter((post) => !post.frontmatter.draft)
 	else return posts
 }
 
-export function getSortedPosts(result: MDXInstance<Record<string, any>>[]) {
+export function getSortedPosts(result: MarkdownInstance<Record<string, any>>[]) {
 	const posts = getPosts(result)
 
 	return posts.sort((a: any, b: any) =>
@@ -20,9 +20,9 @@ export function getSortedPosts(result: MDXInstance<Record<string, any>>[]) {
 	)
 }
 
-export function getGroupedPosts(result: MDXInstance<Record<string, any>>[]) {
+export function getGroupedPosts(result: MarkdownInstance<Record<string, any>>[]) {
 	const posts = getSortedPosts(result)
-	const grouped: Record<string, MDXInstance<Record<string, any>>[]> = {}
+	const grouped: Record<string, MarkdownInstance<Record<string, any>>[]> = {}
 
 	posts.forEach((post) => {
 		const date = t("post.month")(post.frontmatter.pubDate)
