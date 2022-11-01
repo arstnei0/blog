@@ -16,7 +16,7 @@ import dayjs from "dayjs"
 // 	else return posts
 // }
 
-const getPosts = (posts: MarkdownInstance<Record<string, any>>[]) => (
+export const getPosts = (posts: MarkdownInstance<Record<string, any>>[]) => (
 	import.meta.env.PROD ? posts.filter((post) => !post.frontmatter.draft) : posts
 )
 
