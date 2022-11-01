@@ -5,6 +5,7 @@ import '$style/typography.css'
 import dayjs from "dayjs"
 import Giscus from '$component/Giscus'
 import Tags from "$component/Tags.astro"
+import t from "@t"
 
 const article = Astro.props.frontmatter || Astro.props
 
@@ -18,7 +19,7 @@ const {
 
 const headings = await Astro.props.headings
 
-let date = dayjs(pubDate as string, 'YYYY/MM/DD').format('MMM D, YYYY')
+let date = t('post.date')(pubDate)
 ---
 
 <Layout {article} {description} {title} margin={20} marginRight={30}>
