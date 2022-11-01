@@ -1,5 +1,5 @@
 ---
-title: 函数式编程指南 1：基本写法
+title: 函数式编程指南 1：入门
 description: 关于 TypeScript 函数式的基本写法以及一些入门和高级技巧。
 pubDate: 2022/11/1
 tags: 
