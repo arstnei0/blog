@@ -17,7 +17,7 @@ try {
 
     <div id="posts">
         {
-            (posts && posts.length !== 0) ? posts.map(post => {
+            posts ? posts.map(post => {
                 return <PostCard post={post.frontmatter} url={post.url} />
             }) : <h1 class="fw4">{t('blog.noPosts')}</h1>
         }
@@ -35,6 +35,7 @@ try {
         margin: 1%;
         display: flex;
         margin-bottom: 10%;
+        flex-wrap: wrap;
     }
 
     #archive {
