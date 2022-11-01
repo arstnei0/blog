@@ -23,11 +23,9 @@ function getPosts(posts: MarkdownInstance<Record<string, any>>[]) {
                 posts.splice(i, 1)
             }
         }
-
-        return posts
-    } else {
-        return posts
     }
+    
+    return posts
 }
 ```
 
