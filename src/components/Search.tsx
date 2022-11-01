@@ -62,7 +62,8 @@ const Search: Component<{}> = (props) => {
 					})}
 				</h1>
 				<input
-					id="search-input hover-target"
+					id="search-input"
+					class="hover-target"
 					placeholder={g({
 						en: "Search something...",
 						cn: "搜些什么",

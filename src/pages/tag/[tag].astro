@@ -8,13 +8,13 @@ import t from '@t'
 let tags
 
 try {
-    tags = getTags(getSortedPosts(await Astro.glob(`../post/*.mdx`)))
+    tags = getTags(getSortedPosts(await Astro.glob(`../post/*.md`)))
 } catch(e) {}
 
 export async function getStaticPaths() {
     let tags
     try {
-        tags = getTags(getPosts(await Astro.glob('../post/*.mdx')))
+        tags = getTags(getPosts(await Astro.glob('../post/*.md')))
     } catch(e) {}
 
     return tags ? (Reflect.ownKeys(tags) as string[]).map((tag) => ({

@@ -6,7 +6,7 @@ import t from '@t';
 
 let posts;
 try {
-    posts = getSortedPosts(await Astro.glob('./post/*.mdx')).slice(0, 5)
+    posts = getSortedPosts(await Astro.glob('./post/*.md')).slice(0, 5)
 } catch(e) {
 
 }

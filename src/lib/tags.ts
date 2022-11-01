@@ -1,6 +1,6 @@
-import type { MDXInstance } from "astro"
+import type { MarkdownInstance } from "astro"
 
-const getTags = (posts: MDXInstance<Record<string, any>>[]) => {
+const getTags = (posts: MarkdownInstance<Record<string, any>>[]) => {
 	const tags = {} as Record<string, typeof posts>
 	posts.forEach((post) => {
 		post.frontmatter.tags?.forEach((tag: string) => {

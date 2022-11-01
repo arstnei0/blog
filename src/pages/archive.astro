@@ -3,11 +3,11 @@ import PostCard from '$component/PostCard.astro';
 import Layout from '$layout/Base.astro'
 import { getGroupedPosts } from '$lib/posts';
 import t from '@t';
-import type { MDXInstance } from 'astro';
+import type { MarkdownInstance } from 'astro';
 
-let posts: Record<string, MDXInstance<Record<string, any>>[]> = {};
+let posts: Record<string, MarkdownInstance<Record<string, any>>[]> = {};
 try {
-    posts = getGroupedPosts(await Astro.glob('./post/*.mdx'))
+    posts = getGroupedPosts(await Astro.glob('./post/*.md'))
 } catch(e) {
 
 }
