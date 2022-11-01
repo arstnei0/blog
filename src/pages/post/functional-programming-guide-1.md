@@ -29,7 +29,7 @@ function getPosts(posts: MarkdownInstance<Record<string, any>>[]) {
 }
 ```
 
-而使用函数式重写后明显简介了不知道多少：
+而使用函数式重写后明显简洁了不知道多少：
 ```ts
 // 没必要读懂，只是一个展示
 const getPosts = (posts: MarkdownInstance<Record<string, any>>[]) =>
