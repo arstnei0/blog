@@ -9,6 +9,12 @@ main {
 		word-break: break-word;
 	}
 
+	.astro-code {
+		* {
+			font-family: var(--mono) !important;
+		}
+	}
+
 	* {
 		line-height: 1.4em;
 		letter-spacing: 0.02em;
@@ -28,27 +34,6 @@ main {
 		font-size: var(--main-font-size);
 	}
 
-	p,
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		code {
-			font-size: inherit;
-			--border-radius: 0.3em;
-			--padding-block: 0.15em;
-			--padding-inline: 0.2em;
-			font-size: 0.9em;
-			padding: var(--padding-block) var(--padding-inline);
-			margin: calc(var(--padding-block) * -1) 0;
-			border-radius: var(--border-radius);
-			word-break: break-word;
-			background-color: var(--code-inline-bg-color);
-		}
-	}
-
 	mark {
 		font-size: inherit;
 		--border-radius: 0.3em;
@@ -59,7 +44,6 @@ main {
 		margin: calc(var(--padding-block) * -1) 0;
 		border-radius: var(--border-radius);
 		word-break: break-word;
-		background-color: var(--code-inline-bg-color);
 	}
 }
 
