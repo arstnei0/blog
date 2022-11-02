@@ -1,46 +1,50 @@
 ---
-import PostCard from '$component/PostCard.astro';
-import Layout from '$layout/Base.astro'
-import { getSortedPosts } from '$lib/posts';
-import t from '@t';
+import PostCard from "$component/PostCard.astro"
+import Layout from "$layout/Base.astro"
+import { getSortedPosts } from "$lib/posts"
+import t from "@t"
 
-let posts;
+let posts
 try {
-    posts = getSortedPosts(await Astro.glob('./post/*.md')).slice(0, 5)
-} catch(e) {
-
-}
+	posts = getSortedPosts(await Astro.glob("./post/*.md")).slice(0, 5)
+} catch (e) {}
 ---
 
 <Layout title="Blog">
-    <h1 id="my-blog-posts" class="fw6">{t('blog.myBlogPosts')}</h1>
+	<h1 id="my-blog-posts" class="fw6">{t("blog.myBlogPosts")}</h1>
 
-    <div id="posts">
-        {
-            posts ? posts.map(post => {
-                return <PostCard post={post.frontmatter} url={post.url} />
-            }) : <h1 class="fw4">{t('blog.noPosts')}</h1>
-        }
-    </div>
+	<div id="posts">
+		{
+			posts ? (
+				posts.map((post) => {
+					return <PostCard post={post.frontmatter} url={post.url} />
+				})
+			) : (
+				<h1 class="fw4">{t("blog.noPosts")}</h1>
+			)
+		}
+	</div>
 
-    <a href="/archive" id="archive" class="fw3"><span>{t('blog.archive')}</span></a>
+	<a href="/archive" id="archive" class="fw3"
+		><span>{t("blog.archive")}</span>
+	</a>
 </Layout>
 
 <style is:global>
-    #my-blog-posts {
-        font-size: var(--big-title);
-    }
+	#my-blog-posts {
+		font-size: var(--big-title);
+	}
 
-    #posts {
-        margin: 1%;
-        display: flex;
-        margin-bottom: 10%;
-        flex-wrap: wrap;
-    }
+	#posts {
+		margin: 1%;
+		display: flex;
+		margin-bottom: 10%;
+		flex-wrap: wrap;
+	}
 
-    #archive {
-        color: var(--text-color);
-        text-decoration: none;
-        font-size: 1em;
-    }
+	#archive {
+		color: var(--text-color);
+		text-decoration: none;
+		font-size: 1em;
+	}
 </style>

@@ -1,69 +1,77 @@
 ---
 import Fonts from "./Fonts.astro"
-import dayjs from 'dayjs'
+import dayjs from "dayjs"
 import Clarity from "./Clarity.astro"
 
-const {
-    title,
-    description,
-    keywords,
-    author,
-    lang,
-    article,
-} = Astro.props
+const { title, description, keywords, author, lang, article } = Astro.props
 
 const url = Astro.url
 
-let date = dayjs(article.pubDate as string, 'YYYY/MM/DD').format('YYYY-MM-DD')
+let date = dayjs(article.pubDate as string, "YYYY/MM/DD").format("YYYY-MM-DD")
 ---
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
-<meta name="author" content={author}>
-<meta name="keywords" content={keywords.join(', ')}>
-<meta name="description" content={description}>
-
-{article && (
-    <meta property="og:title" content={article.title} />
-    <meta property="og:type" content="article" />
-    <meta property="og:article:published_time" content={date} />
-    <meta property="og:article:author" content={article.author} />
-    <meta property="og:url" content={url} />
-    <meta property="og:image" content={article.image?.src || '/avatar.webp'} />
-)}
-
-<title>{
-    title ? `${title} 🚀 Zihan`
-        : 'Zihan'
-}</title>
-
-<script is:inline>
-    if (!localStorage.getItem("mode")) localStorage.setItem("mode", 'system')
-
-    const mode = localStorage.getItem('mode')
-    let modeClassName
-
-    if (mode === 'system') modeClassName = (globalThis.matchMedia && globalThis.matchMedia("(prefers-color-scheme: dark)").matches) ? 'dark' : 'light'
-    else if (mode === 'dark') modeClassName = 'dark'
-    else modeClassName = 'light'
-    
-    modeClassName && document.documentElement.classList.add(modeClassName)
-
-    globalThis.zihan = { mode }
-</script>
-
-<link rel="icon" href="/avatar.webp">
-
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Merriweather+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Merriweather+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap"></noscript>
+<meta name="author" content={author} />
+<meta name="keywords" content={keywords.join(", ")} />
+<meta name="description" content={description} />
 
 {
-    import.meta.env.PROD && (
-        <Clarity></Clarity>
-    )
+	article && (
+		<>
+			<meta property="og:title" content={article.title} />
+			<meta property="og:type" content="article" />
+			<meta property="og:article:published_time" content={date} />
+			<meta property="og:article:author" content={article.author} />
+			<meta property="og:url" content={url} />
+			<meta
+				property="og:image"
+				content={article.image?.src || "/avatar.webp"}
+			/>
+		</>
+	)
 }
 
-<Fonts></Fonts>
+<title>{title ? `${title} 🚀 Zihan` : "Zihan"}</title>
 
-<slot></slot>
+<script is:inline>
+	if (!localStorage.getItem("mode")) localStorage.setItem("mode", "system")
+
+	const mode = localStorage.getItem("mode")
+	let modeClassName
+
+	if (mode === "system")
+		modeClassName =
+			globalThis.matchMedia &&
+			globalThis.matchMedia("(prefers-color-scheme: dark)").matches
+				? "dark"
+				: "light"
+	else if (mode === "dark") modeClassName = "dark"
+	else modeClassName = "light"
+
+	modeClassName && document.documentElement.classList.add(modeClassName)
+
+	globalThis.zihan = { mode }
+</script>
+
+<link rel="icon" href="/avatar.webp" />
+
+<link
+	rel="preload"
+	href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Merriweather+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap"
+	as="style"
+	onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript
+	><link
+		rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Merriweather+Sans:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap"
+	/>
+</noscript>
+
+{import.meta.env.PROD && <Clarity />}
+
+<Fonts />
+
+<slot />

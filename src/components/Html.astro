@@ -1,21 +1,19 @@
 ---
-import BackToTop from "./BackToTop";
-import Cursor from "./Cursor";
+import BackToTop from "./BackToTop"
+import Cursor from "./Cursor"
 
-const {
-    lang
-} = Astro.props
+const { lang } = Astro.props
 ---
 
 <!DOCTYPE html>
 <html {lang === 'cn' ? 'zh-cn' : lang}>
-    <head>
-        <slot name="head"></slot>
-    </head>
-    <body>
-        <slot></slot>
+	<head>
+		<slot name="head" />
+	</head>
+	<body>
+		<slot />
 
-        <Cursor client:idle></Cursor>
-        <BackToTop client:idle></BackToTop>
-    </body>
+		<Cursor client:idle />
+		<BackToTop client:idle />
+	</body>
 </html>

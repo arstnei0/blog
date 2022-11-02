@@ -1,52 +1,59 @@
 ---
-import PostCard from '$component/PostCard.astro';
-import Layout from '$layout/Base.astro'
-import { getGroupedPosts } from '$lib/posts';
-import t from '@t';
-import type { MarkdownInstance } from 'astro';
+import PostCard from "$component/PostCard.astro"
+import Layout from "$layout/Base.astro"
+import { getGroupedPosts } from "$lib/posts"
+import t from "@t"
+import type { MarkdownInstance } from "astro"
 
-let posts: Record<string, MarkdownInstance<Record<string, any>>[]> = {};
+let posts: Record<string, MarkdownInstance<Record<string, any>>[]> = {}
 try {
-    posts = getGroupedPosts(await Astro.glob('./post/*.md'))
-} catch(e) {
-
-}
+	posts = getGroupedPosts(await Astro.glob("./post/*.md"))
+} catch (e) {}
 ---
 
 <Layout title="Archive">
-    <h1 id="my-blog-posts" class="fw6">{t('blog.archive')}</h1>
+	<h1 id="my-blog-posts" class="fw6">{t("blog.archive")}</h1>
 
-    <div id="posts">
-        {
-            (Reflect.ownKeys(posts).length !== 0) ? (Reflect.ownKeys(posts).map((key) => {
-                return <div class="year">
-                    <h1 class="fw4 year-title">{key}</h1>
-                        {
-                            posts[(key as string)].map(post => {
-                                return <PostCard post={post.frontmatter} url={post.url} />
-                            })
-                        }
-                    </div>
-            })) : <h1 class="fw4">{t('blog.noPosts')}</h1>
-        }
-    </div>
+	<div id="posts">
+		{
+			Reflect.ownKeys(posts).length !== 0 ? (
+				Reflect.ownKeys(posts).map((key) => {
+					return (
+						<div class="year">
+							<h1 class="fw4 year-title">{key}</h1>
+							{posts[key as string].map((post) => {
+								return (
+									<PostCard
+										post={post.frontmatter}
+										url={post.url}
+									/>
+								)
+							})}
+						</div>
+					)
+				})
+			) : (
+				<h1 class="fw4">{t("blog.noPosts")}</h1>
+			)
+		}
+	</div>
 </Layout>
 
 <style is:global>
-    #my-blog-posts {
-        font-size: var(--big-title);
-    }
+	#my-blog-posts {
+		font-size: var(--big-title);
+	}
 
-    #posts {
-        margin: 1%;
-        /* display: flex; */
-    }
+	#posts {
+		margin: 1%;
+		/* display: flex; */
+	}
 
-    #archive {
-        color: var(--text-color);
-    }
+	#archive {
+		color: var(--text-color);
+	}
 
-    .year {
-        margin-bottom: 6%;
-    }
+	.year {
+		margin-bottom: 6%;
+	}
 </style>

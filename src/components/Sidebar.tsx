@@ -69,7 +69,7 @@ const Sidebar: Component<{
 					</svg>
 				}
 			>
-				<div id="sidebar">
+				<aside id="sidebar">
 					<svg
 						class="hover-target"
 						ref={button1}
@@ -95,7 +95,7 @@ const Sidebar: Component<{
 							return h(heading.depth, content)
 						}}
 					</For>
-				</div>
+				</aside>
 			</Show>
 		</>
 	)

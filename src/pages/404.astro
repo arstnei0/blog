@@ -1,40 +1,60 @@
 ---
-import Layout from "$component/Layout.astro";
-import '$style/link.css'
-import g from "@g";
+import Layout from "$component/Layout.astro"
+import "$style/link.css"
+import g from "@g"
 ---
 
 <Layout margin={30} title="404">
-    <h2>404 Not Found!</h2>
-    <h1>{g({
-        en: 'We seem to lost our way...',
-        cn: '迷路了...'
-    })}</h1>
-    <p>{g({
-        en: `You can go to `,
-        cn: `你可以去`
-    })}<a href="/">{g({
-        en: 'my home page',
-        cn: '我的主页'
-    })}</a>{g({
-        en: `, or `,
-        cn: `逛逛，或者去`
-    })}<a href="/blog">{g({
-        en: 'my blog page',
-        cn: '我的博客页面'
-    })}</a>{g({
-        en: '.',
-        cn: `随便康康。`
-    })}</p>
-    <img src="/notfound.webp" width="100%" height="100%" />
+	<h2>404 Not Found!</h2>
+	<h1>
+		{
+			g({
+				en: "We seem to lost our way...",
+				cn: "迷路了...",
+			})
+		}
+	</h1>
+	<p>
+		{
+			g({
+				en: `You can go to `,
+				cn: `你可以去`,
+			})
+		}<a href="/"
+			>{
+				g({
+					en: "my home page",
+					cn: "我的主页",
+				})
+			}</a
+		>{
+			g({
+				en: `, or `,
+				cn: `逛逛，或者去`,
+			})
+		}<a href="/blog"
+			>{
+				g({
+					en: "my blog page",
+					cn: "我的博客页面",
+				})
+			}</a
+		>{
+			g({
+				en: ".",
+				cn: `随便康康。`,
+			})
+		}
+	</p>
+	<img src="/notfound.webp" width="100%" height="100%" />
 </Layout>
 
 <style>
-    * {
-        font-weight: 400;
-    }
+	* {
+		font-weight: 400;
+	}
 
-    h1 {
-        color: #2c3e50;
-    }
+	h1 {
+		color: #2c3e50;
+	}
 </style>

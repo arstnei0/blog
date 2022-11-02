@@ -1,60 +1,62 @@
 ---
 import Layout from "$component/Layout.astro"
 import Sidebar from "$component/Sidebar"
-import '$style/typography.css'
+import "$style/typography.css"
 import dayjs from "dayjs"
-import Giscus from '$component/Giscus'
+import Giscus from "$component/Giscus"
 import Tags from "$component/Tags.astro"
 import t from "@t"
 
 const article = Astro.props.frontmatter || Astro.props
 
-const {
-    title = 'Unknown title',
-    description,
-    image,
-    pubDate,
-    tags
-} = article
+const { title = "Unknown title", description, image, pubDate, tags } = article
 
 const headings = await Astro.props.headings
 
-let date = t('post.date')(pubDate)
+let date = t("post.date")(pubDate)
 ---
 
 <Layout {article} {description} {title} margin={20} marginRight={30}>
-    {image && <img  data-pagefind-meta="image" src={image.src} width={image.width} height={image.height} />}
-    
-    <h1 id="article-title" data-pagefind-meta="title">{title}</h1>
-    <span id="pub-date">{date}</span>
+	{
+		image && (
+			<img
+				data-pagefind-meta="image"
+				src={image.src}
+				width={image.width}
+				height={image.height}
+			/>
+		)
+	}
 
-    <Tags {tags}></Tags>
+	<h1 id="article-title" data-pagefind-meta="title">{title}</h1>
+	<span id="pub-date">{date}</span>
 
-    <article data-pagefind-body>
-        <slot></slot>
-    </article>
+	<Tags {tags} />
 
-    <div id="giscus">
-        <Giscus client:idle></Giscus>
-    </div>
+	<article data-pagefind-body>
+		<slot />
+	</article>
 
-    <Sidebar client:idle {headings}></Sidebar>
+	<div id="giscus">
+		<Giscus client:idle />
+	</div>
+
+	<Sidebar client:idle {headings} />
 </Layout>
 
 <style is:global>
-    article {
-        margin-top: 5%;
-        margin-bottom: 10%;
-    }
+	article {
+		margin-top: 5%;
+		margin-bottom: 10%;
+	}
 
-    @media (min-width: 400px) {
-        main {
-            /* margin-left: 20%;
+	@media (min-width: 400px) {
+		main {
+			/* margin-left: 20%;
             margin-right: 30%; */
-        }
-    }
+		}
+	}
 
-    #pub-date {
-        
-    }
+	#pub-date {
+	}
 </style>

@@ -1,111 +1,157 @@
 ---
-import Layout from "$layout/Base.astro";
-import '$style/typography.css'
-import g from "@g";
-import t from "@t";
+import Layout from "$layout/Base.astro"
+import "$style/typography.css"
+import g from "@g"
+import t from "@t"
 ---
 
 <Layout title="Home">
-    <div id="home-greet-card">
-        <div>
-            <h1 class="typewriter serif">{g({
-                en: `Hello! I'm Zihan.👋`,
-                cn: '你好！我叫 Zihan。'
-            })}</h1>
-        </div>
-        <p class="gradient-1">{g({
-            en: `I'm a 13-year-old boy living in Singapore.`,
-            cn: '我是一个13岁的小屁孩，现在住在新加坡。'
-        })}</p>
-        <p>{g({
-            en: `This site also has a `,
-            cn: `本站还有`
-        })}<a href={t('another-site-url')}>{g({
-            en: 'Chinese edition',
-            cn: '英文站点'
-        })}</a>{g({
-            en: '.'
-        })}{g({
-            en: `请看`,
-            cn: `。Please follow the `
-        })}<a href={t('another-site-url')}>{g({
-            en: `中文站点`,
-            cn: `English site`
-        })}</a>{g({
-            en: '。',
-            cn: '.'
-        })}</p>
-        <p>{g({
-            en: 'See more about me at the ',
-            cn: '更多关于我的信息都在'
-        })}<a href="/about">{g({
-            en: 'About Page',
-            cn: '关于页面'
-        })}</a>{t('period')}</p>
-    </div>
+	<div id="home-greet-card">
+		<div>
+			<h1 class="typewriter serif">
+				{
+					g({
+						en: `Hello! I'm Zihan.👋`,
+						cn: "你好！我叫 Zihan。",
+					})
+				}
+			</h1>
+		</div>
+		<p class="gradient-1">
+			{
+				g({
+					en: `I'm a 13-year-old boy living in Singapore.`,
+					cn: "我是一个13岁的小屁孩，现在住在新加坡。",
+				})
+			}
+		</p>
+		<p>
+			{
+				g({
+					en: `This site also has a `,
+					cn: `本站还有`,
+				})
+			}<a href={t("another-site-url")}
+				>{
+					g({
+						en: "Chinese edition",
+						cn: "英文站点",
+					})
+				}</a
+			>{
+				g({
+					en: ".",
+				})
+			}{
+				g({
+					en: `请看`,
+					cn: `。Please follow the `,
+				})
+			}<a href={t("another-site-url")}
+				>{
+					g({
+						en: `中文站点`,
+						cn: `English site`,
+					})
+				}</a
+			>{
+				g({
+					en: "。",
+					cn: ".",
+				})
+			}
+		</p>
+		<p>
+			{
+				g({
+					en: "See more about me at the ",
+					cn: "更多关于我的信息都在",
+				})
+			}<a href="/about"
+				>{
+					g({
+						en: "About Page",
+						cn: "关于页面",
+					})
+				}</a
+			>{t("period")}
+		</p>
+	</div>
 </Layout>
 
 <style is:global>
-    #home-greet-card {
-        margin: auto;
-        text-align: center;
-    }
+	#home-greet-card {
+		margin: auto;
+		text-align: center;
+	}
 
-    .typewriter {
-        overflow: hidden; 
-        border-right: .15em solid #594545; /* The typwriter cursor */
-        white-space: nowrap; /* Keeps the content on a single line */
-        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-        letter-spacing: .15em; /* Adjust as needed */
-        animation: 
-            typing 2s steps(40, end),
-            blink-caret .75s step-end infinite;
-    }
+	.typewriter {
+		overflow: hidden;
+		border-right: 0.15em solid #594545; /* The typwriter cursor */
+		white-space: nowrap; /* Keeps the content on a single line */
+		margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+		letter-spacing: 0.15em; /* Adjust as needed */
+		animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+	}
 
-    /* The typing effect */
-    @keyframes typing {
-        from { width: 0 }
-        to { width: 100% }
-    }
+	/* The typing effect */
+	@keyframes typing {
+		from {
+			width: 0;
+		}
+		to {
+			width: 100%;
+		}
+	}
 
-    /* The typewriter cursor effect */
-    @keyframes blink-caret {
-        from, to { border-color: transparent; }
-        50% { border-color: #594545; border-radius: 5px; }
-    }
+	/* The typewriter cursor effect */
+	@keyframes blink-caret {
+		from,
+		to {
+			border-color: transparent;
+		}
+		50% {
+			border-color: #594545;
+			border-radius: 5px;
+		}
+	}
 </style>
 
 <style>
-    h1 {
-        background: linear-gradient(#ef709b, #fa9372);
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+	h1 {
+		background: linear-gradient(#ef709b, #fa9372);
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
 
-    @media (min-width: 400px) {
-        h1 {
-            font-size: 4rem;
-        }
-    }
+	@media (min-width: 400px) {
+		h1 {
+			font-size: 4rem;
+		}
+	}
 
-    @media (max-width: 400px) {
-        h1 {
-            font-size: 1.8rem;
-        }
-    }
+	@media (max-width: 400px) {
+		h1 {
+			font-size: 1.8rem;
+		}
+	}
 
-    p {
-        font-size: 1.3em;
-    }
+	p {
+		font-size: 1.3em;
+	}
 
-    .gradient-1 {
-        background: linear-gradient(#96c6ea, #b597f6);
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+	.gradient-1 {
+		background: linear-gradient(#96c6ea, #b597f6);
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
 
-    @keyframes typing {
-        from { width: 0 }
-        to { width: 100% }
-    }
+	@keyframes typing {
+		from {
+			width: 0;
+		}
+		to {
+			width: 100%;
+		}
+	}
 </style>
