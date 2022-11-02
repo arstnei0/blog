@@ -1,28 +1,32 @@
 # My personal website
+
 Built with [Astro](https://astro.build). I chose [Solid](https://solidjs.com/) as the frontend framework.
 
 The Chinese branch is [`cn`](https://github.com/zihan-ch/blog/tree/cn). 中文分支名为 [`cn`](https://github.com/zihan-ch/blog/tree/cn)。
 
 # Dev
+
 Use your favourite package manager(npm, yarn or pnpm). I use `pnpm`.
 
-First, install the dependencies. For example: 
+First, install the dependencies. For example:
+
 ```shell
 pnpm i
 ```
 
 Next, run the script `dev`. For example:
+
 ```shell
 pnpm dev
 ```
 
 or
+
 ```shell
 npm run dev
 ```
 
 The `build` script for building.
-
 
 The site is deployed on [Vercel](https://vercel.com). I use [Pagefind](https://pagefind.app/) as my search engine(it's static). I may change it later.
 

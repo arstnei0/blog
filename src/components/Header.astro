@@ -1,44 +1,49 @@
 ---
-import Nav from "./Nav.astro";
-
+import Nav from "./Nav.astro"
 ---
 
 <div id="header">
-    <div id="left-header">
-        <img id="avatar" src="/avatar.webp" width="50" height="50" alt="avatar" />
-        <a href="/" id="header-title" class="opacity-effect serif">Zihan</a>
-    </div>
-    <div id="nav">
-        <Nav></Nav>
-    </div>
+	<div id="left-header">
+		<img
+			id="avatar"
+			src="/avatar.webp"
+			width="50"
+			height="50"
+			alt="avatar"
+		/>
+		<a href="/" id="header-title" class="opacity-effect serif">Zihan</a>
+	</div>
+	<div id="nav">
+		<Nav />
+	</div>
 </div>
 
 <style is:global>
-    #header {
-        display: flex;
-        margin-left: 4%;
-        margin-right: 4%;
-        justify-content: space-between;
-        align-items: center;
-    }
+	#header {
+		display: flex;
+		margin-left: 4%;
+		margin-right: 4%;
+		justify-content: space-between;
+		align-items: center;
+	}
 
-    .light #header {
-        --header-title-color: black;
-    }
-    
-    .dark #header {
-        --header-title-color: var(--title-color);
-    }
+	.light #header {
+		--header-title-color: black;
+	}
 
-    #left-header {
-        display: flex;
-        align-items: center;
-    }
+	.dark #header {
+		--header-title-color: var(--title-color);
+	}
 
-    #header-title {
-        text-decoration: none;
-        color: var(--header-title-color);
-        font-size: 1.7rem;
-        margin-left: 1rem;
-    }
+	#left-header {
+		display: flex;
+		align-items: center;
+	}
+
+	#header-title {
+		text-decoration: none;
+		color: var(--header-title-color);
+		font-size: 1.7rem;
+		margin-left: 1rem;
+	}
 </style>

@@ -1,32 +1,32 @@
 ---
-import Html from "$component/Html.astro";
-import Head from "$component/Head.astro";
-import Header from "./Header.astro";
-import '$style/variables.css'
-import '$style/fonts.css'
-import '$style/effect.css'
-import '$style/utils.css'
-import '$style/global.css'
+import Html from "$component/Html.astro"
+import Head from "$component/Head.astro"
+import Header from "./Header.astro"
+import "$style/variables.css"
+import "$style/fonts.css"
+import "$style/effect.css"
+import "$style/utils.css"
+import "$style/global.css"
 import { locale } from "@lang"
-import initLocale from "@init";
+import initLocale from "@init"
 
-const { frontmatter } = Astro.props;
+const { frontmatter } = Astro.props
 
 const {
-    title,
-    description = `Zihan's personal website and his blog.`,
-    author = 'Zihan Chen',
-    lang = locale,
-    keywords = ['blog', 'zihan', 'personal website'],
-    article = false,
-    articleImage
+	title,
+	description = `Zihan's personal website and his blog.`,
+	author = "Zihan Chen",
+	lang = locale,
+	keywords = ["blog", "zihan", "personal website"],
+	article = false,
+	articleImage,
 } = frontmatter || Astro.props || {}
 
 const {
-    margin = 17,
-    mobileMargin = 5,
-    marginBottom = 10,
-    marginRight = false
+	margin = 17,
+	mobileMargin = 5,
+	marginBottom = 10,
+	marginRight = false,
 } = Astro.props
 
 const marginStr = `${margin}%`
@@ -38,37 +38,52 @@ initLocale()
 ---
 
 <Html {lang}>
-    <Head slot="head" {title} {description} {lang} {author} {keywords} {article}>
-        <slot name="head"></slot>
-    </Head>
+	<Head
+		slot="head"
+		{title}
+		{description}
+		{lang}
+		{author}
+		{keywords}
+		{article}
+	>
+		<slot name="head" />
+	</Head>
 
-    <Header></Header>
+	<Header />
 
-    <main class="sans">
-        <slot></slot>
-        <slot name="main"></slot>
-    </main>
-    
-    <slot name="body"></slot>
+	<main class="sans">
+		<slot />
+		<slot name="main" />
+	</main>
+
+	<slot name="body" />
 </Html>
 
-<style define:vars={{ marginStr, mobileMarginStr, marginBottomStr, marginRightStr }}>
-    main {
-        margin-top: 2%;
-        margin-bottom: var(--marginBottomStr);
-    }
+<style
+	define:vars={{
+		marginStr,
+		mobileMarginStr,
+		marginBottomStr,
+		marginRightStr,
+	}}
+>
+	main {
+		margin-top: 2%;
+		margin-bottom: var(--marginBottomStr);
+	}
 
-    @media (min-width: 400px) {
-        main {
-            margin-left: var(--marginStr);
-            margin-right: var(--marginRightStr);
-        }
-    }
-    
-    @media (max-width: 400px) {
-        main {
-            margin-left: var(--mobileMarginStr);
-            margin-right: var(--mobileMarginStr);
-        }
-    }
+	@media (min-width: 400px) {
+		main {
+			margin-left: var(--marginStr);
+			margin-right: var(--marginRightStr);
+		}
+	}
+
+	@media (max-width: 400px) {
+		main {
+			margin-left: var(--mobileMarginStr);
+			margin-right: var(--mobileMarginStr);
+		}
+	}
 </style>

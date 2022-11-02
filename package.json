@@ -9,7 +9,7 @@
 		"build": "astro build && pagefind --source \"dist\"",
 		"preview": "astro preview",
 		"astro": "astro",
-		"format": "prettier --write .",
+		"format": "prettier --write . --plugin-search-dir=.",
 		"test": "pnpm build && pnpm preview",
 		"index": "pagefind --source \"dist\""
 	},

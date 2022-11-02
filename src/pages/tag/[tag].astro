@@ -1,49 +1,50 @@
 ---
-import Layout from '$component/Layout.astro'
-import PostCard from '$component/PostCard.astro'
-import { getPosts, getSortedPosts } from '$lib/posts'
-import getTags from '$lib/tags'
-import t from '@t'
+import Layout from "$component/Layout.astro"
+import PostCard from "$component/PostCard.astro"
+import { getPosts, getSortedPosts } from "$lib/posts"
+import getTags from "$lib/tags"
+import t from "@t"
 
 let tags
 
 try {
-    tags = getTags(getSortedPosts(await Astro.glob(`../post/*.md`)))
-} catch(e) {}
+	tags = getTags(getSortedPosts(await Astro.glob(`../post/*.md`)))
+} catch (e) {}
 
 export async function getStaticPaths() {
-    let tags
-    try {
-        tags = getTags(getPosts(await Astro.glob('../post/*.md')))
-    } catch(e) {}
+	let tags
+	try {
+		tags = getTags(getPosts(await Astro.glob("../post/*.md")))
+	} catch (e) {}
 
-    return tags ? (Reflect.ownKeys(tags) as string[]).map((tag) => ({
-        params: {
-            tag,
-        }
-    })) : []
+	return tags
+		? (Reflect.ownKeys(tags) as string[]).map((tag) => ({
+				params: {
+					tag,
+				},
+		  }))
+		: []
 }
 
 const { tag } = Astro.params
 ---
 
 <Layout title={`Tag "${tag}"`}>
-    <h1>{t('tag.title')}<code>{tag}</code>{t('tag.titleAfter')}</h1>
+	<h1>{t("tag.title")}<code>{tag}</code>{t("tag.titleAfter")}</h1>
 
-    <div id="posts">
-        {
-            tag && (
-                tags?.[tag].map((post) => (
-                    <PostCard post={post.frontmatter} url={post.url}></PostCard>
-                ))
-            )
-        }
-    </div>
+	<div id="posts">
+		{
+			tag &&
+				tags?.[tag].map((post) => (
+					<PostCard post={post.frontmatter} url={post.url} />
+				))
+		}
+	</div>
 </Layout>
 
 <style is:global>
-    #posts {
-        margin: 1%;
-        display: flex;
-    }
+	#posts {
+		margin: 1%;
+		display: flex;
+	}
 </style>

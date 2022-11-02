@@ -16,11 +16,14 @@ import dayjs from "dayjs"
 // 	else return posts
 // }
 
-export const getPosts = (posts: MarkdownInstance<Record<string, any>>[]) => (
-	import.meta.env.PROD ? posts.filter((post) => !post.frontmatter.draft) : posts
-)
+export const getPosts = (posts: MarkdownInstance<Record<string, any>>[]) =>
+	import.meta.env.PROD
+		? posts.filter((post) => !post.frontmatter.draft)
+		: posts
 
-export function getSortedPosts(result: MarkdownInstance<Record<string, any>>[]) {
+export function getSortedPosts(
+	result: MarkdownInstance<Record<string, any>>[]
+) {
 	const posts = getPosts(result)
 
 	return posts.sort((a: any, b: any) =>
@@ -30,7 +33,9 @@ export function getSortedPosts(result: MarkdownInstance<Record<string, any>>[]) 
 	)
 }
 
-export function getGroupedPosts(result: MarkdownInstance<Record<string, any>>[]) {
+export function getGroupedPosts(
+	result: MarkdownInstance<Record<string, any>>[]
+) {
 	const posts = getSortedPosts(result)
 	const grouped: Record<string, MarkdownInstance<Record<string, any>>[]> = {}
 

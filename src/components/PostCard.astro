@@ -1,63 +1,58 @@
 ---
-import t from '@t'
-import dayjs from 'dayjs'
-import Tags from './Tags.astro'
+import t from "@t"
+import dayjs from "dayjs"
+import Tags from "./Tags.astro"
 
-const {
-    post,
-    url,
-} = Astro.props as {
-    post: Record<string, any>
-    url: string
+const { post, url } = Astro.props as {
+	post: Record<string, any>
+	url: string
 }
 
-const {
-    tags
-} = post
+const { tags } = post
 
-let date = t('post.date')(post.pubDate)
+let date = t("post.date")(post.pubDate)
 ---
 
 <div class="post-card">
-    <a href={url}>
-        <h1 class="post-title">{post?.title}</h1>
-        <span class="post-pub-date">{date}</span>
-        <Tags {tags}></Tags>
-        <p class="post-description">{post?.description}</p>
-    </a>
+	<a href={url}>
+		<h1 class="post-title">{post?.title}</h1>
+		<span class="post-pub-date">{date}</span>
+		<Tags {tags} />
+		<p class="post-description">{post?.description}</p>
+	</a>
 </div>
 
 <style is:global>
-    @media (min-width: 400px) {
-        .post-card {
-            /* margin-bottom: 40px; */
-            /* flex-basis: 50%; */
-            width: 400px;
-            /* display: block; */
-            /* padding-right: 20px; */
-        }
-    }
+	@media (min-width: 400px) {
+		.post-card {
+			/* margin-bottom: 40px; */
+			/* flex-basis: 50%; */
+			width: 400px;
+			/* display: block; */
+			/* padding-right: 20px; */
+		}
+	}
 
-    .post-card {
-        margin: 2%;
-    }
+	.post-card {
+		margin: 2%;
+	}
 
-    .post-title {
-        font-weight: 500;
-        font-size: 1.4em;
-        line-height: 1em;
-        margin: 0;
-    }
+	.post-title {
+		font-weight: 500;
+		font-size: 1.4em;
+		line-height: 1em;
+		margin: 0;
+	}
 
-    .post-pub-date {
-        font-weight: 300;
-        font-size: 0.7em;
-        line-height: 1em;
-        margin: 0;
-    }
-    
-    .post-description {
-        font-size: 1em;
-        font-weight: 400;
-    }
+	.post-pub-date {
+		font-weight: 300;
+		font-size: 0.7em;
+		line-height: 1em;
+		margin: 0;
+	}
+
+	.post-description {
+		font-size: 1em;
+		font-weight: 400;
+	}
 </style>
