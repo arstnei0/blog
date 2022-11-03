@@ -70,7 +70,7 @@ const Search: Component<{}> = (props) => {
 					})}
 					autofocus
 					value={search()}
-					onInput={(e) => setSearch((e.target as any).value)}
+					onChange={(e) => setSearch((e.target as any).value)}
 				></input>
 			</div>
 			<div id="search-results">
