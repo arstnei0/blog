@@ -6,7 +6,7 @@ const { lang } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html {lang === 'cn' ? 'zh-cn' : lang}>
+<html lang={lang === 'cn' ? 'zh-cn' : lang}>
 	<head>
 		<slot name="head" />
 	</head>
