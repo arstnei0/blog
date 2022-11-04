@@ -4,18 +4,6 @@ import t from "@t"
 import type { MarkdownInstance } from "astro"
 import dayjs from "dayjs"
 
-// export function getPosts(posts: MarkdownInstance<Record<string, any>>[]) {
-// 	if (import.meta.env.PROD)
-// 		return posts.filter((post) => !post.frontmatter.draft)
-// 	else return posts
-// }
-
-// function getPosts(posts: MarkdownInstance<Record<string, any>>[]) {
-// 	if (import.meta.env.PROD)
-// 		return posts.filter((post) => !post.frontmatter.draft)
-// 	else return posts
-// }
-
 export const getPosts = (posts: MarkdownInstance<Record<string, any>>[]) =>
 	import.meta.env.PROD
 		? posts.filter((post) => !post.frontmatter.draft)

@@ -28,7 +28,7 @@ npm run dev
 
 The `build` script for building.
 
-The site is deployed on [Vercel](https://vercel.com). I use [Pagefind](https://pagefind.app/) as my search engine(it's static). I may change it later.
+The site is deployed on [Vercel](https://vercel.com) for the English site and [Cloudflare Pages](https://pages.cloudflare.com/) for the Chinese site. I use [Pagefind](https://pagefind.app/) as my search engine(it's static).
 
 The comment system is [Giscus](https://giscus.app).
 
