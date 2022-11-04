@@ -13,7 +13,6 @@ export function getSortedPosts(
 	result: MarkdownInstance<Record<string, any>>[]
 ) {
 	const posts = getPosts(result)
-	console.log(posts.filter((post) => !post.frontmatter.draft))
 
 	return posts.sort((a: any, b: any) =>
 		dayjs(a.frontmatter.pubDate).isBefore(dayjs(b.frontmatter.pubDate))
