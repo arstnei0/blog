@@ -9,6 +9,7 @@ tags:
 image:
     src: /rss_hero_image.webp
     width: 100%
+    alt: Cover image
 ---
 
 ## Intro to RSS
@@ -19,7 +20,7 @@ RSS has been a popular way to read articles or blog posts. Lots of websites have
 
 How does RSS work? For example, when you are viewing a personal website, you might see an icon like this:
 
-![](/rss-colored.webp)
+<img src="/rss-colored.webp" alt="RSS logo" />
 
 And after you click this, it will link you to another URL such as `myblog.com/rss.xml` or `www.john.com/feed`. This page is in the particular format of XML which is defined by RSS. If you installed any browser extension about RSS, it may show you all the articles of this website because it detected RSS on this page.
 
