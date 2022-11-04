@@ -1,5 +1,6 @@
 import type { Component } from "solid-js"
 import { mode, setMode, Mode, modeStr } from "$lib/mode"
+import { locale } from "@lang"
 
 const Giscus: Component<{}> = (props) => {
 	const { mode: modeName } =
@@ -20,7 +21,7 @@ const Giscus: Component<{}> = (props) => {
 		script.setAttribute("data-emit-metadata", "0")
 		script.setAttribute("data-input-position", "top")
 		script.setAttribute("data-theme", modeStr())
-		script.setAttribute("data-lang", "en")
+		script.setAttribute("data-lang", locale === 'cn' ? 'zh-CN' : "en")
 		script.setAttribute("data-crossorigin", "anonymous")
 		script.setAttribute("async", "true")
 
