@@ -1,4 +1,4 @@
-@media (min-width: 400px) {
+@media (min-width: 499px) {
 	#sidebar {
 		position: fixed;
 		right: 5%;
@@ -6,7 +6,7 @@
 		opacity: 0.2;
 		transition: opacity 0.6s ease-out, right 2s ease-in-out;
 		height: 70%;
-		padding-right: 4em;
+		padding-right: 2em;
 		overflow-y: scroll;
 		overflow-x: hidden;
 	}
@@ -61,7 +61,7 @@
 	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 499px) {
 	#sidebar {
 		display: none;
 	}

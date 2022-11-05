@@ -2,7 +2,7 @@
 import Layout from "$component/Layout.astro"
 import Sidebar from "$component/Sidebar"
 import "$style/typography.css"
-import dayjs from "dayjs"
+import "$style/sidebar.css"
 import Tags from "$component/Tags.astro"
 import t from "@t"
 import CopyToClipboard from "$component/CopyToClipboard.astro"
@@ -83,7 +83,7 @@ let date = t("post.date")(pubDate)
 		margin-bottom: 10%;
 	}
 
-	@media (min-width: 400px) {
+	@media (min-width: 499px) {
 		main {
 			/* margin-left: 20%;
             margin-right: 30%; */

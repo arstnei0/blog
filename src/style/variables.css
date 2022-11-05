@@ -31,14 +31,14 @@ body {
 	--scrollbar-color: #967e76;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 499px) {
 	body {
 		--big-title: 2.6rem !important;
 		--main-font-size: 1.2em;
 	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 499px) {
 	body {
 		--big-title: 2rem !important;
 		--main-font-size: 1.1em;
