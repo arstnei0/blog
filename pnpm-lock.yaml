@@ -8,13 +8,12 @@ specifiers:
   '@astrojs/vercel': ^2.2.0
   '@babel/core': ^7.19.3
   '@types/node': ^18.11.0
-  astro: ^1.6.2
+  astro: ^1.6.3
   astro-compress: ^1.0.12
   autoprefixer: ^10.4.12
   dayjs: ^1.11.6
   hast-util-to-string: ^2.0.0
   hastscript: ^7.1.0
-  lxgw-wenkai-lite-webfont: ^1.6.0
   pagefind: ^0.8.1
   postcss: ^8.4.18
   postcss-extend-rule: ^4.0.0
@@ -34,13 +33,12 @@ dependencies:
   '@astrojs/solid-js': 1.2.0_o5do7oxr2hbtrv24zykqvegilq
   '@astrojs/vercel': 2.2.0
   '@babel/core': 7.19.3
-  astro: 1.6.2
+  astro: 1.6.3
   astro-compress: 1.0.12
   autoprefixer: 10.4.12_postcss@8.4.18
   dayjs: 1.11.6
   hast-util-to-string: 2.0.0
   hastscript: 7.1.0
-  lxgw-wenkai-lite-webfont: 1.6.0
   pagefind: 0.8.1
   postcss: 8.4.18
   postcss-extend-rule: 4.0.0_postcss@8.4.18
@@ -958,8 +956,8 @@ packages:
       terser: 5.15.1
     dev: false
 
-  /astro/1.6.2:
-    resolution: {integrity: sha512-UHbzQ3Q7iU2a0XBY6Dzh/Hksoa7svmkWZ3ABRGgSOT765GXIGZkErgeNAsjsBW7RsTUKVLqVxD2LK3NzZL5EKA==}
+  /astro/1.6.3:
+    resolution: {integrity: sha512-Om84PLuuF497q1LVMzcr0jI3r0kNoYgdX7W0IVUgVnrNd7ubK11h9zhg/2MHRSui+0vCH3+0hnCnCG6QEd2a2Q==}
     engines: {node: ^14.18.0 || >=16.12.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -2804,10 +2802,6 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
-    dev: false
-
-  /lxgw-wenkai-lite-webfont/1.6.0:
-    resolution: {integrity: sha512-jSjCZSlRVDEcj9CQoWqtX5xyjZhwfxisvZjZfef/NFBfMTlKQm5bvKDq6l/G230fiQVgCGu/KxtDPu3OlNU+mw==}
     dev: false
 
   /magic-string/0.25.9:
