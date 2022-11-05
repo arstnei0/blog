@@ -1,5 +1,4 @@
 import { Component, For, JSX, createSignal, Show, onMount } from "solid-js"
-import "$style/sidebar.css"
 
 const h = (depth: number, content: JSX.Element) => {
 	return depth === 1 ? (
@@ -33,10 +32,10 @@ const Sidebar: Component<{
 		setShowSidebar((show) => !show)
 		if (showSidebar()) {
 			localStorage.setItem("show-sidebar", "true")
-			;(window as any).cursor.add(button1)
+			;setTimeout(() => (window as any).cursor.add(button1), 300)
 		} else {
 			localStorage.setItem("show-sidebar", "false")
-			;(window as any).cursor.add(button2)
+			;setTimeout(() => (window as any).cursor.add(button2), 300)
 		}
 
 		;(window as any).cursor.out()

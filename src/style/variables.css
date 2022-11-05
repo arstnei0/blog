@@ -14,6 +14,8 @@ body {
 	--background-color: white;
 	--code-inline-bg-color: #e4f9f5;
 	--bow: black; /* Black Or White */
+	--bowr: white; /* Black Or White */
+	--scrollbar-color: #f5efe6;
 }
 
 .dark body {
@@ -25,16 +27,18 @@ body {
 	--background-color: #191919;
 	--code-inline-bg-color: #594545;
 	--bow: white; /* Black Or White */
+	--bowr: black; /* Black Or White */
+	--scrollbar-color: #967e76;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 499px) {
 	body {
 		--big-title: 2.6rem !important;
 		--main-font-size: 1.2em;
 	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 499px) {
 	body {
 		--big-title: 2rem !important;
 		--main-font-size: 1.1em;

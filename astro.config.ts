@@ -8,6 +8,8 @@ import solidJs from "@astrojs/solid-js"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import compress from "astro-compress"
+import { visit } from "unist-util-visit"
+import { selectAll } from "hast-util-select"
 
 const AnchorLinkIcon = h(
 	"svg",
@@ -52,7 +54,7 @@ export default defineConfig({
 		},
 	},
 	markdown: {
-		extendDefaultPlugins: true,
+		// extendDefaultPlugins: true,
 		syntaxHighlight: "shiki",
 		shikiConfig: {
 			theme: "dracula-soft",
@@ -80,6 +82,23 @@ export default defineConfig({
 						), // toString(heading),
 				},
 			],
+			() => (tree) => {
+				tree.children.forEach((child, i) => {
+					if (!(child.type === "raw")) return
+					if (
+						!(
+							child.value.includes("pre") &&
+							child.value.includes("astro-code") &&
+							child.value.includes(
+								'style="background-color: #282A36; overflow-x: auto;"'
+							)
+						)
+					)
+						return
+					;(tree.children[i] as any).value =
+						'<div class="code">' + child.value + "</div>"
+				})
+			},
 		],
 	},
 	// output: "server",

@@ -68,8 +68,17 @@ main {
 	}
 }
 
+blockquote {
+	border-left: 5px solid #ccc;
+	/* margin: 0em 10px;
+    padding: 0.5em 10px; */
+	padding-left: 1em;
+	margin-left: 2em;
+	border-radius: 3px;
+}
+
 /* Laptop or desktop only */
-@media (min-width: 400px) {
+@media (min-width: 499px) {
 	main {
 	}
 
@@ -79,7 +88,7 @@ main {
 }
 
 /* Mobile only */
-@media (max-width: 400px) {
+@media (max-width: 499px) {
 	main {
 	}
 

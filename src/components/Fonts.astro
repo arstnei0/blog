@@ -1,6 +1,5 @@
 ---
 import { locale } from "@lang"
-
 ---
 
 <link
@@ -17,8 +16,10 @@ import { locale } from "@lang"
 </noscript>
 
 {
-	locale === 'cn' && <>
-		<link href="/lxgw/style.css" rel="stylesheet" />
-		<link href="/chineseFont.css" rel="stylesheet" />
-	</>
+	locale === "cn" && (
+		<>
+			<link href="/lxgw/style.css" rel="stylesheet" />
+			<link href="/chineseFont.css" rel="stylesheet" />
+		</>
+	)
 }

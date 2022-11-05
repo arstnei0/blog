@@ -13,14 +13,14 @@
 	--black-light: #424455;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 499px) {
 	.progress-wrap {
 		right: 50px;
 		bottom: 50px;
 	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 499px) {
 	.progress-wrap {
 		right: 15px;
 		bottom: 15px;
