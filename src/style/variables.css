@@ -14,6 +14,7 @@ body {
 	--background-color: white;
 	--code-inline-bg-color: #e4f9f5;
 	--bow: black; /* Black Or White */
+	--scrollbar-color: #F5EFE6;
 }
 
 .dark body {
@@ -25,6 +26,7 @@ body {
 	--background-color: #191919;
 	--code-inline-bg-color: #594545;
 	--bow: white; /* Black Or White */
+	--scrollbar-color: #967E76;
 }
 
 @media (min-width: 400px) {
