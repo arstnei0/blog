@@ -33,6 +33,8 @@ const mock = (search: string) => [
 
 const Search: Component<{}> = (props) => {
 	const [search, setSearch] = createSignal("")
+	const [realtimeSearch, setRealtimeSearch] = createSignal("")
+
 	const [results] = createResource(search, async (search) =>
 		import.meta.env.PROD
 			? (
@@ -51,6 +53,8 @@ const Search: Component<{}> = (props) => {
 				results.map(async (result: any) => await result.data())
 			))
 	)
+
+	createEffect(() => pagefind.preload(realtimeSearch()))
 
 	return (
 		<>
@@ -71,6 +75,7 @@ const Search: Component<{}> = (props) => {
 					autofocus
 					value={search()}
 					onChange={(e) => setSearch((e.target as any).value)}
+					onInput={(e) => setRealtimeSearch((e.target as any).value)}
 				></input>
 			</div>
 			<div id="search-results">

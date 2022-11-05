@@ -38,7 +38,7 @@ export default defineConfig({
 		shikiConfig: {
 			theme: "dracula-soft",
 		},
-		rehypePlugins: rehypePlugins
+		rehypePlugins: rehypePlugins,
 	},
 	// output: "server",
 	// adapter: vercel()

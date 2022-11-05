@@ -10,14 +10,25 @@
 	font-size: 1.7em;
 	width: 90%;
 	background: #ffffff;
-	box-shadow: 18px 18px 17px #d9d9d9, -18px -18px 17px #ffffff;
+	box-shadow: 18px 18px 17px #4c3b3b, -18px -18px 17px #664f4f;
 	transition: all 0.5s ease-out;
 }
 
 #search-input:hover,
 #search-input:focus {
 	background: #f0f0f0;
-	box-shadow: 18px 18px 36px #cccccc, -18px -18px 36px #ffffff;
+	box-shadow: 18px 18px 36px #4c3b3b, -18px -18px 36px #664f4f;
+}
+
+.dark {
+	#search-input {
+		background: #404258 !important;
+	}
+
+	#search-input:hover,
+	#search-input:focus {
+		background: #2c3639 !important;
+	}
 }
 
 #search-results {

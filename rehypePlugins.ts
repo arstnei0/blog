@@ -22,55 +22,54 @@ const AnchorLinkIcon = h(
 	})
 )
 
-export default ([
-    rehypeSlug,
-    [
-        rehypeAutolinkHeadings,
-        {
-            properties: {
-                class: "anchor-link",
-            },
-            behavior: "after",
-            group: ({ tagName }: { tagName: string }) =>
-                h(`div.heading-wrapper.level-${tagName}`, {
-                    tabIndex: -1,
-                }),
-            content: (heading: any) =>
-                h(
-                    `span.anchor-icon`,
-                    {
-                        ariaHidden: "true",
-                    },
-                    AnchorLinkIcon
-                ), // toString(heading),
-        },
-    ],
-    () => (tree) => {
-        tree.children.forEach((child, i) => {
-            if (!(child.type === "raw")) return
-            if (
-                !(
-                    child.value.includes("pre") &&
-                    child.value.includes("astro-code") &&
-                    child.value.includes(
-                        'style="background-color: #282A36; overflow-x: auto;"'
-                    )
-                )
-            )
-                return
-            ;(tree.children[i] as any).value =
-                '<div class="code">' + child.value + "</div>"
-        })
+export default [
+	rehypeSlug,
+	[
+		rehypeAutolinkHeadings,
+		{
+			properties: {
+				class: "anchor-link",
+			},
+			behavior: "after",
+			group: ({ tagName }: { tagName: string }) =>
+				h(`div.heading-wrapper.level-${tagName}`, {
+					tabIndex: -1,
+				}),
+			content: (heading: any) =>
+				h(
+					`span.anchor-icon`,
+					{
+						ariaHidden: "true",
+					},
+					AnchorLinkIcon
+				), // toString(heading),
+		},
+	],
+	() => (tree) => {
+		tree.children.forEach((child, i) => {
+			if (!(child.type === "raw")) return
+			if (
+				!(
+					child.value.includes("pre") &&
+					child.value.includes("astro-code") &&
+					child.value.includes(
+						'style="background-color: #282A36; overflow-x: auto;"'
+					)
+				)
+			)
+				return
+			;(tree.children[i] as any).value =
+				'<div class="code">' + child.value + "</div>"
+		})
 
-        let last = ""
+		let last = ""
 
-        visit(tree, "element", (node) => {
-            if (node.tagName === "a") {
-                if (node.properties)
-                    node.properties["aria-label"] = last
-            } else if (node.tagName.startsWith("h")) {
-                last = node.properties?.id as string
-            }
-        })
-    },
-] as RehypePlugins)
+		visit(tree, "element", (node) => {
+			if (node.tagName === "a") {
+				if (node.properties) node.properties["aria-label"] = last
+			} else if (node.tagName.startsWith("h")) {
+				last = node.properties?.id as string
+			}
+		})
+	},
+] as RehypePlugins
