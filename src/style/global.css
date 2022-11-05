@@ -17,3 +17,5 @@ main {
 		color: var(--title-color);
 	}
 }
+
+body { overflow-y: scroll; }

@@ -26,6 +26,7 @@
 		"dayjs": "^1.11.6",
 		"hast-util-to-string": "^2.0.0",
 		"hastscript": "^7.1.0",
+		"lxgw-wenkai-lite-webfont": "^1.6.0",
 		"pagefind": "^0.8.1",
 		"postcss": "^8.4.18",
 		"postcss-extend-rule": "^4.0.0",
