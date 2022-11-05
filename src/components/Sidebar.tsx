@@ -32,10 +32,10 @@ const Sidebar: Component<{
 		setShowSidebar((show) => !show)
 		if (showSidebar()) {
 			localStorage.setItem("show-sidebar", "true")
-			;setTimeout(() => (window as any).cursor.add(button1), 300)
+			setTimeout(() => (window as any).cursor.add(button1), 300)
 		} else {
 			localStorage.setItem("show-sidebar", "false")
-			;setTimeout(() => (window as any).cursor.add(button2), 300)
+			setTimeout(() => (window as any).cursor.add(button2), 300)
 		}
 
 		;(window as any).cursor.out()
