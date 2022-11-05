@@ -69,7 +69,7 @@ let date = t("post.date")(pubDate)
 		</script>
 	</div>
 
-	<Sidebar client:idle {headings} />
+	<Sidebar client:idle {headings} client:only="solid-js" />
 
 	<CopyToClipboard></CopyToClipboard>
 </Layout>
