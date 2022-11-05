@@ -123,7 +123,7 @@ const MobileNav: Component<{}> = (props) => {
 							<a
 								aria-label="My Github"
 								class="nav-icon opacity-effect-reversed"
-								id="gh"
+								id="github"
 								target="_blank"
 								href="https://github.com/zihan-ch"
 							>
