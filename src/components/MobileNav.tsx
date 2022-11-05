@@ -100,7 +100,7 @@ const MobileNav: Component<{}> = (props) => {
 							<a
 								aria-label="RSS Feed"
 								class="nav-icon opacity-effect-reversed"
-								id="rss"
+								id="rss-ico"
 								href="/rss.xml"
 							>
 								<svg
