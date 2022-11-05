@@ -2,7 +2,7 @@
 title: 函数式编程指南 2：条件判断
 layout: "$layout/Post.astro"
 pubDate: 2022/11/4
-description: 关于 TypeScript 函数式的基本写法以及一些入门和高级技巧。系列中的第一篇文章。
+description: 关于 TypeScript 函数式的基本写法以及一些入门和高级技巧。系列中的第二篇文章。
 tags:
  - 函数式编程指南
  - TypeScript
