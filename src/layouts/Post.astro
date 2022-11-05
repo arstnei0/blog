@@ -59,7 +59,10 @@ let date = t("post.date")(pubDate)
 				script.setAttribute("data-emit-metadata", "0")
 				script.setAttribute("data-input-position", "top")
 				script.setAttribute("data-theme", modeStr())
-				script.setAttribute("data-lang", locale === 'cn' ? 'zh-CN' : "en")
+				script.setAttribute(
+					"data-lang",
+					locale === "cn" ? "zh-CN" : "en"
+				)
 				script.setAttribute("data-crossorigin", "anonymous")
 				script.setAttribute("async", "true")
 				script.setAttribute("src", "https://giscus.app/client.js")
@@ -71,7 +74,7 @@ let date = t("post.date")(pubDate)
 
 	<Sidebar client:idle {headings} client:only="solid-js" />
 
-	<CopyToClipboard></CopyToClipboard>
+	<CopyToClipboard />
 </Layout>
 
 <style is:global>

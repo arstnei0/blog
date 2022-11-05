@@ -84,11 +84,21 @@ export default defineConfig({
 			],
 			() => (tree) => {
 				tree.children.forEach((child, i) => {
-					if (child.type === 'raw') {
-						(tree.children[i] as any).value = '<div class="code">' + child.value + '</div>'
-					}
+					if (!(child.type === "raw")) return
+					if (
+						!(
+							child.value.includes("pre") &&
+							child.value.includes("astro-code") &&
+							child.value.includes(
+								'style="background-color: #282A36; overflow-x: auto;"'
+							)
+						)
+					)
+						return
+					;(tree.children[i] as any).value =
+						'<div class="code">' + child.value + "</div>"
 				})
-			}
+			},
 		],
 	},
 	// output: "server",
