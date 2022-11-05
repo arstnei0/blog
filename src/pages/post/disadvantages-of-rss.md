@@ -8,7 +8,6 @@ tags:
     - future
 image:
     src: /rss_hero_image.webp
-    width: 100%
     alt: Cover image
 ---
 
