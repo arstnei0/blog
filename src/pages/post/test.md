@@ -11,78 +11,12 @@ tags:
 Content
 > a
 
-# aaa
-## bb
-### cc
-#### dddd
-##### eeeeee
-###### f
-# aaa
-## bb
-### cc
-#### dddd
-##### eeeeee
-###### f
-# aaa
-## bb
-### cc
-#### dddd
-##### eeeeee
-###### f
-# aaa
-## bb
-### cc
-#### dddd
-##### eeeeee
-###### f
-# aaa
-## bb
-### cc
-#### dddd
-##### eeeeee
-###### f
-# aaa
-## bb
-### cc
-#### dddd
-##### eeeeee
-###### f
-# aaa
-## bb
-### cc
-#### dddd
-##### eeeeee
-###### f
-# aaa
-## bb
-### cc
-#### dddd
-##### eeeeee
-###### f
-# aaa
-## bb
-### cc
-#### dddd
-##### eeeeee
-###### f
-# aaa
-## bb
-### cc
-#### dddd
-##### eeeeee
-###### f
-# aaa
-## bb
-### cc
-#### dddd
-##### eeeeee
-###### f
-# aaa
-## bb
-### cc
-#### dddd
-##### eeeeee
-###### f
+```ts
+const a = () => {
+    const b = 0
+    
+}
+```
 
 ```ts
 const a = 0

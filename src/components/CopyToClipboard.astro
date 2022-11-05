@@ -1,0 +1,81 @@
+---
+
+---
+
+<script>
+    const copy = async (codeEl: HTMLElement) => {
+        let str = ''
+
+        const l = [...(codeEl.children)].length
+        ;[...(codeEl.children)].forEach((line: any, i) => {
+            [...line.children].forEach((b) => str += b.innerText)
+            if (i + 1 < l) str += '\n'
+        })
+
+        await navigator.clipboard.writeText(str)
+    }
+
+    ((codes) => {
+        codes.forEach((code) => {
+            const button = document.createElement('button')
+            button.className = 'copy'
+            button.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M15 20H5V7c0-.55-.45-1-1-1s-1 .45-1 1v13c0 1.1.9 2 2 2h10c.55 0 1-.45 1-1s-.45-1-1-1zm5-4V4c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h9c1.1 0 2-.9 2-2zm-2 0H9V4h9v12z"/></svg>`
+            
+            button.onclick = async () => {
+                await copy(((button.parentElement as HTMLElement).firstElementChild as HTMLPreElement).firstElementChild as HTMLElement)
+                button.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="m9 16.2l-3.5-3.5a.984.984 0 0 0-1.4 0a.984.984 0 0 0 0 1.4l4.19 4.19c.39.39 1.02.39 1.41 0L20.3 7.7a.984.984 0 0 0 0-1.4a.984.984 0 0 0-1.4 0L9 16.2z"/></svg>`
+
+                setTimeout(() => {
+                    button.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M15 20H5V7c0-.55-.45-1-1-1s-1 .45-1 1v13c0 1.1.9 2 2 2h10c.55 0 1-.45 1-1s-.45-1-1-1zm5-4V4c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h9c1.1 0 2-.9 2-2zm-2 0H9V4h9v12z"/></svg>`
+                }, 2500)
+            }
+
+            code.appendChild(button)
+        })
+    })(document.querySelectorAll('div.code'))
+</script>
+
+<style is:global>
+    button.copy {
+        all: unset;
+        border-radius: 5px;
+        position: absolute;
+        padding: 0.2rem;
+        padding-bottom: 0;
+        right: 0.25rem;
+        top: 0.25rem;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    div.code:hover {
+        button.copy {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    button.copy:hover {
+        background: #b3b3b3;
+        box-shadow: inset 10px 10px 20px #acacac,
+                    inset -10px -10px 20px #bababa;
+    }
+
+    .light {
+        button.copy {
+            background-color: #EDEDED;
+        }
+    }
+
+    .dark {
+        button.copy {
+            background-color: #7D6E83;
+        }
+    }
+
+    div.code {
+        position: relative;
+    }
+</style>

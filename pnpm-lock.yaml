@@ -12,6 +12,7 @@ specifiers:
   astro-compress: ^1.0.12
   autoprefixer: ^10.4.12
   dayjs: ^1.11.6
+  hast-util-select: ^5.0.2
   hast-util-to-string: ^2.0.0
   hastscript: ^7.1.0
   pagefind: ^0.8.1
@@ -25,6 +26,7 @@ specifiers:
   rollup: ^3.2.2
   solid-js: ^1.4.3
   typescript: ^4.8.4
+  unist-util-visit: ^4.1.1
 
 dependencies:
   '@astrojs/mdx': 0.11.4_rollup@3.2.2
@@ -37,6 +39,7 @@ dependencies:
   astro-compress: 1.0.12
   autoprefixer: 10.4.12_postcss@8.4.18
   dayjs: 1.11.6
+  hast-util-select: 5.0.2
   hast-util-to-string: 2.0.0
   hastscript: 7.1.0
   pagefind: 0.8.1
@@ -50,6 +53,7 @@ dependencies:
   rollup: 3.2.2
   solid-js: 1.5.7
   typescript: 4.8.4
+  unist-util-visit: 4.1.1
 
 devDependencies:
   '@types/node': 18.11.0
@@ -1086,6 +1090,10 @@ packages:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
     dev: false
 
+  /bcp-47-match/2.0.2:
+    resolution: {integrity: sha512-zy5swVXwQ25ttElhoN9Dgnqm6VFlMkeDNljvHSGqGNr4zClUosdFzxD+fQHJVmx3g3KY+r//wV/fmBHsa1ErnA==}
+    dev: false
+
   /bindings/1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
     dependencies:
@@ -1372,6 +1380,10 @@ packages:
       nth-check: 2.1.1
     dev: false
 
+  /css-selector-parser/1.4.1:
+    resolution: {integrity: sha512-HYPSb7y/Z7BNDCOrakL4raGO2zltZkbeXyAd6Tg9obzix6QhzxCotdBl6VT0Dv4vZfJGVz3WL/xaEI9Ly3ul0g==}
+    dev: false
+
   /css-tree/1.1.3:
     resolution: {integrity: sha512-tRpdppF7TRazZrjJ6v3stzv93qxRcSsFmW6cX0Zm2NVKpxE1WV1HblnghVv9TreireHkqI/VDEsfolRF1p6y7Q==}
     engines: {node: '>=8.0.0'}
@@ -1506,6 +1518,11 @@ packages:
   /diff/5.1.0:
     resolution: {integrity: sha512-D+mk+qE8VC/PAUrlAU34N+VfXev0ghe5ywmpqrawphmVZc1bEfn56uo9qpyGp1p4xpzOHkSW4ztBd6L7Xx4ACw==}
     engines: {node: '>=0.3.1'}
+    dev: false
+
+  /direction/2.0.1:
+    resolution: {integrity: sha512-9S6m9Sukh1cZNknO1CWAr2QAWsbKLafQiyM5gZ7VgXHeuaoUwffKN4q6NC4A/Mf9iiPlOXQEKW/Mv/mh9/3YFA==}
+    hasBin: true
     dev: false
 
   /dlv/1.1.3:
@@ -2446,6 +2463,27 @@ packages:
       unist-util-visit: 4.1.1
       vfile: 5.3.5
       web-namespaces: 2.0.1
+      zwitch: 2.0.2
+    dev: false
+
+  /hast-util-select/5.0.2:
+    resolution: {integrity: sha512-QGN5o7N8gq1BhUX96ApLE8izOXlf+IPkOVGXcp9Dskdd3w0OqZrn6faPAmS0/oVogwJOd0lWFSYmBK75e+030g==}
+    dependencies:
+      '@types/hast': 2.3.4
+      '@types/unist': 2.0.6
+      bcp-47-match: 2.0.2
+      comma-separated-tokens: 2.0.2
+      css-selector-parser: 1.4.1
+      direction: 2.0.1
+      hast-util-has-property: 2.0.0
+      hast-util-is-element: 2.1.2
+      hast-util-to-string: 2.0.0
+      hast-util-whitespace: 2.0.0
+      not: 0.1.0
+      nth-check: 2.1.1
+      property-information: 6.1.1
+      space-separated-tokens: 2.0.1
+      unist-util-visit: 4.1.1
       zwitch: 2.0.2
     dev: false
 
@@ -3541,6 +3579,10 @@ packages:
   /normalize-range/0.1.2:
     resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /not/0.1.0:
+    resolution: {integrity: sha512-5PDmaAsVfnWUgTUbJ3ERwn7u79Z0dYxN9ErxCpVJJqe2RK0PJ3z+iFUxuqjwtlDDegXvtWoxD/3Fzxox7tFGWA==}
     dev: false
 
   /npm-run-path/5.1.0:
