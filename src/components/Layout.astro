@@ -10,6 +10,11 @@ import "$style/global.css"
 import { locale } from "@lang"
 import initLocale from "@init"
 
+if (locale === 'cn') {
+	await import('lxgw-wenkai-lite-webfont/style.css')
+	await import('$style/chineseFont.css')
+}
+
 const { frontmatter } = Astro.props
 
 const {
