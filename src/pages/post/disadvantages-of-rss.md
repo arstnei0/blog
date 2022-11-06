@@ -19,11 +19,11 @@ RSS has been a popular way to read articles or blog posts. Lots of websites have
 
 How does RSS work? For example, when you are viewing a personal website, you might see an icon like this:
 
-<img src="/rss-colored.webp" alt="RSS logo" />
+<img src="/images/rss-colored.webp" alt="RSS logo" />
 
 And after you click this, it will link you to another URL such as `myblog.com/rss.xml` or `www.john.com/feed`. This page is in the particular format of XML which is defined by RSS. If you installed any browser extension about RSS, it may show you all the articles of this website because it detected RSS on this page.
 
-<img src="/rss-content.webp" alt="RSS content" width="100%" />
+<img src="/images/rss-content.webp" alt="RSS content" width="100%" />
 
 After you follow the feed through an RSS app or your browser RSS extension, your RSS app or your browser extension will start tracking this URL and remind you when there are new feeds.
 
