@@ -13,7 +13,7 @@ const { lang } = Astro.props
 	<body>
 		<slot />
 
-		<Cursor client:idle />
-		<BackToTop client:idle />
+		<Cursor client:idle client:only="solid-js" />
+		<BackToTop client:idle client:only="solid-js" />
 	</body>
 </html>
