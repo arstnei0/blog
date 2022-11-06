@@ -3,7 +3,7 @@ import { Component, onMount, createSignal, Show } from "solid-js"
 
 const Cursor: Component<{}> = (props) => {
 	const [style, setStyle] = createSignal({})
-	const [show, setShow] = createSignal(false);
+	const [show, setShow] = createSignal(false)
 
 	const [hover, setHover] = createSignal(false)
 
@@ -49,9 +49,11 @@ const Cursor: Component<{}> = (props) => {
 	})
 
 	return (
-		<div style={{
-			display: show() ? '' : 'none'
-		}}>
+		<div
+			style={{
+				display: show() ? "" : "none",
+			}}
+		>
 			<div
 				style={style()}
 				classList={{ cursor: true, hover: hover() }}

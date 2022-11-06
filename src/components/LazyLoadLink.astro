@@ -1,7 +1,5 @@
 ---
-const {
-    href = ''
-} = Astro.props
+const { href = "" } = Astro.props
 ---
 
 <link
@@ -10,9 +8,4 @@ const {
 	as="style"
 	onload="this.onload=null;this.rel='stylesheet'"
 />
-<noscript
-	><link
-		rel="stylesheet"
-		href={href}
-	/>
-</noscript>
+<noscript><link rel="stylesheet" href={href} /></noscript>

@@ -1,10 +1,12 @@
 ---
 import { locale } from "@lang"
-import LazyLoadLink from "./LazyLoadLink.astro";
-import '$style/fonts.css'
+import LazyLoadLink from "./LazyLoadLink.astro"
+import "$style/fonts.css"
 ---
 
-<LazyLoadLink href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Merriweather:wght@300;400;700&display=swap" />
+<LazyLoadLink
+	href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Merriweather:wght@300;400;700&display=swap"
+/>
 
 {
 	locale === "cn" && (
