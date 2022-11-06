@@ -1,6 +1,7 @@
 body {
 	--serif: "Merriweather", serif;
-	--sans: "Merriweather Sans", sans-serif;
+	/* --sans: "Merriweather Sans", sans-serif; */
+	--sans: 'Ysabeau', sans-serif;
 	--mono: "Fira Code", monospace;
 	--link-color: #8675a9;
 }
@@ -34,13 +35,13 @@ body {
 @media (min-width: 499px) {
 	body {
 		--big-title: 2.6rem !important;
-		--main-font-size: 1.2em;
+		--main-font-size: 1.35em;
 	}
 }
 
 @media (max-width: 499px) {
 	body {
 		--big-title: 2rem !important;
-		--main-font-size: 1.1em;
+		--main-font-size: 1.2em;
 	}
 }

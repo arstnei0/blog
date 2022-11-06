@@ -24,7 +24,6 @@ let date = t("post.date")(pubDate)
 				src={image.src}
 				width={image.width}
 				height={image.height}
-				alt={image.alt}
 			/>
 		)
 	}
@@ -47,29 +46,25 @@ let date = t("post.date")(pubDate)
 				((globalThis as any).zihan as { mode: Mode }) || {}
 			setMode(modeName)
 
-			if (globalThis.document) {
-				const giscus = document.querySelector("#giscus")
-				const script = document.createElement("script")
-				script.setAttribute("data-repo", "zihan-ch/blog")
-				script.setAttribute("data-repo-id", "R_kgDOIE6d3Q")
-				script.setAttribute("data-category", "General")
-				script.setAttribute("data-category-id", "DIC_kwDOIE6d3c4CR5h7")
-				script.setAttribute("data-mapping", "pathname")
-				script.setAttribute("data-strict", "0")
-				script.setAttribute("data-reactions-enabled", "1")
-				script.setAttribute("data-emit-metadata", "0")
-				script.setAttribute("data-input-position", "top")
-				script.setAttribute("data-theme", modeStr())
-				script.setAttribute(
-					"data-lang",
-					locale === "cn" ? "zh-CN" : "en"
-				)
-				script.setAttribute("data-crossorigin", "anonymous")
-				script.setAttribute("async", "true")
-				script.setAttribute("src", "https://giscus.app/client.js")
+			const giscus = document.querySelector("#giscus")
+			const script = document.createElement("script")
+			script.setAttribute("data-repo", "zihan-ch/blog")
+			script.setAttribute("data-repo-id", "R_kgDOIE6d3Q")
+			script.setAttribute("data-category", "General")
+			script.setAttribute("data-category-id", "DIC_kwDOIE6d3c4CR5h7")
+			script.setAttribute("data-mapping", "pathname")
+			script.setAttribute("data-strict", "0")
+			script.setAttribute("data-reactions-enabled", "1")
+			script.setAttribute("data-emit-metadata", "0")
+			script.setAttribute("data-input-position", "top")
+			script.setAttribute("data-theme", modeStr())
+			script.setAttribute("data-lang", locale === "cn" ? "zh-CN" : "en")
+			script.setAttribute("data-crossorigin", "anonymous")
+			script.setAttribute("async", "true")
+			script.setAttribute("data-loading", "lazy")
+			script.setAttribute("src", "https://giscus.app/client.js")
 
-				giscus?.appendChild(script)
-			}
+			giscus?.appendChild(script)
 		</script>
 	</div>
 

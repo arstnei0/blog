@@ -10,10 +10,10 @@ import {
 import "$style/themeToggleButton.css"
 
 const ModeToggleButton: Component<{}> = (props) => {
-	onMount(() => {
-		const m = mode()
-		sendMessageToGiscus(modeStr())
-	})
+	// onMount(() => {
+	// 	const m = mode()
+	// 	sendMessageToGiscus(modeStr())
+	// })
 
 	return (
 		<div

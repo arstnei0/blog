@@ -1,8 +1,9 @@
 import "$style/cursor.css"
-import { Component, onMount, createSignal } from "solid-js"
+import { Component, onMount, createSignal, Show } from "solid-js"
 
 const Cursor: Component<{}> = (props) => {
 	const [style, setStyle] = createSignal({})
+	const [show, setShow] = createSignal(false);
 
 	const [hover, setHover] = createSignal(false)
 
@@ -14,6 +15,10 @@ const Cursor: Component<{}> = (props) => {
 	}
 
 	onMount(() => {
+		setTimeout(() => {
+			setShow(true)
+		}, 300)
+
 		window.addEventListener("mousemove", onMouseMove)
 
 		document.querySelectorAll("a").forEach((el) => {
@@ -44,7 +49,9 @@ const Cursor: Component<{}> = (props) => {
 	})
 
 	return (
-		<>
+		<div style={{
+			display: show() ? '' : 'none'
+		}}>
 			<div
 				style={style()}
 				classList={{ cursor: true, hover: hover() }}
@@ -57,7 +64,7 @@ const Cursor: Component<{}> = (props) => {
 				style={style()}
 				classList={{ cursor3: true, hover: hover() }}
 			></div>
-		</>
+		</div>
 	)
 }
 

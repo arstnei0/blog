@@ -102,7 +102,7 @@ const page = Astro.url.pathname
 						/>
 					</svg>
 				</a>
-				<ModeToggleButton client:idle client:only="solid-js" />
+				<ModeToggleButton client:idle />
 			</>
 		))
 	}
@@ -179,7 +179,7 @@ const page = Astro.url.pathname
 </style>
 
 <div class="mobile-only">
-	<MobileNav client:idle client:only="solid-js" />
+	<MobileNav client:idle />
 </div>
 
 <style></style>
