@@ -9,6 +9,8 @@ import "$style/utils.css"
 import "$style/global.css"
 import { locale } from "@lang"
 import initLocale from "@init"
+import Cursor from "./Cursor"
+import BackToTop from "./BackToTop"
 
 const { frontmatter } = Astro.props
 
@@ -58,6 +60,9 @@ initLocale()
 	</main>
 
 	<slot name="body" />
+
+	<Cursor client:idle />
+	<BackToTop client:idle />
 </Html>
 
 <style
