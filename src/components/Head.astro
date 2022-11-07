@@ -27,7 +27,7 @@ let date = dayjs(article.pubDate as string, "YYYY/MM/DD").format("YYYY-MM-DD")
 			<meta property="og:url" content={url} />
 			<meta
 				property="og:image"
-				content={article.image?.src || "/avatar.webp"}
+				content={article.image?.src || "/favicon.ico"}
 			/>
 		</>
 	)
@@ -55,7 +55,7 @@ let date = dayjs(article.pubDate as string, "YYYY/MM/DD").format("YYYY-MM-DD")
 	globalThis.zihan = { mode }
 </script>
 
-<link rel="icon" href="/avatar.webp" />
+<link rel="icon" href="/favicon.ico" />
 
 {import.meta.env.PROD && <Clarity />}
 

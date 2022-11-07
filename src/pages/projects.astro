@@ -1,0 +1,22 @@
+---
+import Project from "$component/Project.astro";
+import Layout from "$layout/Base.astro"
+---
+
+<Layout title="Projects">
+    <h1 id="title">My personal projects</h1>
+    <div id="projects">
+        <Project name="Blog" description="My personal blog." url="https://zihan.ga" githubUrl="https://github.com/zihan-ch/blog"></Project>
+    </div>
+</Layout>
+
+<style>
+    #title {
+        font-size: 3em;
+    }
+
+    #projects {
+        display: flex;
+        flex-wrap: wrap;
+    }
+</style>

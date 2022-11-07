@@ -52,11 +52,11 @@ dependencies:
   rehype-slug: 5.0.1
   rollup: 3.2.2
   solid-js: 1.5.7
-  typescript: 4.8.4
   unist-util-visit: 4.1.1
 
 devDependencies:
   '@types/node': 18.11.0
+  typescript: 4.8.4
 
 packages:
 
@@ -4659,7 +4659,6 @@ packages:
     resolution: {integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: false
 
   /unherit/3.0.0:
     resolution: {integrity: sha512-UmvIQZGEc9qdLIQ8mv8/61n6PiMgfbOoASPKHpCvII5srShCQSa6jSjBjlZOR4bxt2XnT6uo6csmPKRi+zQ0Jg==}

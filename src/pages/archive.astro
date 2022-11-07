@@ -19,16 +19,18 @@ try {
 			Reflect.ownKeys(posts).length !== 0 ? (
 				Reflect.ownKeys(posts).map((key) => {
 					return (
-						<div class="year">
+						<div class="month">
 							<h1 class="fw4 year-title">{key}</h1>
-							{posts[key as string].map((post) => {
-								return (
-									<PostCard
-										post={post.frontmatter}
-										url={post.url}
-									/>
-								)
-							})}
+							<div class="month-content">
+								{posts[key as string].map((post) => {
+									return (
+										<PostCard
+											post={post.frontmatter}
+											url={post.url}
+										/>
+									)
+								})}
+							</div>
 						</div>
 					)
 				})
@@ -53,7 +55,12 @@ try {
 		color: var(--text-color);
 	}
 
-	.year {
+	.month {
 		margin-bottom: 6%;
+	}
+
+	.month-content {
+		display: flex;
+		flex-wrap: wrap;
 	}
 </style>
