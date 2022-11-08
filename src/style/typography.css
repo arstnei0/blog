@@ -17,8 +17,8 @@ main {
 
 	* {
 		line-height: 1.35em;
-		letter-spacing: 0;
 		font-family: var(--sans);
+		letter-spacing: -0.02em;
 	}
 
 	*:not(a) {
@@ -89,6 +89,10 @@ main {
 
 	h6 {
 		font-size: 1.3em;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		letter-spacing: 0.01em;
 	}
 }
 
