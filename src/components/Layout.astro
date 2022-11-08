@@ -52,9 +52,11 @@ initLocale()
 		<slot name="head" />
 	</Head>
 
+	<a href="#main" class="skip-to-main-content-link">Skip to main content</a>
+
 	<Header />
 
-	<main class="sans">
+	<main id="main" class="sans">
 		<slot />
 		<slot name="main" />
 	</main>
@@ -90,5 +92,21 @@ initLocale()
 			margin-left: var(--mobileMarginStr);
 			margin-right: var(--mobileMarginStr);
 		}
+	}
+</style>
+
+<style is:global>
+	.skip-to-main-content-link {
+		position: absolute;
+		z-index: 999;
+		left: -100%;
+		padding: 1em;
+		opacity: 0;
+		transition: opacity 0.5s ease-out;
+	}
+
+	.skip-to-main-content-link:focus {
+		left: 40%;
+		opacity: 1;
 	}
 </style>
