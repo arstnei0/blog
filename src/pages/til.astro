@@ -1,7 +1,27 @@
 ---
 import Layout from "$component/Layout.astro"
+import TIL from "$component/TIL.astro"
+import dayjs from "dayjs"
+
+const tils = (await Astro.glob("./til/**/*.md")).slice(0, 10).sort((a, b) =>
+	dayjs(
+		(a.file.match(/(\d+)\/(\d+)\/(\d+)\.md$/i) as RegExpMatchArray)
+			.slice(1, 4)
+			.join("/"),
+		"YYYY/M/D"
+	).isBefore(
+		dayjs(
+			(b.file.match(/(\d+)\/(\d+)\/(\d+)\.md$/i) as RegExpMatchArray)
+				.slice(1, 4)
+				.join("/"),
+			"YYYY/M/D"
+		)
+	)
+		? 1
+		: -1
+)
 ---
 
-<Layout title>
-
+<Layout title="Today I learned">
+	{tils.map((til) => <TIL til={til} />)}
 </Layout>

@@ -1,0 +1,30 @@
+---
+import g from "@g"
+import dayjs from "dayjs"
+import type { MarkdownInstance } from "astro"
+
+const { til } = Astro.props as {
+	til: MarkdownInstance<{}>
+}
+
+const date = dayjs(
+	(til.file.match(/(\d+)\/(\d+)\/(\d+)\.md$/i) as RegExpMatchArray)
+		.slice(1, 4)
+		.join("/"),
+	"YYYY/M/D"
+)
+
+const MD = til.default
+---
+
+<span
+	>{
+		date.format(
+			g({
+				en: "D MMM, YYYY",
+				cn: "YYYY年M月D日",
+			})
+		)
+	}</span
+>
+<MD />
