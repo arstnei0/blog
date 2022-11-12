@@ -74,7 +74,7 @@ Gitpod doesn't allow you to configure the machine type, while Github Codespaces 
 
 Both Gitpod and Github Codespaces have good IDE support. 
 
-## Gitpod is in trouble.
+## Gitpod is in trouble
 As you can see, Github Codespaces allows ten hours more than Gitpod does. I guess Github Codespaces is directly competing with Gitpod. Also, Github Codespaces has a more flexible plan, which is counted by usage.
 
 I tested both Github Codespaces and Gitpod, and I figured out that Github Codespaces' starting time is much shorter than Gitpod. I often need to wait for about a minute to boot the codespace in Gitpod, but in Github Codespaces, it took me only about 5 seconds. 
