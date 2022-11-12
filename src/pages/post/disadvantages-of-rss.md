@@ -7,7 +7,7 @@ tags:
     - RSS
     - future
 image:
-    src: /rss_hero_image.webp
+    src: /images/rss_hero_image.webp
     alt: Cover image
 ---
 
