@@ -17,14 +17,16 @@ const date = dayjs(
 const MD = til.default
 ---
 
-<span
-	>{
-		date.format(
-			g({
-				en: "D MMM, YYYY",
-				cn: "YYYY年M月D日",
-			})
-		)
-	}</span
->
-<MD />
+<div class="til">
+    <span
+        >{
+            date.format(
+                g({
+                    en: "D MMM, YYYY",
+                    cn: "YYYY年M月D日",
+                })
+            )
+        }</span
+    >
+    <MD />
+</div>
