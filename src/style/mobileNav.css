@@ -6,6 +6,10 @@
 	right: 0;
 }
 
+.nav__list-item * {
+	text-transform: uppercase;
+}
+
 #mobile-menu {
 	.nav-item {
 		font-family: var(--sans);

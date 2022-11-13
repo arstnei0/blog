@@ -19,6 +19,8 @@ const MobileNav: Component<{}> = (props) => {
 
 	onMount(() => {
 		setPage(location.pathname)
+
+		document.body.classList.add('nav-inactive')
 	})
 
 	return env("nav", (t) => (
