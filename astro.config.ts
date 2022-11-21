@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap"
 import vercel from "@astrojs/vercel/serverless"
 import solidJs from "@astrojs/solid-js"
 import compress from "astro-compress"
-import rehypePlugins from "./rehypePlugins"
+import rehypePlugins from "./src/rehypePlugins"
 
 export default defineConfig({
 	integrations: [
