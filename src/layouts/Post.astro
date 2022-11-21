@@ -30,7 +30,7 @@ let date = t("post.date")(pubDate)
 
 	<h1 id="article-title" data-pagefind-meta="title">{title}</h1>
 	<span id="pub-date">{date}</span><br />
-	<span id="views"><script defer id="janalytics" define:vars={{ url: Astro.url }}>(async ()=>{const s=document.querySelector('script#janalytics');const r=await fetch("https://janalytics.zihan.ga/z/" + url);s.insertAdjacentText('afterend',await r.text());})()</script> views</span>
+	<span id="views"><script defer id="janalytics" define:vars={{ url: Astro.url }}>(async ()=>{const s=document.querySelector('script#janalytics');const r=await fetch("https://janalytics.zihan.ga/z/" + url);s.insertAdjacentText('afterend',await r.text());})()</script>&nbsp;views</span>
 
 	<Tags {tags} />
 
