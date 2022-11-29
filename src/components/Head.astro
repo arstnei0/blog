@@ -1,7 +1,7 @@
 ---
 import Fonts from "./Fonts.astro"
 import dayjs from "dayjs"
-import Clarity from "./Clarity.astro"
+import type Analytics from "./Analytics.astro"
 
 const { title, description, keywords, author, lang, article } = Astro.props
 
@@ -57,7 +57,7 @@ let date = dayjs(article.pubDate as string, "YYYY/MM/DD").format("YYYY-MM-DD")
 
 <link rel="icon" href="/favicon.ico" />
 
-{import.meta.env.PROD && <Clarity />}
+{import.meta.env.PROD && <Analytics />}
 
 <Fonts />
 
