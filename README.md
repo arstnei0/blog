@@ -1,5 +1,7 @@
 # My personal website
 
+This repo is deprecated! See my new website at [zihan-ch/portfolio](https://github.com/zihan-ch/portfolio)
+
 Built with [Astro](https://astro.build). I chose [Solid](https://solidjs.com/) as the frontend framework.
 
 The Chinese branch is [`cn`](https://github.com/zihan-ch/blog/tree/cn). 中文分支名为 [`cn`](https://github.com/zihan-ch/blog/tree/cn)。
